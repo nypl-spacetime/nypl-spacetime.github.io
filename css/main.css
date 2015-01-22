@@ -96,6 +96,10 @@ ul, li {
   width: 60px;
   height: 30px;
   border-radius: 0 10px 10px 0;
+  -webkit-box-shadow: 30px 0 0 #DFDFDF;
+  -ms-box-shadow: 30px 0 0 #DFDFDF;
+  -moz-box-shadow: 30px 0 0 #DFDFDF;
+  -o-box-shadow: 30px 0 0 #DFDFDF;
   box-shadow: 30px 0 0 #DFDFDF;
   z-index: 10; }
 
@@ -106,6 +110,10 @@ ul, li {
   height: 30px;
   z-index: 10;
   border-radius: 10px 0 0 10px;
+  -webkit-box-shadow: -30px 0 0 #DFDFDF;
+  -ms-box-shadow: -30px 0 0 #DFDFDF;
+  -moz-box-shadow: -30px 0 0 #DFDFDF;
+  -o-box-shadow: -30px 0 0 #DFDFDF;
   box-shadow: -30px 0 0 #DFDFDF; }
 
 .right:before {
@@ -122,6 +130,10 @@ ul, li {
   width: 22.5px;
   height: 30px;
   border-radius: 0 0 0 10px;
+  -webkit-box-shadow: 0 15px 0 #807F83;
+  -ms-box-shadow: 0 15px 0 #807F83;
+  -moz-box-shadow: 0 15px 0 #807F83;
+  -o-box-shadow: 0 15px 0 #807F83;
   box-shadow: 0 15px 0 #807F83;
   z-index: 10; }
 
@@ -132,6 +144,10 @@ ul, li {
   height: 30px;
   z-index: 10;
   border-radius: 10px 0 0 0;
+  -webkit-box-shadow: 0 -15px 0 #807F83;
+  -ms-box-shadow: 0 -15px 0 #807F83;
+  -moz-box-shadow: 0 -15px 0 #807F83;
+  -o-box-shadow: 0 -15px 0 #807F83;
   box-shadow: 0 -15px 0 #807F83; }
 
 /* END LINK BARS */
@@ -205,44 +221,48 @@ footer {
   background-size: 460px;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  -webkit-box-shadow: inset 20px 0 10px -20px black;
+  -ms-box-shadow: inset 20px 0 10px -20px black;
+  -moz-box-shadow: inset 20px 0 10px -20px black;
+  -o-box-shadow: inset 20px 0 10px -20px black;
   box-shadow: inset 20px 0 10px -20px black;
   width: 100%;
   background-position: right 0; }
 
-#map1766 {
+.map1766 {
   background-image: url("../img/lo.1766.jpg"); }
 
-#map1797 {
+.map1797 {
   background-image: url("../img/lo.1797.jpg"); }
 
-#map1817 {
+.map1817 {
   background-image: url("../img/lo.1817.jpg"); }
 
-#map1830 {
+.map1830 {
   background-image: url("../img/lo.1830.jpg"); }
 
-#map1841 {
+.map1841 {
   background-image: url("../img/lo.1841.jpg"); }
 
-#map1849 {
+.map1849 {
   background-image: url("../img/lo.1849.jpg"); }
 
-#map1857 {
+.map1857 {
   background-image: url("../img/lo.1857.jpg"); }
 
-#map1878 {
+.map1878 {
   background-image: url("../img/lo.1878.jpg"); }
 
-#map1913 {
+.map1913 {
   background-image: url("../img/lo.1913.jpg"); }
 
-#map1920 {
+.map1920 {
   background-image: url("../img/lo.1920.jpg"); }
 
-#map1921 {
+.map1921 {
   background-image: url("../img/lo.1921.jpg"); }
 
-#map2014 {
+.map2014 {
   background-image: url("../img/lo.2014.jpg"); }
 
 /*# sourceMappingURL=main.css.map */

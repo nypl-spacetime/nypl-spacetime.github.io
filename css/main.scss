@@ -18,6 +18,14 @@ $mapwidth: 460px;
   }
 }
 
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
 html {
   box-sizing: border-box;
 }
@@ -132,7 +140,7 @@ ul, li {
   width: $linkmargin;
   height: $linksize;
   border-radius: 0 $radius $radius 0;
-  box-shadow: $linksize 0 0 $bubblecolor;
+  @include vendor-prefix(box-shadow, $linksize 0 0 $bubblecolor);
   z-index: 10;
 }
 
@@ -143,7 +151,7 @@ ul, li {
   height: $linksize;
   z-index: 10;
   border-radius: $radius 0 0 $radius;
-  box-shadow: -$linksize 0 0 $bubblecolor;
+  @include vendor-prefix(box-shadow, -$linksize 0 0 $bubblecolor);
 }
 
 .right:before {
@@ -162,7 +170,7 @@ ul, li {
   width: ($linksize * .75);
   height: $linksize;
   border-radius: 0 0 0 $radius;
-  box-shadow: 0 ($linksize * .5) 0 $iconcolor;
+  @include vendor-prefix(box-shadow, 0 ($linksize * .5) 0 $iconcolor);
   z-index: 10;
 }
 
@@ -173,7 +181,7 @@ ul, li {
   height: $linksize;
   z-index: 10;
   border-radius: $radius 0 0 0;
-  box-shadow: 0 (-$linksize * .5) 0 $iconcolor;
+  @include vendor-prefix(box-shadow, 0 (-$linksize * .5) 0 $iconcolor);
 }
 /* END LINK BARS */
 
@@ -261,55 +269,55 @@ $mapshadow: 10px;
   background-size: $mapwidth;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  box-shadow: inset ($mapshadow * 2) 0 $mapshadow (-$mapshadow * 2) black;
+  @include vendor-prefix(box-shadow, inset ($mapshadow * 2) 0 $mapshadow (-$mapshadow * 2) black);
   width: 100%;
   background-position: right 0;
 }
 
-#map1766 {
+.map1766 {
   background-image: url("../img/lo.1766.jpg");
 }
 
-#map1797 {
+.map1797 {
   background-image: url("../img/lo.1797.jpg");
 }
 
-#map1817 {
+.map1817 {
   background-image: url("../img/lo.1817.jpg");
 }
 
-#map1830 {
+.map1830 {
   background-image: url("../img/lo.1830.jpg");
 }
 
-#map1841 {
+.map1841 {
   background-image: url("../img/lo.1841.jpg");
 }
 
-#map1849 {
+.map1849 {
   background-image: url("../img/lo.1849.jpg");
 }
 
-#map1857 {
+.map1857 {
   background-image: url("../img/lo.1857.jpg");
 }
 
-#map1878 {
+.map1878 {
   background-image: url("../img/lo.1878.jpg");
 }
 
-#map1913 {
+.map1913 {
   background-image: url("../img/lo.1913.jpg");
 }
 
-#map1920 {
+.map1920 {
   background-image: url("../img/lo.1920.jpg");
 }
 
-#map1921 {
+.map1921 {
   background-image: url("../img/lo.1921.jpg");
 }
 
-#map2014 {
+.map2014 {
   background-image: url("../img/lo.2014.jpg");
 }

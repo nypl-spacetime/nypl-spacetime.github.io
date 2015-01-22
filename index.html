@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="//use.typekit.net/eja5ayu.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/spacetime.js"></script>
   </head>
   <body>
     <div id="content">
@@ -20,7 +24,7 @@
       <div id="part1" class="bubble link link-v">
         <p>The New York Public Library is planning a major citizen initiative aimed at turning historical maps and other geographic sources into a digital time travel service for New York City.</p>
       </div>
-      <div class="next"><a href="#">Say more...</a></div>
+      <div class="next"><a href="#" class="more" data-more="part2">Say more...</a></div>
       <div id="part2" class="bubble">
         <p>The NYC Space/Time Directory will make urban history accessible through the kinds of interactive, location-aware tools used to navigate modern cityscapes. It will provide a way for scholars, students, and enthusiasts to explore New York City across time periods, and to add their own knowledge and expertise.</p>
 
@@ -39,13 +43,13 @@
           <li><div class="icon"></div><div class="description">A model and code base for other cities and libraries to map their history. (Time machine in a box).</div></li>
         </ul>
       </div>
-      <div class="next"><a href="#">That sounds ambitious...</a></div>
+      <div class="next"><a href="#" class="more" data-more="part4">That sounds ambitious...</a></div>
       <div id="part4" class="bubble">
         <p>Yup. ;-) That's why we can't do it alone. The NYC Space/Time Directory will be built in collaboration with the communities it serves.</p>
 
         <p>We'll tap the knowledge and passion of local museums, historical societies, government, scholars, teachers, genealogists, librarians, citizen mappers, civic technologists, and others to help build this citywide resource. "Many hands make light work."</p>
       </div>
-      <div class="next"><a href="#">So how do I get involved?</a></div>
+      <div class="next"><a href="#" class="more" data-more="part5">So how do I get involved?</a></div>
       <div id="part5" class="bubble">
         <p>The project will be ramping up later in 2015, but we're starting to build a community now.</p>
 
@@ -78,7 +82,7 @@
           </li>
         </ul>
       </div>
-      <div class="next"><a href="#">Get in touch</a></div>
+      <div class="next"><a href="#" class="more" data-more="part7">Get in touch</a></div>
       <div id="part7" class="bubble">
         <p>[link to spacetime@nypl.org]
         [FORUM LINK]</p>
@@ -87,18 +91,19 @@
       </div>
     </div>
     <div id="maps">
-      <div id="map2014" class="map" ></div>
-      <div id="map1921" class="map" ></div>
-      <div id="map1920" class="map" ></div>
-      <div id="map1913" class="map" ></div>
-      <div id="map1878" class="map" ></div>
-      <div id="map1857" class="map" ></div>
-      <div id="map1849" class="map" ></div>
-      <div id="map1841" class="map" ></div>
-      <div id="map1830" class="map" ></div>
-      <div id="map1817" class="map" ></div>
-      <div id="map1797" class="map" ></div>
-      <div id="map1766" class="map" ></div>
+      <div class="map2014 map" ></div>
+      <div class="map2014 map" ></div>
+      <div class="map1921 map" ></div>
+      <div class="map1920 map" ></div>
+      <!-- <div class="map1913 map" ></div> -->
+      <!-- <div class="map1878 map" ></div> -->
+      <div class="map1857 map" ></div>
+      <div class="map1849 map" ></div>
+      <div class="map1841 map" ></div>
+      <div class="map1830 map" ></div>
+      <div class="map1817 map" ></div>
+      <div class="map1797 map" ></div>
+      <div class="map1766 map" ></div>
     </div>
 
     <footer><a href="http://www.knightfoundation.org/"><img src="img/knight-logo-gray-300.jpg" /></a></footer>
