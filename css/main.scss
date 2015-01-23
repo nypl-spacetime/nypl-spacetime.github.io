@@ -10,6 +10,9 @@ $linksize: 30px;
 $iconsize: 150px;
 $mapwidth: 460px;
 
+$mainfont: "rooney-sans",sans-serif;
+$mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+
 @mixin clearfix {
   &:after {
     content: "";
@@ -42,7 +45,7 @@ html {
 body {
   margin: 0 auto;
   padding: 2em 0 4em;
-  font-family: "rooney-sans",sans-serif;
+  font-family: $mainfont;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -53,7 +56,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: $headingcolor;
   line-height: 1.3em;
-  font-family: "rooney-sans",sans-serif;
+  font-family: $mainfont;
   font-style: italic;
   font-weight: 900;
 }
@@ -62,6 +65,7 @@ h1 {
   font-size: 5em;
   line-height: .85em;
   text-transform: uppercase;
+  margin-top: 30px;
 }
 
 h2 {
@@ -85,6 +89,21 @@ ul, li {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+/**/
+#logo {
+    display:block;
+    position: absolute;
+    left: 30px;
+    top: -30px;
+    height:60px;
+    width:60px;
+    overflow:hidden;
+    background: url("../img/lion.svg") no-repeat scroll 10px 10px / 40px auto white;
+    text-indent:100%;
+    white-space:nowrap;
+    border-radius: 30px;
 }
 
 /* MAIN STRUCTURE */
@@ -269,9 +288,28 @@ $mapshadow: 10px;
   background-size: $mapwidth;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  @include vendor-prefix(box-shadow, inset ($mapshadow * 2) 0 $mapshadow (-$mapshadow * 2) black);
   width: 100%;
   background-position: right 0;
+  border-top: 1px solid $pagecolor;
+  @include vendor-prefix(box-shadow, inset ($mapshadow * 2) 0 $mapshadow (-$mapshadow * 2) black);
+
+  &:nth-child(1), &:nth-child(2) {
+    border-top: none;
+  }
+
+  h2 {
+    font-family: $mapfont;
+    font-style: normal;
+    font-size: 2.5em;
+    margin: 0 10px 0 0;
+    color: #fff;
+    text-align: right;
+    text-shadow: 0 0 4px #000;
+  }
+}
+
+.map1660 {
+  background-image: url("../img/lo.1660.jpg");
 }
 
 .map1766 {
