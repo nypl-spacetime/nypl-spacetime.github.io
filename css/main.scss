@@ -349,6 +349,14 @@ ul, li {
     background-color: $iconcolor;
     @include clearfix;
 
+    a {
+      display: inline-block;
+      background-color: $linkcolor;
+      color: $pagecolor;
+      padding: 0 10px;
+      border-radius: 5px;
+    }
+
     h3, p {
       color: $pagecolor;
     }

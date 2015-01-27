@@ -290,6 +290,12 @@ ul, li {
       content: "";
       display: table;
       clear: both; }
+    #part6 li a {
+      display: inline-block;
+      background-color: #F85200;
+      color: #EFEFEF;
+      padding: 0 10px;
+      border-radius: 5px; }
     #part6 li h3, #part6 li p {
       color: #EFEFEF; }
     #part6 li:nth-child(2n) {
