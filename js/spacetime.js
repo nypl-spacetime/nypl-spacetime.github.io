@@ -299,8 +299,8 @@ $( document ).ready(function() {
 
       frames.push({delay:10000});
 
-      frames.push({el:usadots, animation:{opacity:0}, dur:100});
-      frames.push({el:usa, animation:{opacity:0}, dur:300});
+      frames.push({el:usadots, animation:{opacity:0}, dur:300});
+      frames.push({el:usa, animation:{opacity:0}, dur:500});
 
       setTimeout(go, 1000);
     });

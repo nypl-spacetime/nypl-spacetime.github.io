@@ -33,13 +33,58 @@ $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu
   }
 }
 
-@mixin vendor-prefix($name, $argument) {
+@mixin vendor-prefix($name, $argument...) {
   -webkit-#{$name}: #{$argument};
   -ms-#{$name}: #{$argument};
   -moz-#{$name}: #{$argument};
   -o-#{$name}: #{$argument};
   #{$name}: #{$argument};
 }
+
+/* icomoon stuff */
+
+@font-face {
+  font-family: 'icomoon';
+  src:url('../fonts/icomoon.eot?-8w9jy8');
+  src:url('../fonts/icomoon.eot?#iefix-8w9jy8') format('embedded-opentype'),
+    url('../fonts/icomoon.woff?-8w9jy8') format('woff'),
+    url('../fonts/icomoon.ttf?-8w9jy8') format('truetype'),
+    url('../fonts/icomoon.svg?-8w9jy8#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon_citizens:before {
+  content: "\e601";
+}
+
+.icon-icon_advisors:before {
+  content: "\e600";
+}
+
+.icon-icon_developers:before {
+  content: "\e602";
+}
+
+.icon-icon_partners:before {
+  content: "\e603";
+}
+
+/* /icomoon */
 
 html {
   box-sizing: border-box;
@@ -69,7 +114,11 @@ h1, h2, h3, h4, h5, h6 {
   @include titlestyle;
 }
 
-h2.centered {
+h2 {
+  @include vendor-prefix('text-shadow', 0 0 5px $pagecolor, 0 0 5px $pagecolor, 0 0 5px $pagecolor, 0 0 5px $pagecolor, 0 0 5px $pagecolor);
+}
+
+.centered {
   text-align: center;
 }
 
@@ -162,6 +211,12 @@ ul, li {
   border-radius: ($radius * 4) $radius;
 }
 
+.biglink {
+  text-transform: uppercase;
+  font-size: 2em;
+  @include titlestyle;
+}
+
 .next {
   position: relative;
   width: 30%;
@@ -170,9 +225,6 @@ ul, li {
   background-color: $bubblecolor;
   border-radius: $radius;
   text-align: center;
-  text-transform: uppercase;
-  font-size: 2em;
-  @include titlestyle;
 }
 
 /* LINK BARS */
@@ -204,12 +256,22 @@ ul, li {
 }
 
 .right:before {
-  right: ($radius + ($linkmargin * 1.5));
+  right: ($radius + ($linkmargin * 3));
   left: auto;
 }
 
 .right:after {
   right: $radius;
+  left: auto;
+}
+
+.middle:before {
+  right: 280px;
+  left: auto;
+}
+
+.middle:after {
+  right: (280-($linkmargin*1.5));
   left: auto;
 }
 
@@ -271,30 +333,99 @@ ul, li {
   width: 90%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: ($radius * 2);
-  padding-right: ($radius * 2);
-  border-radius: ($radius * 2);
+  margin-bottom: $linkmargin;
 
   ul {
     @include clearfix;
   }
 
   li {
+    position: relative;
     float: left;
-    width: 45%;
-    height: 300px;
+    width: 50%;
+    height: 340px;
+    padding: $radius ($radius * 2);
+    color: $textcolor;
+    background-color: $iconcolor;
     @include clearfix;
+
+    h3, p {
+      color: $pagecolor;
+    }
 
     &:nth-child(2n) {
       float: right;
       text-align: left;
     }
+
+    &:nth-child(2), &:nth-child(3) {
+      background-color: $bubblecolor;
+
+      h3, .icon, p {
+        color: $headingcolor;
+      }
+    }
+
+    &:nth-child(1) {
+      border-radius: $radius 0 0 0;
+    }
+
+    &:nth-child(2) {
+      border-radius: 0 $radius 0 0;
+    }
+
+    &:nth-child(3) {
+      border-radius: 0 0 0 $radius;
+    }
+
+    &:nth-child(4) {
+      border-radius: 0 0 $radius 0;
+    }
   }
+
+  .icon {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    font-size: 150px;
+    bottom: 0;
+    right: ($radius * 2);
+    color: $pagecolor;
+
+    &.left {
+      right: auto;
+      left: ($radius * 2);
+    }
+  }
+}
+
+#part4, #part5 {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: $radius;
+}
+
+#part7 {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: $radius;
 }
 
 footer {
   margin: 10em $mapwidth 4em 0;
   text-align: right;
+
+  p {
+    width: 50%;
+    margin-left: 45%;
+  }
+}
+
+.thanks {
+  position: absolute;
+  bottom: 10px;
+  right: 100%;
+  width: 200px;
 }
 
 /* MAPS */
@@ -311,7 +442,7 @@ $mapshadow: 10px;
   width: 100%;
   background-position: right 0;
   border-top: 1px solid $pagecolor;
-  @include vendor-prefix(box-shadow, inset ($mapshadow * 2) 0 $mapshadow (-$mapshadow * 2) black);
+  @include vendor-prefix(box-shadow, inset ($mapshadow * 2) 0 $mapshadow (-$mapshadow * 2) #000);
 
   &:nth-child(1), &:nth-child(2) {
     border-top: none;
@@ -326,7 +457,7 @@ $mapshadow: 10px;
     margin: 0 10px 0 0;
     color: #fff;
     text-align: right;
-    @include vendor-prefix(text-shadow, 0 0 4px #000);
+    @include vendor-prefix('text-shadow', 0 0 4px #000);
 
     &.top {
       top: 0;
