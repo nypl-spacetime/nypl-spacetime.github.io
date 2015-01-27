@@ -77,7 +77,9 @@ ul, li {
 
 #snap {
   width: 550px;
-  height: 400px; }
+  height: 400px;
+  background-color: #DFDFDF;
+  border-radius: 20px; }
 
 /* CONTENT */
 .bubble {

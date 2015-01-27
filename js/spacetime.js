@@ -14,7 +14,7 @@ $( document ).ready(function() {
   init();
 
   function init() {
-    var browser, s = Snap("#snap");
+    var main, s = Snap("#snap");
     var g;
 
     frames = [];
@@ -33,13 +33,13 @@ $( document ).ready(function() {
       [160,325,"1876"]
     ];
 
-    var shadow = s.filter(Snap.filter.shadow(0, 0, 4, "#000", 0.5));
+    // var shadow = s.filter(Snap.filter.shadow(0, 0, 1, "#000", 0.5));
 
     var url = "img/delmonicos.svg";
 
     var letters, text, lettersnext, textnext, lettersexport
-        , textexport, json, menu, news, photo
-        , nyc, markerrect, markertext;
+        , textexport, json, menu, news, photo, browser
+        , nyc, markerrect, markertext, usa, usadots;
 
     var monofont = "'Input Sans', 'Lucida Console', 'Monaco', 'Courier New', 'Courier', monospace";
 
@@ -47,12 +47,13 @@ $( document ).ready(function() {
     var querynext = "discover more";
     var queryexport = "export! :)";
 
-    browser = Snap.load(url, function (f) {
+    main = Snap.load(url, function (f) {
       g = f.select("g");
 
-      g.select("#browser").attr({
-        filter: shadow
-      })
+      browser = g.select("#browser")
+      // browser.attr({
+      //   filter: shadow
+      // })
 
       s.append(g);
 
@@ -62,12 +63,16 @@ $( document ).ready(function() {
       news = g.select("#news");
       photo = g.select("#photo");
       nyc = g.select("#oldnyc");
+      usa = g.select("#usa");
+      usadots = g.select("#dots");
 
+      browser.attr({opacity:0});
       json.attr({opacity:0});
       menu.attr({opacity:0});
       news.attr({opacity:0});
       photo.attr({opacity:0});
       nyc.attr({opacity:0});
+      usa.attr({transform:"translate(275.000000, 200.000000) scale(0.0, 0.0)",opacity:0});
 
       // text
       letters = query.split("");
@@ -83,6 +88,7 @@ $( document ).ready(function() {
         "fill-opacity": 0
       });
 
+      frames.push({el:browser, animation:{opacity:1}, dur:200});
       frames.push({el:nyc, animation:{opacity:1}, dur:500});
 
       // text search
@@ -246,11 +252,29 @@ $( document ).ready(function() {
       frames.push({el:nyc, animation:{opacity:0}, dur:100});
       frames.push({el:json, animation:{opacity:1}, dur:300});
 
-      frames.push({delay:5000});
+      frames.push({delay:3000});
 
       frames.push({el:textexport, animation:{opacity:0}, dur:100});
       frames.push({el:json, animation:{opacity:0}, dur:100});
 
+      frames.push({el:browser, animation:{transform:"translate(275.000000, 200.000000) scale(0.0, 0.0)", opacity:0}, dur:300});
+
+      frames.push({el:usa, animation:{transform:"translate(0, 0) scale(1.0, 1.0)",opacity:1}, dur:200});
+
+      frames.push({delay:300});
+
+      var dots = usadots.selectAll("circle");
+
+      for(var i=0;i<dots.length;i++) {
+        var el = dots[i];
+        el.attr({opacity:0});
+        frames.push({el:el, animation:{opacity:1}, dur:100});
+      }
+
+      frames.push({delay:10000});
+
+      frames.push({el:usadots, animation:{opacity:0}, dur:100});
+      frames.push({el:usa, animation:{opacity:0}, dur:300});
       // begineth
       setTimeout(go, 1000);
     });

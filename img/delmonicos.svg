@@ -6,6 +6,27 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="delmonicos" sketch:type="MSArtboardGroup">
+      <clipPath id="usa-mask">
+        <rect fill="#D8D8D8" sketch:type="MSShapeGroup" x="0" y="0" width="550" height="400" rx="20"></rect>
+      </clipPath>
+      <image
+        xlink:href="img/usa.png"
+        style="clip-path:url(#usa-mask);"
+        x="0"
+        y="0"
+        width="550"
+        height="400"
+        id="usa" />
+            <g id="dots" sketch:type="MSLayerGroup" transform="translate(67.000000, 116.000000)" fill="#F85200">
+                <circle id="dot-0" sketch:type="MSShapeGroup" cx="235.5" cy="7.5" r="7.5"></circle>
+                <circle id="dot-1" sketch:type="MSShapeGroup" cx="309.5" cy="30.5" r="7.5"></circle>
+                <circle id="dot-2" sketch:type="MSShapeGroup" cx="328.5" cy="46.5" r="7.5"></circle>
+                <circle id="dot-3" sketch:type="MSShapeGroup" cx="369.5" cy="55.5" r="7.5"></circle>
+                <circle id="dot-4" sketch:type="MSShapeGroup" cx="308.5" cy="126.5" r="7.5"></circle>
+                <circle id="dot-6" sketch:type="MSShapeGroup" cx="334.5" cy="190.5" r="7.5"></circle>
+                <circle id="dot-7" sketch:type="MSShapeGroup" cx="7.5" cy="89.5" r="7.5"></circle>
+                <circle id="dot-5" sketch:type="MSShapeGroup" cx="331.5" cy="106.5" r="7.5"></circle>
+            </g>
             <g id="browser" sketch:type="MSLayerGroup" transform="translate(65.000000, 20.000000)">
                 <rect id="view" fill="#F1F1F1" sketch:type="MSShapeGroup" x="0" y="70" width="420" height="290"></rect>
                 <path d="M420,70 L420,19.9970728 C420,8.95501201 411.04904,0 400.007471,0 L19.9925295,0 C8.95440102,0 0,8.95299444 0,19.9970728 L0,70 L420,70 Z" fill="#D8D8D8" sketch:type="MSShapeGroup"></path>
