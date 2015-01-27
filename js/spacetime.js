@@ -1,4 +1,9 @@
 $( document ).ready(function() {
+
+  var anistarted = false;
+
+  var frames = [];
+
   $(".more").click( function (e) {
     e.preventDefault();
     var d = $(this).data("more");
@@ -9,9 +14,30 @@ $( document ).ready(function() {
     }
   });
 
-  var frames = [];
-
-  init();
+  $(window).scroll( function (e) {
+    var margin = 20;
+    var wintop = $(window).scrollTop();
+    var winh = $(window).height();
+    var parttop = $("#part3").offset().top;
+    var deltatop = wintop - parttop + margin;
+    var ani = $("#animation");
+    var h = ani.height();
+    var nexttop = $(".next.part4").offset().top-margin; // minus a small margin
+    if (wintop+winh*.5 >= parttop) {
+      if (!anistarted) {
+        anistarted = true;
+        ani.fadeIn();
+        end();
+      }
+      if (deltatop <= 0) deltatop = 0;
+      if (wintop+h+margin >= nexttop) deltatop = nexttop-h-parttop;
+      ani.css("top", deltatop);
+    }
+    if (wintop > nexttop) {
+      ani.hide();
+      anistarted = false;
+    }
+  });
 
   function init() {
     var main, s = Snap("#snap");
@@ -275,7 +301,7 @@ $( document ).ready(function() {
 
       frames.push({el:usadots, animation:{opacity:0}, dur:100});
       frames.push({el:usa, animation:{opacity:0}, dur:300});
-      // begineth
+
       setTimeout(go, 1000);
     });
 
@@ -298,6 +324,7 @@ $( document ).ready(function() {
     Snap.selectAll("g").remove();
     Snap.selectAll("text").remove();
     Snap.selectAll("circle").remove();
+    Snap.selectAll("rect").remove();
     Snap.selectAll("image").remove();
     Snap.selectAll("filter").remove();
     init();
@@ -306,4 +333,6 @@ $( document ).ready(function() {
   function go() {
     nextFrame(frames, 0);
   }
+
+  init();
 });

@@ -13,6 +13,18 @@ $mapwidth: 460px;
 $mainfont: "rooney-sans",sans-serif;
 $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 
+@mixin titlestyle {
+  font-family: $mainfont;
+  font-style: italic;
+  font-weight: 900;
+}
+
+@mixin textstyle {
+  font-family: $mainfont;
+  font-style: normal;
+  font-weight: 400;
+}
+
 @mixin clearfix {
   &:after {
     content: "";
@@ -45,9 +57,7 @@ html {
 body {
   margin: 0 auto;
   padding: 2em 0 4em;
-  font-family: $mainfont;
-  font-style: normal;
-  font-weight: 400;
+  @include textstyle;
   font-size: 18px;
   line-height: 1.65em;
   color: $textcolor;
@@ -56,20 +66,23 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: $headingcolor;
   line-height: 1.3em;
-  font-family: $mainfont;
-  font-style: italic;
-  font-weight: 900;
+  @include titlestyle;
+}
+
+h2.centered {
+  text-align: center;
 }
 
 h1 {
   font-size: 5em;
   line-height: .85em;
   text-transform: uppercase;
-  margin-top: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 h2 {
-  margin-top: 1.3em;
+  margin-top: 0.5em;
 }
 
 a {
@@ -92,18 +105,29 @@ ul, li {
 }
 
 /**/
-#logo {
-    display:block;
-    position: absolute;
-    left: 30px;
-    top: -30px;
-    height:60px;
-    width:60px;
-    overflow:hidden;
-    background: url("../img/lion.svg") no-repeat scroll 10px 10px / 40px auto white;
-    text-indent:100%;
-    white-space:nowrap;
-    border-radius: 30px;
+#logos {
+  height: 80px;
+  width: 460px;
+  margin: -30px auto 0;
+  background: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.nypllogo {
+  display: inline-block;
+  height: 60px;
+  width: 110px;
+  overflow: hidden;
+  background: url("../img/nypl.svg") no-repeat scroll 0px 0px/100px auto white;
+  text-indent: 120px;
+  white-space: nowrap;
+}
+
+.knightlogo {
+  display: inline-block;
+  width: 300px;
+  height: 50px;
 }
 
 /* MAIN STRUCTURE */
@@ -147,10 +171,8 @@ ul, li {
   border-radius: $radius;
   text-align: center;
   text-transform: uppercase;
-  font-family: "rooney-sans",sans-serif;
-  font-style: italic;
-  font-weight: 900;
   font-size: 2em;
+  @include titlestyle;
 }
 
 /* LINK BARS */
@@ -214,45 +236,34 @@ ul, li {
 
 /* ICONS */
 #part3 {
+  position: relative;
+  @include clearfix;
+
+  #animation {
+    display: none;
+    position: absolute;
+    width: 550px;
+    height: 400px;
+    top: 0;
+    left: 410px;
+    @include vendor-prefix(box-shadow, 0 0 10px 0 rgba(0,0,0,0.5));
+    border-radius: 20px;
+  }
+
   ul {
-    width: 80%;
-    margin: 0px auto;
+    width: 410px;
+    padding-top: 2em;
+    padding-bottom: 2em;
   }
 
   li {
     clear: both;
     padding: 1px;
-    margin-bottom: 4em;
-    @include clearfix;
-
-    .icon {
-      position: relative;
-      float: right;
-      width: 30%;
-      height: $iconsize;
-      margin: $radius*2 $radius;
-      background-color: $iconcolor;
-      border-radius: $radius;
-    }
-
-    &:nth-child(2n) .icon {
-      float: left;
-    }
-
-    .description {
-      float: left;
-      width: 65%;
-      margin: $radius*3 0 0 0;
-      padding: $radius ($radius * 2);
-      text-align: right;
-      background-color: $bubblecolor;
-      border-radius: $radius;
-    }
-
-    &:nth-child(2n) .description {
-      float: right;
-      text-align: left;
-    }
+    margin: $radius*3 0 0 0;
+    padding: $radius ($radius * 2);
+    text-align: left;
+    @include titlestyle;
+    text-align: right;
   }
 }
 
@@ -289,6 +300,7 @@ footer {
 /* MAPS */
 $mapshadow: 10px;
 .map {
+  position: relative;
   float: left;
   clear: both;
   margin: 0;
@@ -306,13 +318,23 @@ $mapshadow: 10px;
   }
 
   h2 {
+    position: absolute;
+    right: 10px;
     font-family: $mapfont;
     font-style: normal;
-    font-size: 2.5em;
+    font-size: 1.5em;
     margin: 0 10px 0 0;
     color: #fff;
     text-align: right;
-    text-shadow: 0 0 4px #000;
+    @include vendor-prefix(text-shadow, 0 0 4px #000);
+
+    &.top {
+      top: 0;
+    }
+
+    &.bottom {
+      bottom: 0;
+    }
   }
 }
 
