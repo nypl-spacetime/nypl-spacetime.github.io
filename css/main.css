@@ -29,6 +29,12 @@
 .icon-icon_partners:before {
   content: "\e603"; }
 
+.icon-icon_lion:before {
+  content: "\e604";
+  display: block;
+  font-size: 30px;
+  margin-bottom: 5px; }
+
 /* /icomoon */
 html {
   box-sizing: border-box; }
@@ -335,10 +341,10 @@ ul, li {
   margin-right: auto;
   border-radius: 10px; }
 
-footer {
+.fineprint {
   margin: 10em 460px 4em 0;
   text-align: right; }
-  footer p {
+  .fineprint p {
     width: 50%;
     margin-left: 45%; }
 
@@ -425,5 +431,20 @@ footer {
 
 .map2014 {
   background-image: url("../img/lo.2014.jpg"); }
+
+#footer {
+  margin: 20em 460px 0 0;
+  text-align: right;
+  font-size: 0.7em;
+  line-height: 1.4em; }
+  #footer p {
+    width: 50%;
+    margin-left: 45%; }
+  #footer .nypl {
+    color: #424143;
+    display: block; }
+  #footer .icon-icon_lion {
+    color: #424143;
+    display: block; }
 
 /*# sourceMappingURL=main.css.map */

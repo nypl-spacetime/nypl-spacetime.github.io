@@ -84,6 +84,13 @@ $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu
   content: "\e603";
 }
 
+.icon-icon_lion:before {
+  content: "\e604";
+  display: block;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
 /* /icomoon */
 
 html {
@@ -419,7 +426,7 @@ ul, li {
   border-radius: $radius;
 }
 
-footer {
+.fineprint {
   margin: 10em $mapwidth 4em 0;
   text-align: right;
 
@@ -527,4 +534,27 @@ $mapshadow: 10px;
 
 .map2014 {
   background-image: url("../img/lo.2014.jpg");
+}
+
+#footer {
+  margin: 20em $mapwidth 0 0;
+  text-align: right;
+  font-size: 0.7em;
+  line-height: 1.4em;
+
+  p {
+    width: 50%;
+    margin-left: 45%;
+  }
+
+  .nypl {
+    color: $textcolor;
+    display: block;
+  }
+
+  .icon-icon_lion {
+    color: $textcolor;
+    display: block;
+  }
+
 }
