@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>NYC Space/Time Directory</title>
+    <meta name="description" content="NYC Space/Time Directory">
+    <script src="//use.typekit.net/eja5ayu.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+    <script src="js/snap.svg-min.js"></script>
+    <style type="text/css">
+    body {
+      background-color: #fff;
+    }
+
+    #snap {
+      width: 550px;
+      height: 400px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="animation">
+      <svg id="snap"></svg>
+    </div>
+    <script type="text/javascript">
+    var frames = [];
+
+    init();
+
+    function init() {
+      var browser, s = Snap("#snap");
+      var g;
+
+      frames = [];
+
+
+      var linkcolor = "#F85200";
+
+      // markers
+      var markers = [
+        [307,97,"1827"],
+        [215,245,"1830"],
+        [210,295,"1865"],
+        [235,324,"1836"],
+        [232,338,"1856"],
+        [201,350,"1837"],
+        [160,325,"1876"]
+      ];
+
+      var shadow = s.filter(Snap.filter.shadow(0, 0, 4, "#000", 0.5));
+
+      var url = "img/delmonicos.svg";
+
+      var letters, text, lettersnext, textnext, lettersexport
+          , textexport, json, menu, news, photo
+          , nyc, markerrect, markertext;
+
+      var monofont = "'Input Sans', 'Lucida Console', 'Monaco', 'Courier New', 'Courier', monospace";
+
+      var query = "delmonico's 1865";
+      var querynext = "discover more";
+      var queryexport = "export! :)";
+
+      browser = Snap.load(url, function (f) {
+        g = f.select("g");
+
+        g.select("#browser").attr({
+          filter: shadow
+        })
+
+        s.append(g);
+
+        // select main elements
+        json = g.select("#json");
+        menu = g.select("#menu");
+        news = g.select("#news");
+        photo = g.select("#photo");
+        nyc = g.select("#oldnyc");
+
+        json.attr({opacity:0});
+        menu.attr({opacity:0});
+        news.attr({opacity:0});
+        photo.attr({opacity:0});
+        nyc.attr({opacity:0});
+
+        // text
+        letters = query.split("");
+
+        text = s.text(88, 68, letters);
+
+        text.attr({
+          "font-size": "24px"
+          ,"font-family":monofont
+        });
+
+        text.selectAll("tspan").attr({
+          "fill-opacity": 0
+        });
+
+        frames.push({el:nyc, animation:{opacity:1}, dur:500});
+
+        // text search
+        for (var i=0; i<12; i++) {
+          var el = text.select("tspan:nth-child("+(i+1)+")");
+          frames.push({el:el, animation: {"fill-opacity":1}, dur:75})
+        }
+
+        frames.push({delay:500});
+
+        var nycframeout = {
+          el: nyc,
+          animation: {x:54, y:-27, width:434, height:414},
+          dur: 2
+        }
+
+        frames.push(nycframeout);
+
+        var nycframein = {
+          el: nyc,
+          animation: {x:-76, y:-805, width:1327, height:1265},
+          dur: 200
+        }
+
+        frames.push(nycframein);
+
+        frames.push({delay:500});
+
+        // now add marker frames
+        for (var i=0; i<markers.length; i++) {
+          var m = markers[i];
+          var c = s.circle(m[0], m[1], 0);
+          m.push(c);
+          c.attr({fill:linkcolor,opacity:0});
+          var f = {el:c, animation: {opacity:1, r:8}, dur: 100};
+          frames.push(f);
+        }
+
+        frames.push({delay:1000});
+
+        // date search
+        for (var i=12; i<letters.length; i++) {
+          var el = text.select("tspan:nth-child("+(i+1)+")");
+          frames.push({el:el, animation: {"fill-opacity":1}, dur:75})
+        }
+
+        var mainmarker;
+
+        // now add marker frames
+        for (var i=0; i<markers.length; i++) {
+          var m = markers[i];
+          var c = m[3];
+          if (m[2]!="1865") {
+            r = 0;
+          } else {
+            r = 32;
+            mainmarker = m;
+          }
+          var f = {el:c, animation: {opacity:1, r:r}, dur: 100};
+          frames.push(f);
+        }
+
+        markerrect = s.rect(mainmarker[0]-5, mainmarker[1]-30, 1, 1);
+        markerrect.attr({
+          opacity: 0
+          ,fill: "#ffffff"
+        });
+
+        frames.push({el: markerrect, animation:{height:30, opacity:1}, dur:100});
+        frames.push({el: markerrect, animation:{width:200}, dur:100});
+
+        var markertext = s.text(mainmarker[0], mainmarker[1]-10, query);
+
+        markertext.attr({
+          "font-size": "18px"
+          ,"font-family": monofont
+          ,opacity: 0
+        });
+
+        // swap depths with overlays
+        s.add(photo);
+        s.add(news);
+        s.add(menu);
+
+        frames.push({el:markertext, animation:{opacity:1}, dur: 500});
+
+        frames.push({delay:2000});
+
+        // now hide url for new query
+        frames.push({el:text, animation:{opacity:0}, dur:100});
+
+        lettersnext = querynext.split("");
+
+        textnext = s.text(88, 68, lettersnext);
+
+        textnext.attr({
+          "font-size": "24px"
+          ,"font-family":monofont
+        });
+
+        textnext.selectAll("tspan").attr({
+          "fill-opacity": 0
+        });
+
+        // next search
+        for (var i=0; i<lettersnext.length; i++) {
+          var el = textnext.select("tspan:nth-child("+(i+1)+")");
+          frames.push({el:el, animation: {"fill-opacity":1}, dur:75})
+        }
+
+        frames.push({delay:500});
+
+        frames.push({el:mainmarker[3], animation:{opacity:0}, dur:100});
+        frames.push({el:markertext, animation:{opacity:0}, dur:100});
+        frames.push({el:markerrect, animation:{opacity:0}, dur:100});
+
+        // moar stuff appears
+        frames.push({el:photo, animation:{opacity:1, y:parseInt(photo.attr("y")-20)}, dur: 100});
+
+        // move news vertically + opacity
+        var str = news.transform().string.split(",");
+        var y = parseInt(str[1]);
+        y -= 20;
+        frames.push({el:news, animation:{opacity:1, transform:str[0] + "," + y}, dur: 100});
+
+        // move menu vertically + opacity
+        var str = menu.transform().string.split(",");
+        var y = parseInt(str[1]);
+        y -= 20;
+        frames.push({el:menu, animation:{opacity:1, transform:str[0] + "," + y}, dur: 100});
+
+        frames.push({delay:3000});
+
+        // hide url for new query
+        frames.push({el:textnext, animation:{opacity:0}, dur:100});
+
+        lettersexport = queryexport.split("");
+
+        textexport = s.text(88, 68, lettersexport);
+
+        textexport.attr({
+          "font-size": "24px"
+          ,"font-family":monofont
+        });
+
+        textexport.selectAll("tspan").attr({
+          "fill-opacity": 0
+        });
+
+        // export search
+        for (var i=0; i<lettersexport.length; i++) {
+          var el = textexport.select("tspan:nth-child("+(i+1)+")");
+          frames.push({el:el, animation: {"fill-opacity":1}, dur:75})
+        }
+
+        frames.push({delay:1000});
+
+        frames.push({el:news, animation:{opacity:0}, dur:100});
+        frames.push({el:menu, animation:{opacity:0}, dur:100});
+        frames.push({el:photo, animation:{opacity:0}, dur:100});
+        frames.push({el:nyc, animation:{opacity:0}, dur:100});
+        frames.push({el:json, animation:{opacity:1}, dur:300});
+
+        frames.push({delay:5000});
+
+        frames.push({el:textexport, animation:{opacity:0}, dur:100});
+        frames.push({el:json, animation:{opacity:0}, dur:100});
+
+        // begineth
+        setTimeout(go, 1000);
+      });
+
+    }
+
+
+    function nextFrame ( frameArray,  whichFrame ) {
+      if( whichFrame >= frameArray.length ) { end(); return; }
+      el = frameArray[whichFrame].el;
+      if (el==undefined) {
+        setTimeout(function(){
+          nextFrame(frameArray, whichFrame + 1);
+        },frameArray[whichFrame].delay);
+        return;
+      }
+      el.animate( frameArray[ whichFrame ].animation, frameArray[ whichFrame ].dur, mina.easein, nextFrame.bind( null, frameArray, whichFrame + 1 ) );
+    }
+
+    function end() {
+      Snap.selectAll("g").remove();
+      Snap.selectAll("text").remove();
+      Snap.selectAll("circle").remove();
+      Snap.selectAll("image").remove();
+      Snap.selectAll("filter").remove();
+      init();
+    }
+
+    function go() {
+      nextFrame(frames, 0);
+    }
+
+    </script>
+    <img src="img/delmonicos.svg" style="display:none;" />
+    <img src="img/delmonicos.jpg" style="display:none;" />
+    <img src="img/oldnyc.png" style="display:none;" />
+  </body>
+</html>
+
+<!--
+      <clipPath id="mask">
+        <rect id="view" fill="#F1F1F1" sketch:type="MSShapeGroup" x="0" y="70" width="420" height="290"></rect>
+      </clipPath>
+      <image
+        xlink:href="img/oldnyc.png"
+        style="clip-path:url(#mask);"
+        x="54"
+        y="-27"
+        width="434"
+        height="414"
+        id="oldnyc" />
+
+                <image id="photo" xlink:href="img/delmonicos.jpg" x="12" y="166" width="172" height="116" />
+
+                <image id="photob" xlink:href="img/delmonicos.jpg" x="124" y="63" width="172" height="116" />
+-->

@@ -1,0 +1,366 @@
+$pagecolor: #EFEFEF;
+$textcolor: #424143;
+$headingcolor: #67666A;
+$linkcolor: #F85200;
+$bubblecolor: #DFDFDF;
+$iconcolor: #807F83;
+$radius: 10px;
+$linkmargin: 60px;
+$linksize: 30px;
+$iconsize: 150px;
+$mapwidth: 460px;
+
+$mainfont: "rooney-sans",sans-serif;
+$mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin vendor-prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  background-color: $pagecolor;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0 auto;
+  padding: 2em 0 4em;
+  font-family: $mainfont;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.65em;
+  color: $textcolor;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $headingcolor;
+  line-height: 1.3em;
+  font-family: $mainfont;
+  font-style: italic;
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 5em;
+  line-height: .85em;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+h2 {
+  margin-top: 1.3em;
+}
+
+a {
+  color: $linkcolor;
+  text-decoration: none;
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+samp {
+  display: none;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/**/
+#logo {
+    display:block;
+    position: absolute;
+    left: 30px;
+    top: -30px;
+    height:60px;
+    width:60px;
+    overflow:hidden;
+    background: url("../img/lion.svg") no-repeat scroll 10px 10px / 40px auto white;
+    text-indent:100%;
+    white-space:nowrap;
+    border-radius: 30px;
+}
+
+/* MAIN STRUCTURE */
+#content {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+#maps {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $mapwidth;
+  z-index: -1;
+}
+
+#snap {
+  width: 550px;
+  height: 400px;
+}
+
+/* CONTENT */
+.bubble {
+  position: relative;
+  width: 60%;
+  padding: 1px ($radius * 2);
+  margin: $linksize 10px;
+  background-color: $bubblecolor;
+  border-radius: ($radius * 4) $radius;
+}
+
+.next {
+  position: relative;
+  width: 30%;
+  margin-left: 40%;
+  padding: 20px;
+  background-color: $bubblecolor;
+  border-radius: $radius;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "rooney-sans",sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 2em;
+}
+
+/* LINK BARS */
+.link:before, .link:after {
+  position: absolute;
+  content: "";
+  display: block;
+  background-color: transparent;
+}
+
+.link-v:before {
+  bottom: 100%;
+  left: $radius;
+  width: $linkmargin;
+  height: $linksize;
+  border-radius: 0 $radius $radius 0;
+  @include vendor-prefix(box-shadow, $linksize 0 0 $bubblecolor);
+  z-index: 10;
+}
+
+.link-v:after {
+  bottom: 100%;
+  left: ($radius + ($linkmargin * 1.5));
+  width: $linkmargin;
+  height: $linksize;
+  z-index: 10;
+  border-radius: $radius 0 0 $radius;
+  @include vendor-prefix(box-shadow, -$linksize 0 0 $bubblecolor);
+}
+
+.right:before {
+  right: ($radius + ($linkmargin * 1.5));
+  left: auto;
+}
+
+.right:after {
+  right: $radius;
+  left: auto;
+}
+
+.link-h:before {
+  top: $radius;
+  left: 100%;
+  width: ($linksize * .75);
+  height: $linksize;
+  border-radius: 0 0 0 $radius;
+  @include vendor-prefix(box-shadow, 0 ($linksize * .5) 0 $iconcolor);
+  z-index: 10;
+}
+
+.link-h:after {
+  top: $radius+$linksize*1.5;
+  left: 100%;
+  width: ($linksize * .75);
+  height: $linksize;
+  z-index: 10;
+  border-radius: $radius 0 0 0;
+  @include vendor-prefix(box-shadow, 0 (-$linksize * .5) 0 $iconcolor);
+}
+/* END LINK BARS */
+
+/* ICONS */
+#part3 {
+  ul {
+    width: 80%;
+    margin: 0px auto;
+  }
+
+  li {
+    clear: both;
+    padding: 1px;
+    margin-bottom: 4em;
+    @include clearfix;
+
+    .icon {
+      position: relative;
+      float: right;
+      width: 30%;
+      height: $iconsize;
+      margin: $radius*2 $radius;
+      background-color: $iconcolor;
+      border-radius: $radius;
+    }
+
+    &:nth-child(2n) .icon {
+      float: left;
+    }
+
+    .description {
+      float: left;
+      width: 65%;
+      margin: $radius*3 0 0 0;
+      padding: $radius ($radius * 2);
+      text-align: right;
+      background-color: $bubblecolor;
+      border-radius: $radius;
+    }
+
+    &:nth-child(2n) .description {
+      float: right;
+      text-align: left;
+    }
+  }
+}
+
+#part6 {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: ($radius * 2);
+  padding-right: ($radius * 2);
+  border-radius: ($radius * 2);
+
+  ul {
+    @include clearfix;
+  }
+
+  li {
+    float: left;
+    width: 45%;
+    height: 300px;
+    @include clearfix;
+
+    &:nth-child(2n) {
+      float: right;
+      text-align: left;
+    }
+  }
+}
+
+footer {
+  margin: 10em $mapwidth 4em 0;
+  text-align: right;
+}
+
+/* MAPS */
+$mapshadow: 10px;
+.map {
+  float: left;
+  clear: both;
+  margin: 0;
+  height: 500px;
+  background-size: $mapwidth;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-position: right 0;
+  border-top: 1px solid $pagecolor;
+  @include vendor-prefix(box-shadow, inset ($mapshadow * 2) 0 $mapshadow (-$mapshadow * 2) black);
+
+  &:nth-child(1), &:nth-child(2) {
+    border-top: none;
+  }
+
+  h2 {
+    font-family: $mapfont;
+    font-style: normal;
+    font-size: 2.5em;
+    margin: 0 10px 0 0;
+    color: #fff;
+    text-align: right;
+    text-shadow: 0 0 4px #000;
+  }
+}
+
+.map1660 {
+  background-image: url("../img/lo.1660.jpg");
+}
+
+.map1766 {
+  background-image: url("../img/lo.1766.jpg");
+}
+
+.map1797 {
+  background-image: url("../img/lo.1797.jpg");
+}
+
+.map1817 {
+  background-image: url("../img/lo.1817.jpg");
+}
+
+.map1830 {
+  background-image: url("../img/lo.1830.jpg");
+}
+
+.map1841 {
+  background-image: url("../img/lo.1841.jpg");
+}
+
+.map1849 {
+  background-image: url("../img/lo.1849.jpg");
+}
+
+.map1857 {
+  background-image: url("../img/lo.1857.jpg");
+}
+
+.map1878 {
+  background-image: url("../img/lo.1878.jpg");
+}
+
+.map1913 {
+  background-image: url("../img/lo.1913.jpg");
+}
+
+.map1920 {
+  background-image: url("../img/lo.1920.jpg");
+}
+
+.map1921 {
+  background-image: url("../img/lo.1921.jpg");
+}
+
+.map2014 {
+  background-image: url("../img/lo.2014.jpg");
+}
