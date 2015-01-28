@@ -62,13 +62,22 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "rooney-sans", Verdana, sans-serif;
   font-style: italic;
   font-weight: 900; }
+  @media screen and (max-width: 980px) {
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 1em; } }
 
 h2 {
-  -webkit-text-shadow: 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF;
-  -ms-text-shadow: 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF;
-  -moz-text-shadow: 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF;
-  -o-text-shadow: 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF;
-  text-shadow: 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF, 0 0 5px #EFEFEF; }
+  width: 60%;
+  -webkit-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
+  -ms-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
+  -moz-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
+  -o-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
+  text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF; }
+  @media screen and (max-width: 980px) {
+    h2 {
+      width: auto;
+      margin-left: 30px;
+      margin-right: 30px; } }
 
 .centered {
   text-align: center; }
@@ -79,9 +88,19 @@ h1 {
   text-transform: uppercase;
   margin-top: 10px;
   margin-bottom: 10px; }
+  @media screen and (max-width: 980px) {
+    h1 {
+      font-size: 4em; } }
+  @media screen and (max-width: 800px) {
+    h1 {
+      font-size: 2em; } }
 
 h2 {
   margin-top: 0.5em; }
+
+@media screen and (max-width: 980px) {
+  p {
+    line-height: 1.3em; } }
 
 a {
   color: #F85200;
@@ -106,6 +125,11 @@ ul, li {
   background: white;
   padding: 10px 20px;
   border-radius: 10px; }
+  @media screen and (max-width: 980px) {
+    #logos {
+      width: auto;
+      height: auto;
+      text-align: center; } }
 
 .nypllogo {
   display: inline-block;
@@ -120,6 +144,11 @@ ul, li {
   display: inline-block;
   width: 300px;
   height: 50px; }
+  @media screen and (max-width: 980px) {
+    .knightlogo {
+      width: 90%;
+      height: auto;
+      max-width: 300px; } }
 
 /* MAIN STRUCTURE */
 #content {
@@ -132,6 +161,9 @@ ul, li {
   top: 0;
   width: 460px;
   z-index: -1; }
+  @media screen and (max-width: 460px) {
+    #maps {
+      width: 100%; } }
 
 #snap {
   width: 550px;
@@ -147,6 +179,13 @@ ul, li {
   margin: 30px 10px;
   background-color: #DFDFDF;
   border-radius: 40px 10px; }
+  @media screen and (max-width: 800px) {
+    .bubble {
+      width: auto;
+      margin-left: 30px;
+      margin-right: 30px;
+      padding: 1px 10px;
+      border-radius: 10px; } }
 
 .biglink {
   text-transform: uppercase;
@@ -154,6 +193,9 @@ ul, li {
   font-family: "rooney-sans", Verdana, sans-serif;
   font-style: italic;
   font-weight: 900; }
+  @media screen and (max-width: 980px) {
+    .biglink {
+      font-size: 1.2em; } }
 
 .next {
   position: relative;
@@ -163,6 +205,11 @@ ul, li {
   background-color: #DFDFDF;
   border-radius: 10px;
   text-align: center; }
+  @media screen and (max-width: 980px) {
+    .next {
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto; } }
 
 /* LINK BARS */
 .link:before, .link:after {
@@ -260,10 +307,40 @@ ul, li {
     -o-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     border-radius: 20px; }
+    @media screen and (max-width: 980px) {
+      #part3 #animation {
+        display: block;
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-right: auto;
+        margin-left: auto; } }
+    @media screen and (max-width: 550px) {
+      #part3 #animation {
+        border-radius: 20px;
+        background: url("../img/delmonicos.gif") no-repeat scroll 0% 0%/100% auto transparent;
+        height: 264px;
+        -webkit-box-shadow: none;
+        -ms-box-shadow: none;
+        -moz-box-shadow: none;
+        -o-box-shadow: none;
+        box-shadow: none; }
+        #part3 #animation svg {
+          display: none; } }
   #part3 ul {
     width: 410px;
     padding-top: 2em;
     padding-bottom: 2em; }
+    @media screen and (max-width: 980px) {
+      #part3 ul {
+        font-size: 1.2em;
+        width: auto;
+        min-width: 280px;
+        max-width: 600px;
+        margin: 0 auto; } }
+    @media screen and (max-width: 800px) {
+      #part3 ul {
+        padding-top: 0; } }
   #part3 li {
     clear: both;
     padding: 1px;
@@ -274,6 +351,16 @@ ul, li {
     font-style: italic;
     font-weight: 900;
     text-align: right; }
+    @media screen and (max-width: 980px) {
+      #part3 li {
+        text-align: center;
+        margin-top: 10px;
+        padding: 10px;
+        -webkit-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
+        -ms-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
+        -moz-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
+        -o-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
+        text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF; } }
 
 #part6 {
   width: 90%;
@@ -331,13 +418,25 @@ ul, li {
       right: auto;
       left: 20px; }
 
-#part4, #part5, #part7, #part8 {
+.regular {
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px; }
+  @media screen and (max-width: 980px) {
+    .regular {
+      margin-left: 30px;
+      margin-right: 30px; } }
 
-#part8 {
-  width: 40%; }
+#part7, #part8 {
+  width: 50%; }
+  @media screen and (max-width: 980px) {
+    #part7, #part8 {
+      margin-left: auto;
+      margin-right: auto; } }
+  @media screen and (max-width: 800px) {
+    #part7, #part8 {
+      width: auto;
+      max-width: 400px; } }
 
 .fineprint {
   margin: 10em 460px 4em 0;
@@ -350,7 +449,9 @@ ul, li {
   position: absolute;
   bottom: 10px;
   right: 100%;
-  width: 200px; }
+  width: 210px;
+  font-size: 0.7em;
+  line-height: 1.5em; }
 
 /* MAPS */
 .map {
@@ -372,6 +473,13 @@ ul, li {
   box-shadow: inset 20px 0 10px -20px #000; }
   .map:nth-child(1), .map:nth-child(2) {
     border-top: none; }
+  @media screen and (max-width: 460px) {
+    .map {
+      -webkit-box-shadow: none;
+      -ms-box-shadow: none;
+      -moz-box-shadow: none;
+      -o-box-shadow: none;
+      box-shadow: none; } }
   .map h2 {
     position: absolute;
     right: 10px;

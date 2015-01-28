@@ -3,38 +3,58 @@ $( document ).ready(function() {
   var anistarted = false;
 
   var main, s = Snap("#snap");
-  var frames = [];
+  var whichFrame = 0, frames = [], anistopped = false;
+  var mobilewidth = 550;
 
-  $(".more").click( function (e) {
-    e.preventDefault();
-    var d = $(this).data("more");
-    // TODO: add item to history to support back button?
-    if (d) {
-      var id = "#" + d;
-      $("body").scrollTo(id, 500, {easing:'easeOutCubic',offset: {top:-20}});
-    }
+  gifWidth();
+
+  // $(".more").click( function (e) {
+  //   e.preventDefault();
+  //   var d = $(this).data("more");
+  //   // TODO: add item to history to support back button?
+  //   if (d) {
+  //     var id = "#" + d;
+  //     $("body").scrollTo(id, 500, {easing:'easeOutCubic',offset: {top:-20}});
+  //   }
+  // });
+  $(window).resize( function (e) {
+    gifWidth();
   });
 
   $(window).scroll( function (e) {
+    var responsivewidth = 980;
     var margin = 20;
     var wintop = $(window).scrollTop();
     var winh = $(window).height();
+    var winw = $(window).width();
     var parttop = $("#part3").offset().top;
     var deltatop = wintop - parttop + margin;
     var ani = $("#animation");
     var h = ani.height();
-    var nexttop = $(".next.part4").offset().top-margin; // minus a small margin
+    var nexttop = $("h2.part4").offset().top - margin; // minus a small margin
     if (wintop+winh*.5 >= parttop) {
       if (!anistarted) {
+        if (winw >= responsivewidth) ani.fadeIn();
         anistarted = true;
-        ani.fadeIn();
         end();
       }
+      if (winw < mobilewidth) anistopped = true;
+      if (winw < responsivewidth) return;
       if (deltatop <= 0) deltatop = 0;
       if (wintop+h+margin >= nexttop) deltatop = nexttop-h-parttop;
       ani.css("top", deltatop);
     }
   });
+
+  function gifWidth() {
+    var winw = $(window).width();
+    if (winw >= mobilewidth) return;
+    var ani = $("#animation");
+    var ratio = 400/550;
+    var neww = winw - 20;
+    ani.width(neww);
+    ani.height(neww*ratio);
+  }
 
   function init() {
     s = Snap("#snap");
@@ -73,10 +93,7 @@ $( document ).ready(function() {
     main = Snap.load(url, function (f) {
       g = f.select("g");
 
-      browser = g.select("#browser")
-      // browser.attr({
-      //   filter: shadow
-      // })
+      browser = g.select("#browser");
 
       s.append(g);
 
@@ -310,16 +327,19 @@ $( document ).ready(function() {
   }
 
 
-  function nextFrame ( frameArray,  whichFrame ) {
+  function nextFrame ( frameArray ) {
+    if (anistopped) return;
     if( whichFrame >= frameArray.length ) { end(); return; }
-    el = frameArray[whichFrame].el;
+    var frame = frameArray[ whichFrame ];
+    whichFrame++;
+    el = frame.el;
     if (el==undefined) {
       setTimeout(function(){
-        nextFrame(frameArray, whichFrame + 1);
-      },frameArray[whichFrame].delay);
+        nextFrame(frameArray);
+      },frame.delay);
       return;
     }
-    el.animate( frameArray[ whichFrame ].animation, frameArray[ whichFrame ].dur, mina.easein, nextFrame.bind( null, frameArray, whichFrame + 1 ) );
+    el.animate( frame.animation, frame.dur, mina.easein, nextFrame.bind( null, frameArray  ) );
   }
 
   function end() {
@@ -332,8 +352,20 @@ $( document ).ready(function() {
     init();
   }
 
+  function stop() {
+    anistopped = true;
+    Snap.selectAll("g").remove();
+    Snap.selectAll("text").remove();
+    Snap.selectAll("circle").remove();
+    Snap.selectAll("rect").remove();
+    Snap.selectAll("image").remove();
+    Snap.selectAll("filter").remove();
+    whichFrame = frames.length + 1;
+  }
+
   function go() {
-    nextFrame(frames, 0);
+    whichFrame = 0;
+    nextFrame(frames);
   }
 
 });

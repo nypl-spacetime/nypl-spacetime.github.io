@@ -10,6 +10,9 @@ $linksize: 30px;
 $iconsize: 150px;
 $mapwidth: 460px;
 
+$mainbreakpoint: 980px;
+$mobilebreakpoint: 800px;
+
 $mainfont: "rooney-sans", Verdana, sans-serif;
 $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 
@@ -31,6 +34,10 @@ $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu
     display: table;
     clear: both;
   }
+}
+
+@mixin fancy-shadow {
+  @include vendor-prefix('text-shadow', -1px -1px 0 $pagecolor, 1px -1px 0 $pagecolor, 1px 1px 0 $pagecolor, -1px 1px 0 $pagecolor, -2px 2px 0 $pagecolor);
 }
 
 @mixin vendor-prefix($name, $argument...) {
@@ -119,10 +126,21 @@ h1, h2, h3, h4, h5, h6 {
   color: $headingcolor;
   line-height: 1.3em;
   @include titlestyle;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    line-height: 1em;
+  }
 }
 
 h2 {
-  @include vendor-prefix('text-shadow', 0 0 5px $pagecolor, 0 0 5px $pagecolor, 0 0 5px $pagecolor, 0 0 5px $pagecolor, 0 0 5px $pagecolor);
+  width: 60%;
+  @include fancy-shadow;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    width: auto;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
 }
 
 .centered {
@@ -135,10 +153,24 @@ h1 {
   text-transform: uppercase;
   margin-top: 10px;
   margin-bottom: 10px;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    font-size: 4em;
+  }
+
+  @media screen and (max-width: $mobilebreakpoint) {
+    font-size: 2em;
+  }
 }
 
 h2 {
   margin-top: 0.5em;
+}
+
+p {
+  @media screen and (max-width: $mainbreakpoint) {
+    line-height: 1.3em;
+  }
 }
 
 a {
@@ -168,6 +200,13 @@ ul, li {
   background: white;
   padding: 10px 20px;
   border-radius: 10px;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    width: auto;
+    height: auto;
+    text-align: center;
+  }
+
 }
 
 .nypllogo {
@@ -184,6 +223,12 @@ ul, li {
   display: inline-block;
   width: 300px;
   height: 50px;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    width: 90%;
+    height: auto;
+    max-width: 300px;
+  }
 }
 
 /* MAIN STRUCTURE */
@@ -198,6 +243,10 @@ ul, li {
   top: 0;
   width: $mapwidth;
   z-index: -1;
+
+  @media screen and (max-width: $mapwidth) {
+    width: 100%;
+  }
 }
 
 #snap {
@@ -216,12 +265,24 @@ ul, li {
   margin: $linksize 10px;
   background-color: $bubblecolor;
   border-radius: ($radius * 4) $radius;
+
+  @media screen and (max-width: $mobilebreakpoint) {
+    width: auto;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 1px $radius;
+    border-radius: $radius;
+  }
 }
 
 .biglink {
   text-transform: uppercase;
   font-size: 2em;
   @include titlestyle;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    font-size: 1.2em;
+  }
 }
 
 .next {
@@ -232,6 +293,12 @@ ul, li {
   background-color: $bubblecolor;
   border-radius: $radius;
   text-align: center;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* LINK BARS */
@@ -317,12 +384,44 @@ ul, li {
     left: 410px;
     @include vendor-prefix(box-shadow, 0 0 10px 0 rgba(0,0,0,0.5));
     border-radius: 20px;
+
+    @media screen and (max-width: $mainbreakpoint) {
+      display: block;
+      position: relative;
+      top: auto;
+      left: auto;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    @media screen and (max-width: 550px) {
+      border-radius: 20px;
+      background: url("../img/delmonicos.gif") no-repeat scroll 0% 0% / 100% auto transparent;
+      height: 264px;
+      @include vendor-prefix(box-shadow, none);
+
+      svg {
+        display: none;
+      }
+    }
   }
 
   ul {
     width: 410px;
     padding-top: 2em;
     padding-bottom: 2em;
+
+    @media screen and (max-width: $mainbreakpoint) {
+      font-size: 1.2em;
+      width: auto;
+      min-width: 280px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: $mobilebreakpoint) {
+      padding-top: 0;
+    }
   }
 
   li {
@@ -333,6 +432,13 @@ ul, li {
     text-align: left;
     @include titlestyle;
     text-align: right;
+
+    @media screen and (max-width: $mainbreakpoint) {
+      text-align: center;
+      margin-top: $radius;
+      padding: $radius;
+      @include fancy-shadow;
+    }
   }
 }
 
@@ -414,14 +520,29 @@ ul, li {
   }
 }
 
-#part4, #part5, #part7, #part8 {
+.regular {
   margin-left: auto;
   margin-right: auto;
   border-radius: $radius;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
 }
 
-#part8 {
-  width: 40%;
+#part7, #part8 {
+  width: 50%;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: $mobilebreakpoint) {
+    width: auto;
+    max-width: 400px;
+  }
 }
 
 .fineprint {
@@ -438,7 +559,9 @@ ul, li {
   position: absolute;
   bottom: 10px;
   right: 100%;
-  width: 200px;
+  width: 210px;
+  font-size: 0.7em;
+  line-height: 1.5em;
 }
 
 /* MAPS */
@@ -459,6 +582,10 @@ $mapshadow: 10px;
 
   &:nth-child(1), &:nth-child(2) {
     border-top: none;
+  }
+
+  @media screen and (max-width: $mapwidth) {
+    @include vendor-prefix(box-shadow, none);
   }
 
   h2 {
