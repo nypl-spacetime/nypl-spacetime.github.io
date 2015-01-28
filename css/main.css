@@ -93,10 +93,14 @@ h1 {
       font-size: 4em; } }
   @media screen and (max-width: 800px) {
     h1 {
+      text-align: center;
       font-size: 2em; } }
 
 h2 {
   margin-top: 0.5em; }
+  @media screen and (max-width: 800px) {
+    h2 {
+      text-align: center; } }
 
 @media screen and (max-width: 980px) {
   p {
@@ -179,13 +183,20 @@ ul, li {
   margin: 30px 10px;
   background-color: #DFDFDF;
   border-radius: 40px 10px; }
+  .bubble h2 {
+    -webkit-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
+    -ms-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
+    -moz-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
+    -o-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
+    text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF; }
   @media screen and (max-width: 800px) {
     .bubble {
       width: auto;
       margin-left: 30px;
       margin-right: 30px;
       padding: 1px 10px;
-      border-radius: 10px; } }
+      border-radius: 10px;
+      padding: 10px 20px; } }
 
 .biglink {
   text-transform: uppercase;

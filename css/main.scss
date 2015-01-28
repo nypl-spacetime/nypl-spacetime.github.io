@@ -36,7 +36,7 @@ $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu
   }
 }
 
-@mixin fancy-shadow {
+@mixin fancy-shadow ($color:$pagecolor) {
   @include vendor-prefix('text-shadow', -1px -1px 0 $pagecolor, 1px -1px 0 $pagecolor, 1px 1px 0 $pagecolor, -1px 1px 0 $pagecolor, -2px 2px 0 $pagecolor);
 }
 
@@ -159,12 +159,17 @@ h1 {
   }
 
   @media screen and (max-width: $mobilebreakpoint) {
+    text-align: center;
     font-size: 2em;
   }
 }
 
 h2 {
   margin-top: 0.5em;
+
+  @media screen and (max-width: $mobilebreakpoint) {
+    text-align: center;
+  }
 }
 
 p {
@@ -266,12 +271,17 @@ ul, li {
   background-color: $bubblecolor;
   border-radius: ($radius * 4) $radius;
 
+  h2 {
+    @include fancy-shadow($bubblecolor);
+  }
+
   @media screen and (max-width: $mobilebreakpoint) {
     width: auto;
     margin-left: 30px;
     margin-right: 30px;
     padding: 1px $radius;
     border-radius: $radius;
+    padding: $radius $radius*2;
   }
 }
 
