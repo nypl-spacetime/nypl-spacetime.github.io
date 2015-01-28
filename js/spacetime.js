@@ -304,7 +304,7 @@ $( document ).ready(function() {
       frames.push({el:usatext, animation:{opacity:0}, dur:300});
       frames.push({el:usa, animation:{opacity:0}, dur:500});
 
-      setTimeout(go, 2000);
+      setTimeout(go, 500);
     });
 
   }
