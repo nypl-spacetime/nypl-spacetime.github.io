@@ -34,12 +34,20 @@ $( document ).ready(function() {
     var nexttop = $("h2.part4").offset().top - margin; // minus a small margin
     if (wintop+winh*.5 >= parttop) {
       if (!anistarted) {
-        if (winw >= responsivewidth) ani.fadeIn();
+        if (winw >= mobilewidth) ani.fadeIn();
         anistarted = true;
         end();
       }
-      if (winw < mobilewidth) anistopped = true;
-      if (winw < responsivewidth) return;
+      if (winw < mobilewidth) {
+        anistopped = true;
+        return;
+      }
+      ani.width(550);
+      ani.height(400);
+      if (winw < responsivewidth) {
+        ani.css("top", 0);
+        return;
+      }
       if (deltatop <= 0) deltatop = 0;
       if (wintop+h+margin >= nexttop) deltatop = nexttop-h-parttop;
       ani.css("top", deltatop);
@@ -48,7 +56,10 @@ $( document ).ready(function() {
 
   function gifWidth() {
     var winw = $(window).width();
-    if (winw >= mobilewidth) return;
+    if (winw >= mobilewidth) {
+      $("#animation").show();
+      return;
+    }
     var ani = $("#animation");
     var ratio = 400/550;
     var neww = winw - 20;

@@ -470,17 +470,22 @@ ul, li {
   @media screen and (max-width: 800px) {
     #part7, #part8 {
       width: auto;
-      margin-left: 10px;
-      margin-right: 10px;
+      margin-left: auto;
+      margin-right: auto;
       max-width: 400px; } }
+  @media screen and (max-width: 550px) {
+    #part7, #part8 {
+      margin-left: 20px;
+      margin-right: 20px;
+      max-width: 100%; } }
 
 .fineprint {
   margin: 10em 460px 4em 0;
   text-align: right; }
   @media screen and (max-width: 800px) {
     .fineprint {
-      margin-left: 10px;
-      margin-right: 10px;
+      margin-left: 20px;
+      margin-right: 20px;
       text-align: center;
       background-color: #DFDFDF;
       border-radius: 10px;
@@ -599,8 +604,8 @@ ul, li {
   line-height: 1.4em; }
   @media screen and (max-width: 800px) {
     #footer {
-      margin-left: 10px;
-      margin-right: 10px;
+      margin-left: 20px;
+      margin-right: 20px;
       text-align: center;
       background-color: #DFDFDF;
       border-radius: 10px;
