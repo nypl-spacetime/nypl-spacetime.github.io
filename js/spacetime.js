@@ -41,6 +41,7 @@ $( document ).ready(function() {
   });
 
   function init() {
+    s = Snap("#snap");
     var g;
 
     frames = [];
