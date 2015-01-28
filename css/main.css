@@ -460,8 +460,7 @@ ul, li {
       #part6 .icon {
         width: 100px;
         height: 100px;
-        font-size: 100px;
-        bottom: -1px; } }
+        font-size: 100px; } }
 
 .regular {
   margin-left: auto;

@@ -1,22 +1,8 @@
-var SP = {};
+var SP = {}; // the animation code
 
 (function(){
   var main, s = Snap("#snap");
   var whichFrame = 0, frames = [], anistopped = false;
-  var mobilewidth = 550;
-
-  SP.gifWidth = function() {
-    var winw = $(window).width();
-    if (winw >= mobilewidth) {
-      $("#animation").show();
-      return;
-    }
-    var ani = $("#animation");
-    var ratio = 400/550;
-    var neww = winw - 20;
-    ani.width(neww);
-    ani.height(neww*ratio);
-  }
 
   SP.init = function() {
     s = Snap("#snap");
@@ -331,38 +317,118 @@ var SP = {};
   }
 })();
 
+// the document scroll/resize code
+
 $( document ).ready(function() {
   var anistarted = false;
   var mobilewidth = 550;
+  var responsivewidth = 667;
+  var firstmap = false;
+  var isdevice = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
 
-  SP.gifWidth();
+  if (!firstmap) {
+    firstmap = true;
+    $(".map").first().remove();
+  }
 
-  // $(".more").click( function (e) {
-  //   e.preventDefault();
-  //   var d = $(this).data("more");
-  //   // TODO: add item to history to support back button?
-  //   if (d) {
-  //     var id = "#" + d;
-  //     $("body").scrollTo(id, 500, {easing:'easeOutCubic',offset: {top:-20}});
-  //   }
-  // });
+
+  gifWidth();
+  orderMaps();
+  mapBackground();
+
+  function gifWidth() {
+    var winw = $(window).width();
+    if (winw >= mobilewidth) {
+      $("#animation").show();
+      return;
+    }
+    var ani = $("#animation");
+    var ratio = 400/550;
+    var neww = winw - 20;
+    ani.width(neww);
+    ani.height(neww*ratio);
+  }
+
+  function orderMaps() {
+    if (!isdevice) return;
+    var maps = $(".map");
+    var map, l = maps.length;
+
+    maps.css({
+      boxShadow: "none"
+      ,position: "absolute"
+      ,backgroundAttachment: "scroll"
+      ,backgroundSize: "cover"
+      ,opacity: 1
+      ,top: 0
+    });
+
+    for (var i=0;i<l;i++) {
+      map = $(maps[i]);
+      map.css({zIndex:l-i});
+    }
+  }
+
+  function mapBackground() {
+    if (!isdevice) return;
+    var wintop = $(window).scrollTop();
+    var winw = $(window).width();
+    var winh = $(window).height();
+    var bodyh = $("body").height();
+    var main = $("#maps");
+    var maps = $(".map");
+
+    var ratio = winw/460; // from the img size
+    main.width(winw);
+    main.height(winh);
+    main.css({
+      position: "fixed"
+    });
+    maps.width(winw);
+    maps.height(930*ratio);
+
+    var position = wintop / bodyh;
+
+    var map, l = maps.length;
+
+    var shown = l * position;
+
+    var mapshown = Math.floor(shown);
+
+    var opacity = 1 - parseFloat("." + shown.toFixed(2).split(".")[1]);
+
+    if (mapshown<0) mapshown = 0;
+    if (mapshown>=l) mapshown = l-1;
+
+    for (var i=0;i<l;i++) {
+      map = $(maps[i]);
+      if (i == mapshown) {
+        map.css({opacity:opacity});
+      } else if (i == mapshown+1) {
+        map.css({opacity:1});
+      } else {
+        map.css({opacity:0});
+      }
+    }
+  }
+
   $(window).resize( function (e) {
-    SP.gifWidth();
+    gifWidth();
+    // mapBackground();
   });
 
   $(window).scroll( function (e) {
-    var responsivewidth = 667;
+    mapBackground();
     var margin = 20;
     var wintop = $(window).scrollTop();
-    var winh = $(window).height();
     var winw = $(window).width();
+    var winh = $(window).height();
     var parttop = $("#part3").offset().top;
     var deltatop = wintop - parttop + margin;
     var ani = $("#animation");
     var h = ani.height();
     var nexttop = $("h2.part4").offset().top - margin; // minus a small margin
     if (wintop+winh*.5 >= parttop) {
-      console.log("started", anistarted);
       if (winw < mobilewidth) {
         anistopped = true;
         anistarted = false;
