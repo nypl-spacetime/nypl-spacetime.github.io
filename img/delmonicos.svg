@@ -17,15 +17,26 @@
         width="550"
         height="400"
         id="usa" />
-            <g id="dots" sketch:type="MSLayerGroup" transform="translate(67.000000, 116.000000)" fill="#F85200">
-                <circle id="dot-0" sketch:type="MSShapeGroup" cx="235.5" cy="7.5" r="7.5"></circle>
-                <circle id="dot-1" sketch:type="MSShapeGroup" cx="309.5" cy="30.5" r="7.5"></circle>
-                <circle id="dot-2" sketch:type="MSShapeGroup" cx="328.5" cy="46.5" r="7.5"></circle>
-                <circle id="dot-3" sketch:type="MSShapeGroup" cx="369.5" cy="55.5" r="7.5"></circle>
-                <circle id="dot-4" sketch:type="MSShapeGroup" cx="308.5" cy="126.5" r="7.5"></circle>
-                <circle id="dot-6" sketch:type="MSShapeGroup" cx="334.5" cy="190.5" r="7.5"></circle>
-                <circle id="dot-7" sketch:type="MSShapeGroup" cx="7.5" cy="89.5" r="7.5"></circle>
-                <circle id="dot-5" sketch:type="MSShapeGroup" cx="331.5" cy="106.5" r="7.5"></circle>
+            <text id="usa-text" sketch:type="MSTextLayer" font-family="'rooney-sans', Verdana, sans-serif" font-size="32" font-style="italic" font-weight="900" fill="#000000">
+                <tspan x="20" y="340">BUILD A SPACE/TIME DIRECTORY</tspan>
+                <tspan x="20" y="370">FOR YOUR CITY!</tspan>
+            </text>
+            <g id="dots" sketch:type="MSLayerGroup" transform="translate(63.000000, 99.000000)" fill="#F85200">
+                <circle id="dot-0" sketch:type="MSShapeGroup" cx="239.5" cy="24.5" r="7.5"></circle>
+                <circle id="dot-1" sketch:type="MSShapeGroup" cx="313.5" cy="47.5" r="7.5"></circle>
+                <circle id="dot-1" sketch:type="MSShapeGroup" cx="212.5" cy="7.5" r="7.5"></circle>
+                <circle id="dot-2" sketch:type="MSShapeGroup" cx="332.5" cy="63.5" r="7.5"></circle>
+                <circle id="dot-3" sketch:type="MSShapeGroup" cx="373.5" cy="72.5" r="7.5"></circle>
+                <circle id="dot-4" sketch:type="MSShapeGroup" cx="312.5" cy="143.5" r="7.5"></circle>
+                <circle id="dot-6" sketch:type="MSShapeGroup" cx="338.5" cy="207.5" r="7.5"></circle>
+                <circle id="dot-7" sketch:type="MSShapeGroup" cx="11.5" cy="106.5" r="7.5"></circle>
+                <circle id="dot-7" sketch:type="MSShapeGroup" cx="7.5" cy="12.5" r="7.5"></circle>
+                <circle id="dot-7" sketch:type="MSShapeGroup" cx="102.5" cy="78.5" r="7.5"></circle>
+                <circle id="dot-7" sketch:type="MSShapeGroup" cx="65.5" cy="45.5" r="7.5"></circle>
+                <circle id="dot-7" sketch:type="MSShapeGroup" cx="134.5" cy="31.5" r="7.5"></circle>
+                <circle id="dot-7" sketch:type="MSShapeGroup" cx="219.5" cy="114.5" r="7.5"></circle>
+                <circle id="dot-7" sketch:type="MSShapeGroup" cx="172.5" cy="56.5" r="7.5"></circle>
+                <circle id="dot-5" sketch:type="MSShapeGroup" cx="335.5" cy="123.5" r="7.5"></circle>
             </g>
             <g id="browser" sketch:type="MSLayerGroup" transform="translate(65.000000, 20.000000)">
                 <rect id="view" fill="#F1F1F1" sketch:type="MSShapeGroup" x="0" y="70" width="420" height="290"></rect>
@@ -66,7 +77,7 @@
             </g>
             <g id="json" sketch:type="MSLayerGroup" transform="translate(65.000000, 89.000000)">
                 <rect id="jsonview" fill="#F1F1F1" sketch:type="MSShapeGroup" x="0" y="0" width="420" height="290"></rect>
-                <text id="{" sketch:type="MSTextLayer" font-family="'Input Sans', 'Lucida Console', 'Monaco', 'Courier New', 'Courier', monospace" font-size="14" font-weight="bold" fill="#000000">
+                <text id="{" sketch:type="MSTextLayer" font-family="'Input Sans', 'Lucida Console', 'Monaco', 'Courier New', 'Courier', monospace" font-size="14" font-weight="normal" fill="#000000">
                     <tspan x="12" y="62.2050781">{</tspan>
                     <tspan x="12" y="80.2050781">  name: "Delmonico's",</tspan>
                     <tspan x="12" y="98.2050781">  date: 1865,</tspan>

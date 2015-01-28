@@ -49,7 +49,7 @@ html {
 body {
   margin: 0 auto;
   padding: 2em 0 4em;
-  font-family: "rooney-sans", sans-serif;
+  font-family: "rooney-sans", Verdana, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -59,7 +59,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: #67666A;
   line-height: 1.3em;
-  font-family: "rooney-sans", sans-serif;
+  font-family: "rooney-sans", Verdana, sans-serif;
   font-style: italic;
   font-weight: 900; }
 
@@ -151,7 +151,7 @@ ul, li {
 .biglink {
   text-transform: uppercase;
   font-size: 2em;
-  font-family: "rooney-sans", sans-serif;
+  font-family: "rooney-sans", Verdana, sans-serif;
   font-style: italic;
   font-weight: 900; }
 
@@ -270,7 +270,7 @@ ul, li {
     margin: 30px 0 0 0;
     padding: 10px 20px;
     text-align: left;
-    font-family: "rooney-sans", sans-serif;
+    font-family: "rooney-sans", Verdana, sans-serif;
     font-style: italic;
     font-weight: 900;
     text-align: right; }
@@ -331,15 +331,13 @@ ul, li {
       right: auto;
       left: 20px; }
 
-#part4, #part5 {
+#part4, #part5, #part7, #part8 {
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px; }
 
-#part7 {
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 10px; }
+#part8 {
+  width: 40%; }
 
 .fineprint {
   margin: 10em 460px 4em 0;

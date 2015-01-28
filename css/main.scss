@@ -10,7 +10,7 @@ $linksize: 30px;
 $iconsize: 150px;
 $mapwidth: 460px;
 
-$mainfont: "rooney-sans",sans-serif;
+$mainfont: "rooney-sans", Verdana, sans-serif;
 $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 
 @mixin titlestyle {
@@ -414,16 +414,14 @@ ul, li {
   }
 }
 
-#part4, #part5 {
+#part4, #part5, #part7, #part8 {
   margin-left: auto;
   margin-right: auto;
   border-radius: $radius;
 }
 
-#part7 {
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: $radius;
+#part8 {
+  width: 40%;
 }
 
 .fineprint {

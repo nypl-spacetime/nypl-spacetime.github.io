@@ -60,7 +60,7 @@ $( document ).ready(function() {
 
     var url = "img/delmonicos.svg";
 
-    var letters, text, lettersnext, textnext, lettersexport
+    var letters, text, lettersnext, textnext, usatext, lettersexport
         , textexport, json, menu, news, photo, browser
         , nyc, markerrect, markertext, usa, usadots;
 
@@ -68,7 +68,7 @@ $( document ).ready(function() {
 
     var query = "delmonico's 1865";
     var querynext = "discover more";
-    var queryexport = "export! :)";
+    var queryexport = "export!";
 
     main = Snap.load(url, function (f) {
       g = f.select("g");
@@ -88,6 +88,7 @@ $( document ).ready(function() {
       nyc = g.select("#oldnyc");
       usa = g.select("#usa");
       usadots = g.select("#dots");
+      usatext = g.select("#usa-text");
 
       browser.attr({opacity:0});
       json.attr({opacity:0});
@@ -96,6 +97,7 @@ $( document ).ready(function() {
       photo.attr({opacity:0});
       nyc.attr({opacity:0});
       usa.attr({transform:"translate(275.000000, 200.000000) scale(0.0, 0.0)",opacity:0});
+      usatext.attr({opacity:0});
 
       // text
       letters = query.split("");
@@ -294,9 +296,12 @@ $( document ).ready(function() {
         frames.push({el:el, animation:{opacity:1}, dur:100});
       }
 
+      frames.push({el:usatext, animation:{opacity:1}, dur:200});
+
       frames.push({delay:5000});
 
       frames.push({el:usadots, animation:{opacity:0}, dur:300});
+      frames.push({el:usatext, animation:{opacity:0}, dur:300});
       frames.push({el:usa, animation:{opacity:0}, dur:500});
 
       setTimeout(go, 2000);
