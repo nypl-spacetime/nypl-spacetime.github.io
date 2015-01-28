@@ -462,6 +462,14 @@ ul, li {
     background-color: $iconcolor;
     @include clearfix;
 
+    @media screen and (max-width: $mobilebreakpoint) {
+      float: none;
+      width: auto;
+      height: auto;
+      padding-bottom: 100px;
+      border-radius: 0;
+    }
+
     a {
       display: inline-block;
       background-color: $linkcolor;
@@ -477,6 +485,10 @@ ul, li {
     &:nth-child(2n) {
       float: right;
       text-align: left;
+
+      @media screen and (max-width: $mobilebreakpoint) {
+        float: none;
+      }
     }
 
     &:nth-child(2), &:nth-child(3) {
@@ -489,18 +501,44 @@ ul, li {
 
     &:nth-child(1) {
       border-radius: $radius 0 0 0;
+
+      @media screen and (max-width: $mobilebreakpoint) {
+        border-radius: $radius $radius 0 0;
+      }
     }
 
     &:nth-child(2) {
       border-radius: 0 $radius 0 0;
+
+      @media screen and (max-width: $mobilebreakpoint) {
+        border-radius: 0;
+      }
     }
 
     &:nth-child(3) {
       border-radius: 0 0 0 $radius;
+
+      @media screen and (max-width: $mobilebreakpoint) {
+        border-radius: 0;
+        background-color: $headingcolor;
+
+        h3, .icon, p {
+          color: $bubblecolor;
+        }
+      }
     }
 
     &:nth-child(4) {
       border-radius: 0 0 $radius 0;
+
+      @media screen and (max-width: $mobilebreakpoint) {
+        border-radius: 0 0 $radius $radius;
+        background-color: $bubblecolor;
+
+        h3, .icon, p {
+          color: $headingcolor;
+        }
+      }
     }
   }
 
@@ -516,6 +554,13 @@ ul, li {
     &.left {
       right: auto;
       left: ($radius * 2);
+    }
+
+    @media screen and (max-width: $mobilebreakpoint) {
+      width: 100px;
+      height: 100px;
+      font-size: 100px;
+      bottom: -1px;
     }
   }
 }
@@ -541,6 +586,8 @@ ul, li {
 
   @media screen and (max-width: $mobilebreakpoint) {
     width: auto;
+    margin-left: $radius;
+    margin-right: $radius;
     max-width: 400px;
   }
 }
@@ -549,9 +596,23 @@ ul, li {
   margin: 10em $mapwidth 4em 0;
   text-align: right;
 
+  @media screen and (max-width: $mobilebreakpoint) {
+    margin-left: $radius;
+    margin-right: $radius;
+    text-align: center;
+    background-color: $bubblecolor;
+    border-radius: $radius;
+    padding: $radius;
+  }
+
   p {
     width: 50%;
     margin-left: 45%;
+
+    @media screen and (max-width: $mobilebreakpoint) {
+      width: auto;
+      margin-left: 0;
+    }
   }
 }
 
@@ -562,6 +623,10 @@ ul, li {
   width: 210px;
   font-size: 0.7em;
   line-height: 1.5em;
+
+  @media screen and (max-width: $mobilebreakpoint) {
+    display: none;
+  }
 }
 
 /* MAPS */
@@ -598,6 +663,10 @@ $mapshadow: 10px;
     color: #fff;
     text-align: right;
     @include vendor-prefix('text-shadow', 0 0 4px #000);
+
+    @media screen and (max-width: $mobilebreakpoint) {
+      display: none;
+    }
 
     &.top {
       top: 0;
@@ -667,9 +736,23 @@ $mapshadow: 10px;
   font-size: 0.7em;
   line-height: 1.4em;
 
+  @media screen and (max-width: $mobilebreakpoint) {
+    margin-left: $radius;
+    margin-right: $radius;
+    text-align: center;
+    background-color: $bubblecolor;
+    border-radius: $radius;
+    padding: $radius;
+  }
+
   p {
     width: 50%;
     margin-left: 45%;
+
+    @media screen and (max-width: $mobilebreakpoint) {
+      width: auto;
+      margin-left: 0;
+    }
   }
 
   .nypl {

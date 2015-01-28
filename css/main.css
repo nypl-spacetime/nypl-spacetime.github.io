@@ -383,6 +383,13 @@ ul, li {
       content: "";
       display: table;
       clear: both; }
+    @media screen and (max-width: 800px) {
+      #part6 li {
+        float: none;
+        width: auto;
+        height: auto;
+        padding-bottom: 100px;
+        border-radius: 0; } }
     #part6 li a {
       display: inline-block;
       background-color: #F85200;
@@ -394,18 +401,39 @@ ul, li {
     #part6 li:nth-child(2n) {
       float: right;
       text-align: left; }
+      @media screen and (max-width: 800px) {
+        #part6 li:nth-child(2n) {
+          float: none; } }
     #part6 li:nth-child(2), #part6 li:nth-child(3) {
       background-color: #DFDFDF; }
       #part6 li:nth-child(2) h3, #part6 li:nth-child(2) .icon, #part6 li:nth-child(2) p, #part6 li:nth-child(3) h3, #part6 li:nth-child(3) .icon, #part6 li:nth-child(3) p {
         color: #67666A; }
     #part6 li:nth-child(1) {
       border-radius: 10px 0 0 0; }
+      @media screen and (max-width: 800px) {
+        #part6 li:nth-child(1) {
+          border-radius: 10px 10px 0 0; } }
     #part6 li:nth-child(2) {
       border-radius: 0 10px 0 0; }
+      @media screen and (max-width: 800px) {
+        #part6 li:nth-child(2) {
+          border-radius: 0; } }
     #part6 li:nth-child(3) {
       border-radius: 0 0 0 10px; }
+      @media screen and (max-width: 800px) {
+        #part6 li:nth-child(3) {
+          border-radius: 0;
+          background-color: #67666A; }
+          #part6 li:nth-child(3) h3, #part6 li:nth-child(3) .icon, #part6 li:nth-child(3) p {
+            color: #DFDFDF; } }
     #part6 li:nth-child(4) {
       border-radius: 0 0 10px 0; }
+      @media screen and (max-width: 800px) {
+        #part6 li:nth-child(4) {
+          border-radius: 0 0 10px 10px;
+          background-color: #DFDFDF; }
+          #part6 li:nth-child(4) h3, #part6 li:nth-child(4) .icon, #part6 li:nth-child(4) p {
+            color: #67666A; } }
   #part6 .icon {
     position: absolute;
     width: 150px;
@@ -417,6 +445,12 @@ ul, li {
     #part6 .icon.left {
       right: auto;
       left: 20px; }
+    @media screen and (max-width: 800px) {
+      #part6 .icon {
+        width: 100px;
+        height: 100px;
+        font-size: 100px;
+        bottom: -1px; } }
 
 .regular {
   margin-left: auto;
@@ -436,14 +470,28 @@ ul, li {
   @media screen and (max-width: 800px) {
     #part7, #part8 {
       width: auto;
+      margin-left: 10px;
+      margin-right: 10px;
       max-width: 400px; } }
 
 .fineprint {
   margin: 10em 460px 4em 0;
   text-align: right; }
+  @media screen and (max-width: 800px) {
+    .fineprint {
+      margin-left: 10px;
+      margin-right: 10px;
+      text-align: center;
+      background-color: #DFDFDF;
+      border-radius: 10px;
+      padding: 10px; } }
   .fineprint p {
     width: 50%;
     margin-left: 45%; }
+    @media screen and (max-width: 800px) {
+      .fineprint p {
+        width: auto;
+        margin-left: 0; } }
 
 .thanks {
   position: absolute;
@@ -452,6 +500,9 @@ ul, li {
   width: 210px;
   font-size: 0.7em;
   line-height: 1.5em; }
+  @media screen and (max-width: 800px) {
+    .thanks {
+      display: none; } }
 
 /* MAPS */
 .map {
@@ -494,6 +545,9 @@ ul, li {
     -moz-text-shadow: 0 0 4px #000;
     -o-text-shadow: 0 0 4px #000;
     text-shadow: 0 0 4px #000; }
+    @media screen and (max-width: 800px) {
+      .map h2 {
+        display: none; } }
     .map h2.top {
       top: 0; }
     .map h2.bottom {
@@ -543,9 +597,21 @@ ul, li {
   text-align: right;
   font-size: 0.7em;
   line-height: 1.4em; }
+  @media screen and (max-width: 800px) {
+    #footer {
+      margin-left: 10px;
+      margin-right: 10px;
+      text-align: center;
+      background-color: #DFDFDF;
+      border-radius: 10px;
+      padding: 10px; } }
   #footer p {
     width: 50%;
     margin-left: 45%; }
+    @media screen and (max-width: 800px) {
+      #footer p {
+        width: auto;
+        margin-left: 0; } }
   #footer .nypl {
     color: #424143;
     display: block; }
