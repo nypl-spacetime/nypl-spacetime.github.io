@@ -36,6 +36,7 @@ $( document ).ready(function() {
     }
     if (wintop > nexttop) {
       ani.hide();
+      end();
       anistarted = false;
     }
   });
