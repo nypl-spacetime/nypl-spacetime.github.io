@@ -22,7 +22,7 @@ $( document ).ready(function() {
   });
 
   $(window).scroll( function (e) {
-    var responsivewidth = 980;
+    var responsivewidth = 670;
     var margin = 20;
     var wintop = $(window).scrollTop();
     var winh = $(window).height();
