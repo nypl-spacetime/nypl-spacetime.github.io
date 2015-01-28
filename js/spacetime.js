@@ -2,6 +2,7 @@ $( document ).ready(function() {
 
   var anistarted = false;
 
+  var main, s = Snap("#snap");
   var frames = [];
 
   $(".more").click( function (e) {
@@ -40,7 +41,6 @@ $( document ).ready(function() {
   });
 
   function init() {
-    var main, s = Snap("#snap");
     var g;
 
     frames = [];
@@ -334,5 +334,4 @@ $( document ).ready(function() {
     nextFrame(frames, 0);
   }
 
-  init();
 });
