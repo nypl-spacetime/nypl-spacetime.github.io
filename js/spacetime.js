@@ -34,11 +34,6 @@ $( document ).ready(function() {
       if (wintop+h+margin >= nexttop) deltatop = nexttop-h-parttop;
       ani.css("top", deltatop);
     }
-    if (wintop > nexttop) {
-      ani.hide();
-      end();
-      anistarted = false;
-    }
   });
 
   function init() {
