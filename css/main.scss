@@ -36,8 +36,8 @@ $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu
   }
 }
 
-@mixin fancy-shadow ($color:$pagecolor) {
-  @include vendor-prefix('text-shadow', -1px -1px 0 $pagecolor, 1px -1px 0 $pagecolor, 1px 1px 0 $pagecolor, -1px 1px 0 $pagecolor, -2px 2px 0 $pagecolor);
+@mixin fancy-shadow ($color: $pagecolor) {
+  @include vendor-prefix('text-shadow', -1px -1px 0 $color, 1px -1px 0 $color, 1px 1px 0 $color, -1px 1px 0 $color, -2px 2px 0 $color);
 }
 
 @mixin vendor-prefix($name, $argument...) {

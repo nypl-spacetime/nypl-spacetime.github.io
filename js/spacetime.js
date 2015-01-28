@@ -1,60 +1,11 @@
-$( document ).ready(function() {
+var SP = {};
 
-  var anistarted = false;
-
+(function(){
   var main, s = Snap("#snap");
   var whichFrame = 0, frames = [], anistopped = false;
   var mobilewidth = 550;
 
-  gifWidth();
-
-  // $(".more").click( function (e) {
-  //   e.preventDefault();
-  //   var d = $(this).data("more");
-  //   // TODO: add item to history to support back button?
-  //   if (d) {
-  //     var id = "#" + d;
-  //     $("body").scrollTo(id, 500, {easing:'easeOutCubic',offset: {top:-20}});
-  //   }
-  // });
-  $(window).resize( function (e) {
-    gifWidth();
-  });
-
-  $(window).scroll( function (e) {
-    var responsivewidth = 670;
-    var margin = 20;
-    var wintop = $(window).scrollTop();
-    var winh = $(window).height();
-    var winw = $(window).width();
-    var parttop = $("#part3").offset().top;
-    var deltatop = wintop - parttop + margin;
-    var ani = $("#animation");
-    var h = ani.height();
-    var nexttop = $("h2.part4").offset().top - margin; // minus a small margin
-    if (wintop+winh*.5 >= parttop) {
-      if (!anistarted) {
-        if (winw >= mobilewidth) ani.fadeIn();
-        anistarted = true;
-        end();
-      }
-      if (winw < mobilewidth) {
-        anistopped = true;
-        return;
-      }
-      ani.width(550);
-      ani.height(400);
-      if (winw < responsivewidth) {
-        ani.css("top", 0);
-        return;
-      }
-      if (deltatop <= 0) deltatop = 0;
-      if (wintop+h+margin >= nexttop) deltatop = nexttop-h-parttop;
-      ani.css("top", deltatop);
-    }
-  });
-
-  function gifWidth() {
+  SP.gifWidth = function() {
     var winw = $(window).width();
     if (winw >= mobilewidth) {
       $("#animation").show();
@@ -67,7 +18,7 @@ $( document ).ready(function() {
     ani.height(neww*ratio);
   }
 
-  function init() {
+  SP.init = function() {
     s = Snap("#snap");
     var g;
 
@@ -332,13 +283,13 @@ $( document ).ready(function() {
       frames.push({el:usatext, animation:{opacity:0}, dur:300});
       frames.push({el:usa, animation:{opacity:0}, dur:500});
 
-      setTimeout(go, 500);
+      setTimeout(SP.go, 500);
     });
 
   }
 
 
-  function nextFrame ( frameArray ) {
+  SP.nextFrame = function ( frameArray ) {
     if (anistopped) return;
     if( whichFrame >= frameArray.length ) { end(); return; }
     var frame = frameArray[ whichFrame ];
@@ -346,24 +297,24 @@ $( document ).ready(function() {
     el = frame.el;
     if (el==undefined) {
       setTimeout(function(){
-        nextFrame(frameArray);
+        SP.nextFrame(frameArray);
       },frame.delay);
       return;
     }
-    el.animate( frame.animation, frame.dur, mina.easein, nextFrame.bind( null, frameArray  ) );
+    el.animate( frame.animation, frame.dur, mina.easein, SP.nextFrame.bind( null, frameArray  ) );
   }
 
-  function end() {
+  SP.end = function() {
     Snap.selectAll("g").remove();
     Snap.selectAll("text").remove();
     Snap.selectAll("circle").remove();
     Snap.selectAll("rect").remove();
     Snap.selectAll("image").remove();
     Snap.selectAll("filter").remove();
-    init();
+    SP.init();
   }
 
-  function stop() {
+  SP.stop = function() {
     anistopped = true;
     Snap.selectAll("g").remove();
     Snap.selectAll("text").remove();
@@ -374,9 +325,64 @@ $( document ).ready(function() {
     whichFrame = frames.length + 1;
   }
 
-  function go() {
+  SP.go = function() {
     whichFrame = 0;
-    nextFrame(frames);
+    SP.nextFrame(frames);
   }
+})();
+
+$( document ).ready(function() {
+  var anistarted = false;
+  var mobilewidth = 550;
+
+  SP.gifWidth();
+
+  // $(".more").click( function (e) {
+  //   e.preventDefault();
+  //   var d = $(this).data("more");
+  //   // TODO: add item to history to support back button?
+  //   if (d) {
+  //     var id = "#" + d;
+  //     $("body").scrollTo(id, 500, {easing:'easeOutCubic',offset: {top:-20}});
+  //   }
+  // });
+  $(window).resize( function (e) {
+    SP.gifWidth();
+  });
+
+  $(window).scroll( function (e) {
+    var responsivewidth = 667;
+    var margin = 20;
+    var wintop = $(window).scrollTop();
+    var winh = $(window).height();
+    var winw = $(window).width();
+    var parttop = $("#part3").offset().top;
+    var deltatop = wintop - parttop + margin;
+    var ani = $("#animation");
+    var h = ani.height();
+    var nexttop = $("h2.part4").offset().top - margin; // minus a small margin
+    if (wintop+winh*.5 >= parttop) {
+      console.log("started", anistarted);
+      if (winw < mobilewidth) {
+        anistopped = true;
+        anistarted = false;
+        return;
+      }
+      if (!anistarted) {
+        if (winw >= responsivewidth) ani.fadeIn();
+        anistarted = true;
+        SP.end();
+      }
+      ani.width(550);
+      ani.height(400);
+      if (winw <= responsivewidth) {
+        ani.css("top", 0);
+        return;
+      }
+      if (deltatop <= 0) deltatop = 0;
+      if (wintop+h+margin >= nexttop) deltatop = nexttop-h-parttop;
+      ani.css("top", deltatop);
+    }
+  });
 
 });

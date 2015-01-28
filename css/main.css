@@ -184,11 +184,11 @@ ul, li {
   background-color: #DFDFDF;
   border-radius: 40px 10px; }
   .bubble h2 {
-    -webkit-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
-    -ms-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
-    -moz-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
-    -o-text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF;
-    text-shadow: -1px -1px 0 #EFEFEF, 1px -1px 0 #EFEFEF, 1px 1px 0 #EFEFEF, -1px 1px 0 #EFEFEF, -2px 2px 0 #EFEFEF; }
+    -webkit-text-shadow: -1px -1px 0 #DFDFDF, 1px -1px 0 #DFDFDF, 1px 1px 0 #DFDFDF, -1px 1px 0 #DFDFDF, -2px 2px 0 #DFDFDF;
+    -ms-text-shadow: -1px -1px 0 #DFDFDF, 1px -1px 0 #DFDFDF, 1px 1px 0 #DFDFDF, -1px 1px 0 #DFDFDF, -2px 2px 0 #DFDFDF;
+    -moz-text-shadow: -1px -1px 0 #DFDFDF, 1px -1px 0 #DFDFDF, 1px 1px 0 #DFDFDF, -1px 1px 0 #DFDFDF, -2px 2px 0 #DFDFDF;
+    -o-text-shadow: -1px -1px 0 #DFDFDF, 1px -1px 0 #DFDFDF, 1px 1px 0 #DFDFDF, -1px 1px 0 #DFDFDF, -2px 2px 0 #DFDFDF;
+    text-shadow: -1px -1px 0 #DFDFDF, 1px -1px 0 #DFDFDF, 1px 1px 0 #DFDFDF, -1px 1px 0 #DFDFDF, -2px 2px 0 #DFDFDF; }
   @media screen and (max-width: 800px) {
     .bubble {
       width: auto;
