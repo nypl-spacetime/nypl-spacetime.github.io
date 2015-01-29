@@ -277,7 +277,7 @@ var SP = {}; // the animation code
 
   SP.nextFrame = function ( frameArray ) {
     if (anistopped) return;
-    if( whichFrame >= frameArray.length ) { end(); return; }
+    if( whichFrame >= frameArray.length ) { SP.end(); return; }
     var frame = frameArray[ whichFrame ];
     whichFrame++;
     el = frame.el;
