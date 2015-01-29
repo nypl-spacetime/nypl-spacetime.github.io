@@ -419,6 +419,7 @@ $( document ).ready(function() {
 
   $(window).scroll( function (e) {
     mapBackground();
+    var breakpoint = 980;
     var margin = 20;
     var wintop = $(window).scrollTop();
     var winw = $(window).width();
@@ -441,7 +442,7 @@ $( document ).ready(function() {
       }
       ani.width(550);
       ani.height(400);
-      if (winw <= responsivewidth) {
+      if (winw < breakpoint) {
         ani.css("top", 0);
         return;
       }
