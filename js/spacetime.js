@@ -414,7 +414,7 @@ $( document ).ready(function() {
 
   $(window).resize( function (e) {
     gifWidth();
-    // mapBackground();
+    mapBackground();
   });
 
   $(window).scroll( function (e) {
