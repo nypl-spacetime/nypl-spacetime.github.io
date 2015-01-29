@@ -326,7 +326,7 @@ $( document ).ready(function() {
   var firstmap = false;
   var isdevice = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
 
-  if (!firstmap) {
+  if (!firstmap && isdevice) {
     firstmap = true;
     $(".map").first().remove();
   }
@@ -453,3 +453,21 @@ $( document ).ready(function() {
   });
 
 });
+// some github pages code
+var metas = document.getElementsByTagName('meta');
+var i;
+if (navigator.userAgent.match(/iPhone/i)) {
+  for (i=0; i<metas.length; i++) {
+    if (metas[i].name == "viewport") {
+      metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+    }
+  }
+  document.addEventListener("gesturestart", gestureStart, false);
+}
+function gestureStart() {
+  for (i=0; i<metas.length; i++) {
+    if (metas[i].name == "viewport") {
+      metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+    }
+  }
+}
