@@ -397,6 +397,8 @@ $( document ).ready(function() {
 
     var opacity = 1 - parseFloat("." + shown.toFixed(2).split(".")[1]);
 
+    if (opacity == 1 && Math.round(shown)>mapshown) opacity = 0;
+
     if (mapshown<0) mapshown = 0;
     if (mapshown>=l) mapshown = l-1;
 
