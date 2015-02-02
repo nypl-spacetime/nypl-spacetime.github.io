@@ -653,7 +653,7 @@ ul, li {
   line-height: 1.5em;
 
   @media screen and (max-width: $mobilebreakpoint) {
-    display: none;
+    right: 0;
   }
 }
 

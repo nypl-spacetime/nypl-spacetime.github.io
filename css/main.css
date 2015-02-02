@@ -528,7 +528,7 @@ ul, li {
   line-height: 1.5em; }
   @media screen and (max-width: 800px) {
     .thanks {
-      display: none; } }
+      right: 0; } }
 
 /* MAPS */
 .map {
