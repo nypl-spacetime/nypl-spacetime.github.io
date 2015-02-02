@@ -452,6 +452,12 @@ $( document ).ready(function() {
       if (wintop+h+margin >= nexttop) deltatop = nexttop-h-parttop;
       ani.css("top", deltatop);
     }
+    if (!isdevice) return;
+    if (wintop>$("#footer").scrollTop()) {
+      $(".thanks").show();
+    } else {
+      $(".thanks").hide();
+    }
   });
 
 });

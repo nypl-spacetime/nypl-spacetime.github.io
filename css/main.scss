@@ -643,6 +643,7 @@ ul, li {
   line-height: 1.5em;
 
   @media screen and (max-width: $mobilebreakpoint) {
+    display: none;
     right: 0;
     z-index: 111;
   }
@@ -655,7 +656,6 @@ ul, li {
   right: 0;
   top: 0;
   width: $mapwidth;
-  // z-index: -1;
 
   @media screen and (max-width: $mapwidth) {
     width: 100%;
