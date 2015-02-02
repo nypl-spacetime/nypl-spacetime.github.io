@@ -199,12 +199,13 @@ ul, li {
 
 /**/
 #logos {
-  height: 80px;
+  // height: 80px;
   width: 460px;
   margin: -30px auto 0;
   background: white;
   padding: 10px 20px;
   border-radius: 10px;
+  @include clearfix;
 
   @media screen and (max-width: $mainbreakpoint) {
     width: auto;
@@ -215,13 +216,21 @@ ul, li {
 }
 
 .nypllogo {
-  display: inline-block;
+  display: block;
+  float: left;
   height: 60px;
   width: 110px;
   overflow: hidden;
   background: url("../img/nypl.svg") no-repeat scroll 0px 0px/100px auto white;
   text-indent: 120px;
   white-space: nowrap;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+
 }
 
 .knightlogo {
