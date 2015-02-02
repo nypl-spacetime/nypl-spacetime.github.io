@@ -255,18 +255,6 @@ ul, li {
   max-width: 1024px;
 }
 
-#maps {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: $mapwidth;
-  z-index: -1;
-
-  @media screen and (max-width: $mapwidth) {
-    width: 100%;
-  }
-}
-
 #snap {
   width: 550px;
   height: 400px;
@@ -621,6 +609,8 @@ ul, li {
 }
 
 .fineprint {
+  position: relative;
+  z-index: 1;
   margin: 10em $mapwidth 4em 0;
   text-align: right;
 
@@ -654,10 +644,24 @@ ul, li {
 
   @media screen and (max-width: $mobilebreakpoint) {
     right: 0;
+    z-index: 111;
   }
 }
 
 /* MAPS */
+
+#maps {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $mapwidth;
+  // z-index: -1;
+
+  @media screen and (max-width: $mapwidth) {
+    width: 100%;
+  }
+}
+
 $mapshadow: 10px;
 .map {
   position: relative;
@@ -759,6 +763,8 @@ $mapshadow: 10px;
 }
 
 #footer {
+  position: relative;
+  z-index: 1;
   margin: 20em $mapwidth 0 0;
   text-align: right;
   font-size: 0.7em;
