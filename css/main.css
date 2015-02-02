@@ -170,6 +170,16 @@ ul, li {
   margin: 0 auto;
   max-width: 1024px; }
 
+#maps {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 460px;
+  z-index: -1; }
+  @media screen and (max-width: 460px) {
+    #maps {
+      width: 100%; } }
+
 #snap {
   width: 550px;
   height: 400px;
@@ -491,8 +501,6 @@ ul, li {
       max-width: 100%; } }
 
 .fineprint {
-  position: relative;
-  z-index: 1;
   margin: 10em 460px 4em 0;
   text-align: right; }
   @media screen and (max-width: 800px) {
@@ -520,20 +528,9 @@ ul, li {
   line-height: 1.5em; }
   @media screen and (max-width: 800px) {
     .thanks {
-      display: none;
-      right: 0;
-      z-index: 111; } }
+      display: none; } }
 
 /* MAPS */
-#maps {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 460px; }
-  @media screen and (max-width: 460px) {
-    #maps {
-      width: 100%; } }
-
 .map {
   position: relative;
   float: left;
@@ -622,8 +619,6 @@ ul, li {
   background-image: url("../img/lo.2014.jpg"); }
 
 #footer {
-  position: relative;
-  z-index: 1;
   margin: 20em 460px 0 0;
   text-align: right;
   font-size: 0.7em;
