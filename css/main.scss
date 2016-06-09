@@ -16,6 +16,18 @@ $mobilebreakpoint: 800px;
 $mainfont: "rooney-sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 
+@font-face{
+    font-family:"kievit light";
+    font-style:normal;
+    font-weight:800;
+    src:url("http://ux-static.nypl.org.s3-website-us-east-1.amazonaws.com/ff_kievit_web/KievitWeb-Light.woff") format('woff');}
+
+@font-face{
+    font-family:"kievit bold";
+    font-style:bold;
+    font-weight:800;
+    src:url("http://ux-static.nypl.org.s3-website-us-east-1.amazonaws.com/ff_kievit_web/KievitWeb-Bold.woff") format('woff');}
+
 @mixin titlestyle {
   font-family: $mainfont;
   font-style: italic;
@@ -273,6 +285,10 @@ ul, li {
   background-color: $bubblecolor;
   border-radius: 20px;
   // box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
+  @media screen and (max-width: 550px) {
+    width: auto;
+    height: 100%;
+  }
 }
 
 /* CONTENT */
@@ -419,13 +435,13 @@ ul, li {
 
     @media screen and (max-width: 550px) {
       border-radius: 20px;
-      background: url("../img/delmonicos.gif") no-repeat scroll 0% 0% / 100% auto transparent;
+      // background: url("../img/delmonicos.gif") no-repeat scroll 0% 0% / 100% auto transparent;
       height: 264px;
       @include vendor-prefix(box-shadow, none);
 
-      svg {
-        display: none;
-      }
+      // svg {
+      //   display: none;
+      // }
     }
   }
 

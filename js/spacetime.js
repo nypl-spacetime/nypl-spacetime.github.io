@@ -335,6 +335,7 @@ $( document ).ready(function() {
   gifWidth();
   orderMaps();
   mapBackground();
+  updateScroll()
 
   function gifWidth() {
     var winw = $(window).width();
@@ -414,12 +415,8 @@ $( document ).ready(function() {
     }
   }
 
-  $(window).resize( function (e) {
+  function updateScroll() {
     gifWidth();
-    mapBackground();
-  });
-
-  $(window).scroll( function (e) {
     mapBackground();
     var breakpoint = 980;
     var margin = 20;
@@ -431,19 +428,19 @@ $( document ).ready(function() {
     var ani = $("#animation");
     var h = ani.height();
     var nexttop = $("h2.part4").offset().top - margin; // minus a small margin
-    if (wintop+winh*.5 >= parttop) {
-      if (winw < mobilewidth) {
-        anistopped = true;
-        anistarted = false;
-        return;
-      }
+    if (wintop+winh*.80 >= parttop) {
+      // if (winw < mobilewidth) {
+      //   anistopped = true;
+      //   anistarted = false;
+      //   return;
+      // }
       if (!anistarted) {
         if (winw >= responsivewidth) ani.fadeIn();
         anistarted = true;
         SP.end();
       }
-      ani.width(550);
-      ani.height(400);
+      // ani.width(550);
+      // ani.height(400);
       if (winw < breakpoint) {
         ani.css("top", 0);
         return;
@@ -452,6 +449,15 @@ $( document ).ready(function() {
       if (wintop+h+margin >= nexttop) deltatop = nexttop-h-parttop;
       ani.css("top", deltatop);
     }
+  }
+
+  $(window).resize( function (e) {
+    gifWidth();
+    mapBackground();
+  });
+
+  $(window).scroll( function (e) {
+    updateScroll();
   });
 
 });

@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "kievit light";
+  font-style: normal;
+  font-weight: 800;
+  src: url("http://ux-static.nypl.org.s3-website-us-east-1.amazonaws.com/ff_kievit_web/KievitWeb-Light.woff") format("woff"); }
+@font-face {
+  font-family: "kievit bold";
+  font-style: bold;
+  font-weight: 800;
+  src: url("http://ux-static.nypl.org.s3-website-us-east-1.amazonaws.com/ff_kievit_web/KievitWeb-Bold.woff") format("woff"); }
 /* icomoon stuff */
 @font-face {
   font-family: 'icomoon';
@@ -185,6 +195,10 @@ ul, li {
   height: 400px;
   background-color: #DFDFDF;
   border-radius: 20px; }
+  @media screen and (max-width: 550px) {
+    #snap {
+      width: auto;
+      height: 100%; } }
 
 /* CONTENT */
 .bubble {
@@ -340,15 +354,12 @@ ul, li {
     @media screen and (max-width: 550px) {
       #part3 #animation {
         border-radius: 20px;
-        background: url("../img/delmonicos.gif") no-repeat scroll 0% 0%/100% auto transparent;
         height: 264px;
         -webkit-box-shadow: none;
         -ms-box-shadow: none;
         -moz-box-shadow: none;
         -o-box-shadow: none;
-        box-shadow: none; }
-        #part3 #animation svg {
-          display: none; } }
+        box-shadow: none; } }
   #part3 ul {
     width: 410px;
     padding-top: 2em;
