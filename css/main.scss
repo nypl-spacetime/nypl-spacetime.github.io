@@ -1,3 +1,6 @@
+---
+---
+
 $pagecolor: #EFEFEF;
 $textcolor: #424143;
 $headingcolor: #67666A;
@@ -9,6 +12,7 @@ $linkmargin: 60px;
 $linksize: 30px;
 $iconsize: 150px;
 $mapwidth: 460px;
+$contentwidth: 1024px;
 
 $mainbreakpoint: 980px;
 $mobilebreakpoint: 800px;
@@ -264,7 +268,7 @@ ul, li {
 /* MAIN STRUCTURE */
 #content {
   margin: 0 auto;
-  max-width: 1024px;
+  max-width: $contentwidth;
 }
 
 #maps {
@@ -809,4 +813,38 @@ $mapshadow: 10px;
     display: block;
   }
 
+}
+
+
+
+#projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#projects li {
+  width: $contentwidth / 3;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.project-container {
+  padding: 20px;
+  background-color: $pagecolor;
+  border-radius: 10px;
+}
+
+.project-container img {
+  width: 100%;
+  transition: all .05s ease-in-out;
+}
+
+.project-container:hover {
+  background-color: darken($pagecolor, 1%);
+}
+
+.project-container:hover img {
+  transform: scale(1.07);
 }

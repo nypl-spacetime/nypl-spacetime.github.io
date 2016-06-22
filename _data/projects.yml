@@ -1,2 +1,25 @@
 - name: Map Warper
+  image: mapwarper.jpg
   url: http://maps.nypl.org
+  description: Map rectifying, browse maps, use maps in your own projects, thousands of public domain maps
+
+- name: Building Inspector
+  image: buildinginspector.jpg
+  url: http://buildinginspector.nypl.org
+  description: buildings, many buildings, addresses, crowdsourding, time history!
+
+- name: Centerlines
+  image: centerlines.jpg
+  url: http://spacetime.nypl.org/centerlines
+  description: centerlines centerlines centerlines centerlines centerlines
+
+
+- name: Place names
+  image: placenames.jpg
+  url: http://mgiraldo.github.io/placenames
+  description: place names place names place names place names place names
+
+- name: Maps by Decade
+  image: maps-by-decade.jpg
+  url: http://spacetime.github.io/maps-by-decade/maps-by-decade.html
+  description: maps by decade1!!!! maaaaaaaps

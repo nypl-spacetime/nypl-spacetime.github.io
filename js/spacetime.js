@@ -1,3 +1,7 @@
+---
+layout:
+---
+
 var SP = {}; // the animation code
 
 (function(){
@@ -26,7 +30,7 @@ var SP = {}; // the animation code
 
     // var shadow = s.filter(Snap.filter.shadow(0, 0, 1, "#000", 0.5));
 
-    var url = "img/delmonicos.svg";
+    var url = "{{ site.baseurl }}/images/delmonicos.svg";
 
     var letters, text, lettersnext, textnext, usatext, lettersexport
         , textexport, json, menu, news, photo, browser
