@@ -427,31 +427,36 @@ $( document ).ready(function() {
     var wintop = $(window).scrollTop();
     var winw = $(window).width();
     var winh = $(window).height();
-    var parttop = $("#part3").offset().top;
-    var deltatop = wintop - parttop + margin;
-    var ani = $("#animation");
-    var h = ani.height();
-    var nexttop = $("h2.part4").offset().top - margin; // minus a small margin
-    if (wintop+winh*.80 >= parttop) {
-      // if (winw < mobilewidth) {
-      //   anistopped = true;
-      //   anistarted = false;
-      //   return;
-      // }
-      if (!anistarted) {
-        if (winw >= responsivewidth) ani.fadeIn();
-        anistarted = true;
-        SP.end();
-      }
-      // ani.width(550);
-      // ani.height(400);
-      if (winw < breakpoint) {
-        ani.css("top", 0);
-        return;
-      }
-      if (deltatop <= 0) deltatop = 0;
-      if (wintop+h+margin >= nexttop) deltatop = nexttop-h-parttop;
-      ani.css("top", deltatop);
+
+    if (document.getElementById("animation")) {
+      var ani = $("#animation");
+      var parttop = $("#part3").offset().top;
+      var deltatop = wintop - parttop + margin;
+      var h = ani.height();
+      var nexttop = $("h2.part4").offset().top - margin; // minus a small margin
+      if (wintop+winh*.80 >= parttop) {
+        // if (winw < mobilewidth) {
+        //   anistopped = true;
+        //   anistarted = false;
+        //   return;
+        // }
+        if (!anistarted) {
+          if (winw >= responsivewidth) ani.fadeIn();
+          anistarted = true;
+          SP.end();
+        }
+        // ani.width(550);
+        // ani.height(400);
+        if (winw < breakpoint) {
+          ani.css("top", 0);
+          return;
+        }
+        if (deltatop <= 0) deltatop = 0;
+        if (wintop+h+margin >= nexttop) deltatop = nexttop-h-parttop;
+        ani.css("top", deltatop);
+    }
+
+
     }
   }
 

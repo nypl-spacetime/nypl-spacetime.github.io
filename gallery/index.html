@@ -7,12 +7,12 @@ layout: default
 {% for project in site.data.projects %}
   <li>
     <div class="project-container">
-      <a href="{{ project.url }}">
-        <img src="{{ site.baseurl}}/img/projects/{{ project.image }}" />
-        <h3>{{ project.name }}</h2>
-        <p>{{ project.description}}</p>
-      </a>
-    <div>
+      <img src="{{ site.baseurl}}/img/projects/{{ project.image }}" />
+      <h3>{{ project.name }}</h3>
+      <p>{{ project.description}}</p>
+      <button>We need your help - contribute!</button>
+      <p>View project on GitHub</p>
+    </div>
   </li>
 {% endfor %}
 </ul>

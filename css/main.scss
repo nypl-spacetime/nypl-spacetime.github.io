@@ -814,8 +814,11 @@ $mapshadow: 10px;
   }
 
 }
-
-
+//
+// .collection-item-wrapper:after {
+//     content: '';
+//     display: block;
+//     padding-top: 66.65%;
 
 #projects {
   display: flex;
@@ -831,9 +834,21 @@ $mapshadow: 10px;
 }
 
 .project-container {
+  position: relative;
   padding: 20px;
   background-color: $pagecolor;
   border-radius: 10px;
+}
+
+.project-container h3 {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  padding: 10px;
+  background-color: $pagecolor;
+
+  display: inline;
+  -webkit-box-decoration-break: clone;
 }
 
 .project-container img {
@@ -841,10 +856,14 @@ $mapshadow: 10px;
   transition: all .05s ease-in-out;
 }
 
+.project-container p {
+  margin: 0;
+}
+
 .project-container:hover {
   background-color: darken($pagecolor, 1%);
 }
 
 .project-container:hover img {
-  transform: scale(1.07);
+  transform: scale(1.06);
 }

@@ -1,7 +1,11 @@
+
+
 - name: Map Warper
   image: mapwarper.jpg
   url: http://maps.nypl.org
+  contribute: yes
   description: Map rectifying, browse maps, use maps in your own projects, thousands of public domain maps
+  github: sss
 
 - name: Building Inspector
   image: buildinginspector.jpg
