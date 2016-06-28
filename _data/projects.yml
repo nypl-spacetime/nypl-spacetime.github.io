@@ -5,25 +5,26 @@
   url: http://maps.nypl.org
   contribute: yes
   description: Map rectifying, browse maps, use maps in your own projects, thousands of public domain maps
-  github: sss
+  github: https://github.com/nypl-spacetime/nypl-warper
 
 - name: Building Inspector
   image: buildinginspector.jpg
   url: http://buildinginspector.nypl.org
   description: buildings, many buildings, addresses, crowdsourding, time history!
+  contribute: http://buildinginspector.nypl.org/
 
 - name: Centerlines
   image: centerlines.jpg
   url: http://spacetime.nypl.org/centerlines
-  description: centerlines centerlines centerlines centerlines centerlines
+  description: See 1854 street names, historical street names, Building Inspector maps from 1854
 
 
 - name: Place names
   image: placenames.jpg
   url: http://mgiraldo.github.io/placenames
-  description: place names place names place names place names place names
+  description: View names of buildings from Building Inspector, banks, hotels, restaurants, on map, 1854
 
 - name: Maps by Decade
   image: maps-by-decade.jpg
   url: http://spacetime.github.io/maps-by-decade/maps-by-decade.html
-  description: maps by decade1!!!! maaaaaaaps
+  description: See all New York City maps by decade, street-scale, grouped by decade.

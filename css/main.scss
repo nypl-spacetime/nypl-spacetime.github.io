@@ -237,7 +237,7 @@ ul, li {
   height: 60px;
   width: 110px;
   overflow: hidden;
-  background: url("../img/nypl.svg") no-repeat scroll 0px 0px/100px auto white;
+  background: url("{{ site.baseurl}}/images/nypl.svg") no-repeat scroll 0px 0px/100px auto white;
   text-indent: 120px;
   white-space: nowrap;
 
@@ -439,7 +439,7 @@ ul, li {
 
     @media screen and (max-width: 550px) {
       border-radius: 20px;
-      // background: url("../img/delmonicos.gif") no-repeat scroll 0% 0% / 100% auto transparent;
+      // background: url("{{ site.baseurl }}/images/delmonicos.gif") no-repeat scroll 0% 0% / 100% auto transparent;
       height: 264px;
       @include vendor-prefix(box-shadow, none);
 
@@ -727,55 +727,55 @@ $mapshadow: 10px;
 }
 
 .map1660 {
-  background-image: url("../img/lo.1660.jpg");
+  background-image: url("{{ site.baseurl }}/images/lo.1660.jpg");
 }
 
 .map1766 {
-  background-image: url("../img/lo.1766.jpg");
+  background-image: url("{{ site.baseurl }}/images/lo.1766.jpg");
 }
 
 .map1797 {
-  background-image: url("../img/lo.1797.jpg");
+  background-image: url("{{ site.baseurl }}/images/lo.1797.jpg");
 }
 
 .map1817 {
-  background-image: url("../img/lo.1817.jpg");
+  background-image: url("{{ site.baseurl }}/images/lo.1817.jpg");
 }
 
 .map1830 {
-  background-image: url("../img/lo.1830.jpg");
+  background-image: url("{{ site.baseurl }}/images/lo.1830.jpg");
 }
 
 .map1841 {
-  background-image: url("../img/lo.1841.jpg");
+  background-image: url("{{ site.baseurl }}/images/lo.1841.jpg");
 }
 
 .map1849 {
-  background-image: url("../img/lo.1849.jpg");
+  background-image: url("{{ site.baseurl }}/images/lo.1849.jpg");
 }
 
 .map1857 {
-  background-image: url("../img/lo.1857.jpg");
+  background-image: url("{{ site.baseurl }}/images/lo.1857.jpg");
 }
 
 .map1878 {
-  background-image: url("../img/lo.1878.jpg");
+  background-image: url("{{ site.baseurl }}/images/lo.1878.jpg");
 }
 
 .map1913 {
-  background-image: url("../img/lo.1913.jpg");
+  background-image: url("{{ site.baseurl }}/images/lo.1913.jpg");
 }
 
 .map1920 {
-  background-image: url("../img/lo.1920.jpg");
+  background-image: url("{{ site.baseurl }}/images/lo.1920.jpg");
 }
 
 .map1921 {
-  background-image: url("../img/lo.1921.jpg");
+  background-image: url("{{ site.baseurl }}/images/lo.1921.jpg");
 }
 
 .map2014 {
-  background-image: url("../img/lo.2014.jpg");
+  background-image: url("{{ site.baseurl }}/images/lo.2014.jpg");
 }
 
 #footer {
@@ -851,7 +851,7 @@ $mapshadow: 10px;
   -webkit-box-decoration-break: clone;
 }
 
-.project-container img {
+.project-container img.project-image {
   width: 100%;
   transition: all .05s ease-in-out;
 }
@@ -864,6 +864,23 @@ $mapshadow: 10px;
   background-color: darken($pagecolor, 1%);
 }
 
-.project-container:hover img {
+.project-container:hover img.project-image {
   transform: scale(1.06);
+}
+
+.button {
+	background-color: #F85200;
+	border-radius: 28px;
+	display: inline-block;
+	cursor: pointer;
+	color: white;
+	padding: 10px 13px;
+	text-decoration:none;
+  margin: 0 auto;
+}
+
+.github {
+  width: 1em;
+  top: 3px;
+  position: relative;
 }
