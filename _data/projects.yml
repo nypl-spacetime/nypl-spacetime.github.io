@@ -3,7 +3,7 @@
 - name: Map Warper
   image: mapwarper.jpg
   url: http://maps.nypl.org
-  contribute: yes
+  contribute: http://maps.nypl.org
   description: Map rectifying, browse maps, use maps in your own projects, thousands of public domain maps
   github: https://github.com/nypl-spacetime/nypl-warper
 
