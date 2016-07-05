@@ -702,14 +702,16 @@ $mapshadow: 5px;
   width: 100%;
   background-position: right 0;
   border-top: 1px solid $pagecolor;
-  @include vendor-prefix(box-shadow, inset ($mapshadow * 2) 0 $mapshadow (-$mapshadow * 2) #000);
+  border-left: 2px solid $headingcolor;
+  // @include vendor-prefix(box-shadow, inset ($mapshadow * 2) 0 $mapshadow (-$mapshadow * 2) #000);
 
   &:nth-child(1), &:nth-child(2) {
     border-top: none;
   }
 
   @media screen and (max-width: $mapwidth) {
-    @include vendor-prefix(box-shadow, none);
+    border-left: none;
+    // @include vendor-prefix(box-shadow, none);
   }
 
   h2 {
