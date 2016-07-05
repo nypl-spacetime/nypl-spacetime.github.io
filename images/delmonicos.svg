@@ -20,7 +20,7 @@ layout:
         width="550"
         height="400"
         id="usa" />
-            <text id="usa-text" sketch:type="MSTextLayer" font-family="'rooney-sans', Verdana, sans-serif" font-size="32" font-style="italic" font-weight="900" fill="#000000">
+            <text id="usa-text" sketch:type="MSTextLayer" font-family="'kievit bold', Helvetica, sans-serif" font-size="32" font-style="normal" font-weight="900" fill="#000000">
                 <tspan x="20" y="340">BUILD A SPACE/TIME DIRECTORY</tspan>
                 <tspan x="20" y="370">FOR YOUR CITY!</tspan>
             </text>

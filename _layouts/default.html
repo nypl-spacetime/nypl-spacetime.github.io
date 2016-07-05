@@ -11,9 +11,9 @@
     <meta name="description" content="NYC Space/Time Directory" />
     <link rel="stylesheet" href="{{ site.baseurl }}/css/normalize.css" />
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" />
-    <script src="//use.typekit.net/eja5ayu.js">
+    <!-- <script src="//use.typekit.net/eja5ayu.js">
     </script>
-    <script>try{Typekit.load();}catch(e){}</script>
+    <script>try{Typekit.load();}catch(e){}</script> -->
     <script src="{{ site.baseurl }}/js/jquery-1.11.2.min.js"></script>
     <script src="{{ site.baseurl }}/js/jquery.scrollTo.min.js"></script>
     <script src="{{ site.baseurl }}/js/jquery.easing.min.js"></script>
@@ -21,80 +21,15 @@
   </head>
   <body>
     <div id="content">
+      {% include header.html %}
+
       {{ content }}
     </div>
-    <div id="footer">
-      <p>    • <a href="http://www.nypl.org/help/about-nypl/legal-notices/privacy-policy">Privacy Policy</a> •    <a href="http://www.nypl.org/help/about-nypl/legal-notices/rules-and-regulations">Rules and Regulations</a> •<br /> • <a href="http://www.nypl.org/policy-patron-generated-web-content">Policy on Patron-Generated Web Content</a> •<br /> • <a href="http://www.nypl.org/help/about-nypl/legal-notices/website-terms-and-conditions">Terms and Conditions</a> •  </p>
-      <p>The data produced through this project is covered by a<br>
-        <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 1.0 Universal Public Domain</a> designation. By participating in this project, you agree that any copyrightable content you submit shall be subject to a <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons CC0 1.0 Universal Public Domain Dedication</a>
-      </p>
-      <p>A project of <a href="http://www.nypl.org/collections/labs">NYPL Labs</a> and the <a href="http://www.nypl.org/locations/divisions/map-division">Lionel Pincus and Princess Firyal Map Division</a>.</p>
-      <p>
-        <a href="http://www.nypl.org" class="nypl" title="Visit NYPL.org">
-          <span class="icon-icon_lion">
-            </span>The New York Public Library</a>
-          </p>
-          <p>© The New York Public Library, Astor, Lennox, and Tilden Foundation 2015</p>
-        </div>
-        <div id="maps">
-          <div class="map2014 map" >
-          </div>
-          <div class="map2014 map" >
-            <h2 class="bottom">PRESENT</h2>
-          </div>
-          <div class="map1921 map" >
-            <h2 class="top">1921</h2>
-            <h2 class="bottom">1921</h2>
-          </div>
-          <div class="map1920 map" >
-            <h2 class="top">1920</h2>
-            <h2 class="bottom">1920</h2>
-          </div>
-          <!-- <div class="map1913 map" >
-          <h2 class="top">1913</h2>
-          <h2 class="bottom">1913</h2>
-        </div> -->
-        <!-- <div class="map1878 map" >
-        <h2 class="top">1878</h2>
-        <h2 class="bottom">1878</h2>
-      </div> -->
-      <div class="map1857 map" >
-        <h2 class="top">1857</h2>
-        <h2 class="bottom">1857</h2>
-      </div>
-      <div class="map1849 map" >
-        <h2 class="top">1849</h2>
-        <h2 class="bottom">1849</h2>
-      </div>
-      <div class="map1841 map" >
-        <h2 class="top">1841</h2>
-        <h2 class="bottom">1841</h2>
-      </div>
-      <div class="map1830 map" >
-        <h2 class="top">1830</h2>
-        <h2 class="bottom">1830</h2>
-      </div>
-      <div class="map1817 map" >
-        <h2 class="top">1817</h2>
-        <h2 class="bottom">1817</h2>
-      </div>
-      <div class="map1797 map" >
-        <h2 class="top">1797</h2>
-        <h2 class="bottom">1797</h2>
-      </div>
-      <div class="map1766 map" >
-        <h2 class="top">1766</h2>
-        <h2 class="bottom">1766</h2>
-      </div>
-      <div class="map1660 map" >
-        <h2 class="top">1660</h2>
-        <h2 class="bottom">1660</h2>
-      </div>
-      <div class="thanks">
-        <p>Thanks for scrolling! :-)<br />
-        <a href="//spacetime.nypl.org/scrollnyc/">See these maps really big</a> or <a href="#content">go to top</a>.</p>
-      </div>
-    </div>
+
+{% include footer.html %}
+
+{% include scrollnyc.html %}
+
     <!-- preload svg-used assets -->
     <img src="{{ site.baseurl }}/images/delmonicos.svg" style="width:0;height:0;" />
     <img src="{{ site.baseurl }}/images/delmonicos.jpg" style="width:0;height:0;" />

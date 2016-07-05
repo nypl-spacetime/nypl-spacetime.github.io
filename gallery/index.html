@@ -1,39 +1,9 @@
 ---
 layout: default
 ---
-<p><a href="{{ site.baseurl }}/">Back to homepage</a></p>
-<h1>Projects</h1>
-<ul id="projects">
-{% for project in site.data.projects %}
-  <li>
-    <div class="project-container">
-      <a href="{{ project.url }}">
-      <img class="project-image" src="{{ site.baseurl}}/images/projects/{{ project.image }}" />
-      </a>
-      <h3>{{ project.name }}</h3>
-      <p>{{ project.description}}</p>
 
-      {% if project.github %}
-      <p>
-        <a href="{{ project.github }}">
-          <img class="github" src="{{ site.baseurl}}/images/github.svg" />
-          View project on GitHub
-        </a>
-      </p>
-      {% endif %}
+<div id="projects">
+{% include projectlist.html title="projects" type="project" %}
 
-      {% if project.contribute %}
-      <p>
-        <a class="button" href="{{ project.contribute }}">
-          Contribute!
-        </a>
-      </p>
-      {% endif %}
-    </div>
-  </li>
-{% endfor %}
-</ul>
-<h1>Sketches</h1>
-<ul id="sketches">
-  <p>Sketches and prototypes here!</p>
-</ul>
+{% include projectlist.html title="sketches" type="sketch" %}
+</div>

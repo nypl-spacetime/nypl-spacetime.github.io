@@ -433,7 +433,7 @@ $( document ).ready(function() {
       var parttop = $("#part3").offset().top;
       var deltatop = wintop - parttop + margin;
       var h = ani.height();
-      var nexttop = $("h2.part4").offset().top - margin; // minus a small margin
+      var nexttop = $("h2.part4").offset().top - (margin*3); // minus a small margin
       if (wintop+winh*.80 >= parttop) {
         // if (winw < mobilewidth) {
         //   anistopped = true;
