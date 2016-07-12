@@ -2,31 +2,64 @@
   image: mapwarper.jpg
   url: http://maps.nypl.org
   contribute: http://maps.nypl.org
-  description: Map rectifying, browse maps, use maps in your own projects, thousands of public domain maps
+  description: An online tool for browsing and rectifying thousands of public domain maps all free to use without restriction.
   github: https://github.com/nypl-spacetime/nypl-warper
-  category: project
+  category: featured
 
 - name: Building Inspector
   image: buildinginspector.jpg
   url: http://buildinginspector.nypl.org
-  description: buildings, many buildings, addresses, crowdsourding, time history!
+  description: Kill time and make history with this game for extracting place names, addresses, and building information from old maps.
   contribute: http://buildinginspector.nypl.org/
-  category: project
+  category: featured
+
+- name: Maps by Decade
+  image: maps-by-decade.jpg
+  url: http://spacetime.nypl.org/maps-by-decade/maps-by-decade.html
+  description: Move through the decades to see a snapshot of the library's street-scale, New York City maps from that era.
+  category: featured
 
 - name: Centerlines
   image: centerlines.jpg
   url: http://spacetime.nypl.org/centerlines
-  description: See 1854 street names, historical street names, Building Inspector maps from 1854
+  description: Want to be a tourist in New York City in 1854?  Get oriented with this map showing the lower Manhattan's street names and layout from that year.
   category: sketch
 
 - name: Place names
   image: placenames.jpg
   url: http://spacetime.nypl.org/placenames
-  description: View names of buildings from Building Inspector, banks, hotels, restaurants, on map, 1854
+  description: View all the buildings identified in Building Inspector and check out where 1854's coal yards, druggists, stables, and more were located.
   category: sketch
 
-- name: Maps by Decade
-  image: maps-by-decade.jpg
-  url: http://spacetime.nypl.org/maps-by-decade/maps-by-decade.html
-  description: See all New York City maps by decade, street-scale, grouped by decade.
+name: Menus
+  image: loremipsum.jpg
+  url: http://menus.nypl.org/
+  read: http://menus.nypl.org/
+  description: Search and explore 17,545 historic menus in New York City and beyond.
   category: sketch
+
+name: Menus
+  image: loremipsum.jpg
+  url: http://menus.nypl.org/
+  read: http://menus.nypl.org/
+  description: Search and explore 17,545 historic menus in New York City and beyond.
+  category: sketch
+
+name: Digital Collections
+  image: loremipsum.jpg
+  url: digitalcollections.nypl.org
+  description: The Library's database of digitized collections with new items being added every day, featuring prints, photographs, maps, manuscripts, streaming video, and more.
+  category: data
+
+name: Emigrant City
+  image: loremipsum.jpg
+  url: http://emigrantcity.nypl.org/#/data
+  description: An experimental resource for searching and exporting over 10,000 transcribed records from the mortgage and bond ledgers of the Emigrant Savings Bank.
+  category: data
+
+name: Placeholder Blog
+  image: loremipsum.jpg
+  url: http://maps.nypl.org
+  read: http://maps.nypl.org
+  description: Read about NYC Surveyor and some other stuff for example.
+  category: blog
