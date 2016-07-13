@@ -23,7 +23,7 @@
 - name: Digital Collections Chrome Tab
   image: loremipsum.jpg
   url: http://spacetime.nypl.org/surveyor-tab
-  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  description: Is Chrome your browser? Be greeted with a beautiful item from our Digital Collections everytime you open a new tab. Download the Library's Digital Collections Chrome extension.
   category: project
 
 - name: Building Inspector
@@ -61,7 +61,7 @@
 - name: Street View, Then and Now
   image: loremipsum.jpg
   url: http://publicdomain.nypl.org/fifth-avenue/
-  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
   category: sketch
 
 - name: Navigating the Green Book
@@ -95,7 +95,7 @@
 - name: Oral History
   image: loremipsum.jpg
   url: http://oralhistory.nypl.org/
-  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  description: The New York Public Library's Community Oral History Project is an initiative taking place at NYPL branches that aims to document, preserve, and celebrate the rich history of the city's unique neighborhoods by collecting the stories of people who have experienced it firsthand.
   category: resource
 
 - name: PIC
@@ -119,5 +119,5 @@
 - name: Stereogranimator
   image: loremipsum.jpg
   url: http://stereo.nypl.org/
-  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  description: Create and share 3D images from the stereograph collections of The New York Public Library (and others).
   category: resource
