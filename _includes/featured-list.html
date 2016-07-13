@@ -1,0 +1,37 @@
+<h2 class="part4">{{ include.title }}</h2>
+<ul class="featured">
+{% for project in site.data.projects %}
+
+  {% if project.category == include.type %}
+  <li>
+    <div class="project-container">
+      <div class="project-image-container">
+        <a href="{{ project.url }}" style="background-image: url({{ site.baseurl}}/images/projects/{{ project.image }});">
+        </a>
+      </div>
+      <h3>{{ project.name }}</h3>
+      <div class="project-description">
+        <p>{{ project.description}}</p>
+
+        {% if project.github %}
+        <p>
+          <a href="{{ project.github }}">
+            View project on GitHub
+          </a>
+        </p>
+        {% endif %}
+
+        {% if project.contribute %}
+        <p>
+          <a class="button" href="{{ project.contribute }}">
+            Contribute!
+          </a>
+        </p>
+        {% endif %}
+      </div>
+    </div>
+  </li>
+
+  {% endif %}
+{% endfor %}
+</ul>

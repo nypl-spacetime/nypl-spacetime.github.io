@@ -1,23 +1,50 @@
+################################################################################
+## Featured
+################################################################################
+
+- name: Surveyor
+  image: loremipsum.jpg
+  url: http://spacetime.nypl.org/surveyor
+  contribute: http://spacetime.nypl.org/surveyor
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  github: https://github.com/nypl-spacetime/surveyor
+  category: featured
+
+- name: Maps by Decade
+  image: maps-by-decade.jpg
+  url: http://spacetime.nypl.org/maps-by-decade/maps-by-decade
+  description: Move through the decades to see a snapshot of the library's street-scale, New York City maps from that era.
+  category: featured
+
+################################################################################
+## Projects
+################################################################################
+
+- name: Digital Collections Chrome Tab
+  image: loremipsum.jpg
+  url: http://spacetime.nypl.org/surveyor-tab
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  category: project
+
+- name: Building Inspector
+  image: buildinginspector.jpg
+  url: http://buildinginspector.nypl.org
+  description: Kill time and make history with this game for extracting place names, addresses, and building information from old maps.
+  github: https://github.com/nypl-spacetime/building-inspector
+  contribute: http://buildinginspector.nypl.org/
+  category: project
+
 - name: Map Warper
   image: mapwarper.jpg
   url: http://maps.nypl.org
   contribute: http://maps.nypl.org
   description: An online tool for browsing and rectifying thousands of public domain maps all free to use without restriction.
   github: https://github.com/nypl-spacetime/nypl-warper
-  category: featured
+  category: project
 
-- name: Building Inspector
-  image: buildinginspector.jpg
-  url: http://buildinginspector.nypl.org
-  description: Kill time and make history with this game for extracting place names, addresses, and building information from old maps.
-  contribute: http://buildinginspector.nypl.org/
-  category: featured
-
-- name: Maps by Decade
-  image: maps-by-decade.jpg
-  url: http://spacetime.nypl.org/maps-by-decade/maps-by-decade.html
-  description: Move through the decades to see a snapshot of the library's street-scale, New York City maps from that era.
-  category: featured
+################################################################################
+## Sketches
+################################################################################
 
 - name: Centerlines
   image: centerlines.jpg
@@ -28,38 +55,69 @@
 - name: Place names
   image: placenames.jpg
   url: http://spacetime.nypl.org/placenames
-  description: View all the buildings identified in Building Inspector and check out where 1854's coal yards, druggists, stables, and more were located.
+  description: View all the buildings identified in <a href="http://buildinginspector.nypl.org">Building Inspector</a> and check out where 1854's coal yards, druggists, stables, and more were located.
   category: sketch
 
-name: Menus
+- name: Street View, Then and Now
   image: loremipsum.jpg
-  url: http://menus.nypl.org/
-  read: http://menus.nypl.org/
-  description: Search and explore 17,545 historic menus in New York City and beyond.
+  url: http://publicdomain.nypl.org/fifth-avenue/
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   category: sketch
 
-name: Menus
+- name: Navigating the Green Book
   image: loremipsum.jpg
-  url: http://menus.nypl.org/
-  read: http://menus.nypl.org/
-  description: Search and explore 17,545 historic menus in New York City and beyond.
+  url: http://publicdomain.nypl.org/greenbook-map/
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   category: sketch
 
-name: Digital Collections
+- name: ScrollNYC
   image: loremipsum.jpg
-  url: digitalcollections.nypl.org
+  url: http://spacetime.nypl.org/scrollnyc
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  category: sketch
+
+################################################################################
+## Resources
+################################################################################
+
+- name: Digital Collections
+  image: loremipsum.jpg
+  url: http://digitalcollections.nypl.org/
   description: The Library's database of digitized collections with new items being added every day, featuring prints, photographs, maps, manuscripts, streaming video, and more.
-  category: data
+  category: resource
 
-name: Emigrant City
+- name: Visualize the Public Domain
+  image: loremipsum.jpg
+  url: http://publicdomain.nypl.org/pd-visualization/
+  description: The Library's database of digitized collections with new items being added every day, featuring prints, photographs, maps, manuscripts, streaming video, and more.
+  category: resource
+
+- name: Oral History
+  image: loremipsum.jpg
+  url: http://oralhistory.nypl.org/
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  category: resource
+
+- name: PIC
+  image: loremipsum.jpg
+  url: http://pic.nypl.org/
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  category: resource
+
+- name: Emigrant City
   image: loremipsum.jpg
   url: http://emigrantcity.nypl.org/#/data
   description: An experimental resource for searching and exporting over 10,000 transcribed records from the mortgage and bond ledgers of the Emigrant Savings Bank.
-  category: data
+  category: resource
 
-name: Placeholder Blog
+- name: Menus
   image: loremipsum.jpg
-  url: http://maps.nypl.org
-  read: http://maps.nypl.org
-  description: Read about NYC Surveyor and some other stuff for example.
-  category: blog
+  url: http://menus.nypl.org/
+  description: Search and explore 17,545 historic menus in New York City and beyond.
+  category: resource
+
+- name: Stereogranimator
+  image: loremipsum.jpg
+  url: http://stereo.nypl.org/
+  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  category: resource

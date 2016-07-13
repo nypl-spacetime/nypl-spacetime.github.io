@@ -1,10 +1,13 @@
 ---
 ---
 
-
 <div id="part1" class="bubble link link-v">
   <p>The New York Public Library is developing a major civic initiative aimed at turning historical maps and other geographic sources into a digital time-travel service for New York City.</p>
   <p>The NYC Space/Time Directory will make urban history accessible through a set of visualizations, crowdsourcing projects, tools, and data sources. It will provide a way for scholars, students, and enthusiasts to explore New York City across time periods, and to add their own knowledge and expertise.</p>
+</div>
+
+<div id="part7" class="bubble regular">
+  <p>Code! <a href="https://github.com/nypl-spacetime" class="biglink">GitHub</a>!</p>
 </div>
 
 <h2 class="">More specifically, the Directory will be:</h2>
@@ -14,34 +17,25 @@
   </div>
   <ul>
     <li><strong>A searchable atlas of New York City's past</strong> stitched together from the pages of old maps. (Think Google Maps, with a time slider).</li>
-
     <li><strong>A historical location directory and geocoder</strong> that helps you find your place in time. (Think historical FourSquare or Yelp!).</li>
-
     <li><strong>A discovery tool</strong> linking cultural heritage material (photographs, newspapers, business directories, literary references, census data, and much more) in historical and geographic context. (City as catalog).</li>
-
     <li><strong>A set of APIs and data sets</strong> that digital humanists, journalists, and developers can use to create new views of the past. (Vintage big data).</li>
-
     <li><strong>A model and code base</strong> for other cities and libraries to map their histories. (Time machine in a box).</li>
   </ul>
 </div>
 
-<div id="projects" class="">
+<div id="projects">
   <p>These are some of the projects and sketches related to our ongoing work on the Space/Time Directory:</p>
-{% include projectlist.html title="New 	&#38; Featured" type="featured" %}
-
-{% include projectlist.html title="Tools &#38; Experiments" type="sketch" %}
-
-{% include projectlist.html title="Collections and Data" type="data" %}
-
-{% include projectlist.html title="Blogs" type="blog" %}
+  {% include featured-list.html title="New &#38; Featured" type="featured" %}
+  {% include project-list.html title="Projects" type="project" %}
+  {% include project-list.html title="Tools &#38; Experiments" type="sketch" %}
+  {% include project-list.html title="Related resources" type="resource" %}
 </div>
-
 
 <h2 class="">Interested? Sign up to receive updates on new tools, new data sources, and engagement opportunities!</h2>
-<div id="part7" class="bubble  regular">
+<div id="part7" class="bubble regular">
   <p><a href="mailto:spacetime@nypl.org" class="biglink">spacetime@nypl.org</a></p>
 </div>
-<h2 class="">Start helping unlock the past today:</h2>
-<div id="part8" class="bubble  regular">
-  <p><a href="//buildinginspector.nypl.org" class="biglink"><img src="{{ site.baseurl }}/images/buildinginspector.svg" width="100%" /></a></p>
+<div id="part7" class="bubble regular">
+  <p><a href="https://twitter.com/nypl_labs" class="biglink">@nypl_labs</a></p>
 </div>
