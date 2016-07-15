@@ -1,7 +1,11 @@
 ---
 ---
 
-$pagecolor: #efefef;
+$nyplred: #ed1c24;
+$nypldarkgreen: #437529;
+$nypllightgreen: lighten($nypldarkgreen, 20%);
+
+$pagecolor: darken(#fff, 5%);
 $textcolor: darken(#424143, 10%);
 $headingcolor: darken(#67666A, 10%);
 $linkcolor: #F85200;
@@ -132,9 +136,9 @@ html {
 
 body {
   margin: 0 auto;
-  padding: 2rem 0 4rem;
+  padding: 0 0 4rem;
   @include textstyle;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.65;
   color: $textcolor;
 }
@@ -150,7 +154,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-  width: 60%;
+  // width: 60%;
   // @include fancy-shadow;
 
   @media screen and (max-width: $mainbreakpoint) {
@@ -166,10 +170,10 @@ h2 {
 
 h1 {
   font-size: 3rem;
-  line-height: .85;
+  line-height: 1.2;
   text-transform: uppercase;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 0;
 
   @media screen and (max-width: $mainbreakpoint) {
     font-size: 3rem;
@@ -215,32 +219,22 @@ ul, li {
 }
 
 /**/
-#logos {
-  // height: 80px;
-  // width: 460px;
-  margin: -40px 10px 40px 0;
+#header {
+  border-top: 2px solid $nypldarkgreen;
   background: white;
-  padding: 20px 20px 10px;
-  // border-radius: 0 0 10px 10px;
-  @include clearfix;
-
-  @media screen and (max-width: $mainbreakpoint) {
-    width: auto;
-    height: auto;
-    // text-align: center;
-    margin: -40px 10px 40px 10px;
+  .content {
+    padding: 2rem 1rem 2rem 2rem;
   }
-
 }
 
 .nypllogo {
   display: block;
-  float: left;
-  height: 40px;
-  width: 70px;
+  // float: left;
+  height: 3.5rem;
+  width: 6.25rem;
   overflow: hidden;
-  background: url("{{ site.baseurl}}/images/nypl.svg") no-repeat scroll 0px 0px/66px auto white;
-  text-indent: 80px;
+  background: url("{{ site.baseurl}}/images/nypl.svg") no-repeat scroll 0px 0px/6.25rem auto white;
+  text-indent: 12rem;
   white-space: nowrap;
 
   @media screen and (max-width: $mainbreakpoint) {
@@ -249,6 +243,21 @@ ul, li {
     // text-align: center;
   }
 
+}
+
+#subheader {
+  background-color: $nypllightgreen;
+  color: white;
+
+  .content {
+    padding: 2rem 1rem;
+    padding-left: (8.25rem + 1.8124rem);
+  }
+
+  h1, h2 {
+    margin: 0;
+    color: white;
+  }
 }
 
 .knightlogo {
@@ -268,10 +277,10 @@ ul, li {
 }
 
 /* MAIN STRUCTURE */
-#content {
+.content {
   // margin: 0 auto;
   max-width: $contentwidth;
-  margin: 0 $mapwidth 0 $linkmargin;
+  margin: 0 auto;
 
   @media screen and (max-width: $mainbreakpoint) {
     margin: 0 auto;

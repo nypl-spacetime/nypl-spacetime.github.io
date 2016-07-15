@@ -337,9 +337,9 @@ $( document ).ready(function() {
 
 
   gifWidth();
-  orderMaps();
-  mapBackground();
-  updateScroll()
+  // orderMaps();
+  // mapBackground();
+  // updateScroll()
 
   function gifWidth() {
     var winw = $(window).width();
