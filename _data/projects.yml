@@ -3,7 +3,7 @@
 ################################################################################
 
 - name: Surveyor
-  image: loremipsum.jpg
+  image: surveyor.jpg
   url: http://spacetime.nypl.org/surveyor
   contribute: http://spacetime.nypl.org/surveyor
   description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -47,7 +47,7 @@
   category: sketch
 
 - name: Navigating the Green Book
-  image: loremipsum.jpg
+  image: greenbooks.jpg
   url: http://publicdomain.nypl.org/greenbook-map/
   description: In the age of segregation, the Green Book listed hotels, restaurants, bars, and gas stations where black travelers were welcomed. Map out trips you would take with this tool.
   category: sketch
@@ -63,7 +63,7 @@
 ################################################################################
 
 - name: Digital Collections
-  image: loremipsum.jpg
+  image: digitalcollections.jpg
   url: http://digitalcollections.nypl.org/
   description: The Library's database of digitized collections with new items being added every day, featuring prints, photographs, maps, manuscripts, streaming video, and more.
   category: resource
