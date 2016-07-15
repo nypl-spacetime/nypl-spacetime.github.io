@@ -41,7 +41,7 @@
 ################################################################################
 
 - name: Street View, Then &amp; Now
-  image: loremipsum.jpg
+  image: fifthave.jpg
   url: http://publicdomain.nypl.org/fifth-avenue/
   description: Take a tour of the Fifth Avenue, past and present! Compare the photos from the 1911 Fifth Avenue from Start to Finish collection with 2015's Google Street View.
   category: sketch
@@ -53,7 +53,7 @@
   category: sketch
 
 - name: ScrollNYC
-  image: loremipsum.jpg
+  image: scroll.jpg
   url: http://spacetime.nypl.org/scrollnyc
   description: Peel away layers of the city's history with this visualization layering maps from 1660 through 2014.
   category: sketch
@@ -69,37 +69,37 @@
   category: resource
 
 - name: Visualize the Public Domain
-  image: loremipsum.jpg
+  image: digitalcollections.jpg
   url: http://publicdomain.nypl.org/pd-visualization/
   description: The Library's database of digitized collections with new items being added every day, featuring maps, prints, photographs, manuscripts, streaming video, and more.
   category: resource
 
 - name: Oral History
-  image: loremipsum.jpg
+  image: oralhistory.jpg
   url: http://oralhistory.nypl.org/
   description: The New York Public Library's Community Oral History Project is an initiative taking place at NYPL branches that aims to document, preserve, and celebrate the rich history of the city's unique neighborhoods by collecting the stories of people who have experienced it firsthand.
   category: resource
 
 - name: Photographers’ Identities Catalog (PIC)
-  image: loremipsum.jpg
+  image: pic.jpg
   url: http://pic.nypl.org/
   description: Photographers’ Identities Catalog (PIC) is an experimental interface to a collection of biographical data describing photographers, studios, manufacturers, and others involved in the production of photographic images. The vast and growing resource is created through extensive original research by NYPL Photography Collection staff.
   category: resource
 
 - name: Emigrant City
-  image: loremipsum.jpg
+  image: emigrant.jpg
   url: http://emigrantcity.nypl.org/#/data
   description: An experimental resource for searching and exporting over 10,000 transcribed records from the mortgage and bond ledgers of the Emigrant Savings Bank. Browse and download the records, or pitch in on verifying their transcriptions!
   category: resource
 
 - name: Menus
-  image: loremipsum.jpg
+  image: menus.jpg
   url: http://menus.nypl.org/
   description: Search and explore the dishes and locations of 17,545 historic menus from New York City and beyond.
   category: resource
 
 - name: Stereogranimator
-  image: loremipsum.jpg
+  image: stereo.jpg
   url: http://stereo.nypl.org/
   description: Create and share 3D images from the stereograph collections of The New York Public Library (and others). You can even use your own Flickr photos.
   category: resource
