@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <title>NYC Space/Time Directory</title>
     <meta name="description" content="NYC Space/Time Directory" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/normalize.css" />
+    <!-- <link rel="stylesheet" href="{{ site.baseurl }}/css/normalize.css" /> -->
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" />
     <!-- <script src="//use.typekit.net/eja5ayu.js">
     </script>
@@ -20,11 +20,10 @@
     <script src="{{ site.baseurl }}/js/snap.svg-min.js"></script>
   </head>
   <body>
-    <div class="wrapper">
-      {% include header.html %}
 
-      {{ content }}
-    </div>
+{% include header.html %}
+
+{{ content }}
 
 {% include footer.html %}
 

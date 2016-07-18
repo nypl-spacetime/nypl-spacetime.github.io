@@ -332,11 +332,11 @@ $( document ).ready(function() {
 
   if (!firstmap && isdevice) {
     firstmap = true;
-    $(".map").first().remove();
+    // $(".map").first().remove();
   }
 
 
-  gifWidth();
+  // gifWidth();
   // orderMaps();
   // mapBackground();
   // updateScroll()
@@ -461,12 +461,12 @@ $( document ).ready(function() {
   }
 
   $(window).resize( function (e) {
-    gifWidth();
-    mapBackground();
+    // gifWidth();
+    // mapBackground();
   });
 
   $(window).scroll( function (e) {
-    updateScroll();
+    // updateScroll();
   });
 
 });

@@ -80,7 +80,7 @@
   description: The New York Public Library's Community Oral History Project is an initiative taking place at NYPL branches that aims to document, preserve, and celebrate the rich history of the city's unique neighborhoods by collecting the stories of people who have experienced it firsthand.
   category: resource
 
-- name: Photographers’ Identities Catalog (PIC)
+- name: Photographers’ Identities Catalog
   image: pic.jpg
   url: http://pic.nypl.org/
   description: Photographers’ Identities Catalog (PIC) is an experimental interface to a collection of biographical data describing photographers, studios, manufacturers, and others involved in the production of photographic images. The vast and growing resource is created through extensive original research by NYPL Photography Collection staff.

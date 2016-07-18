@@ -5,6 +5,7 @@ $nyplred: #ed1c24;
 $nypldarkgreen: #437529;
 $nypllightgreen: lighten($nypldarkgreen, 20%);
 
+$basefontsize: 16px;
 $pagecolor: darken(#fff, 5%);
 $textcolor: darken(#424143, 10%);
 $headingcolor: darken(#67666A, 10%);
@@ -17,6 +18,8 @@ $linksize: 30px;
 $iconsize: 150px;
 $mapwidth: 460px;
 $contentwidth: 1024px;
+$projectborder: 3px;
+$timelinearrow: 1rem;
 
 $mainbreakpoint: 980px;
 $mobilebreakpoint: 800px;
@@ -67,6 +70,11 @@ $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu
   -moz-#{$name}: #{$argument};
   -o-#{$name}: #{$argument};
   #{$name}: #{$argument};
+}
+
+@mixin map_left($year) {
+  $left: ($year - 1660)/(2016 - 1660) * 100;
+  left: 0% + $left;
 }
 
 /* icomoon stuff */
@@ -138,9 +146,13 @@ body {
   margin: 0 auto;
   padding: 0 0 4rem;
   @include textstyle;
-  font-size: 16px;
+  font-size: $basefontsize;
   line-height: 1.65;
   color: $textcolor;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    font-size: $basefontsize * 0.9;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -162,10 +174,6 @@ h2 {
     margin-left: 30px;
     margin-right: 30px;
   }
-}
-
-.centered {
-  text-align: center;
 }
 
 h1 {
@@ -194,7 +202,18 @@ h2 {
 }
 
 p {
+  max-width: 60rem;
+
+  &.major-headline {
+    font-size: 2rem;
+  }
+
+  &.minor-headline {
+    font-size: 1.5rem;
+  }
+
   @media screen and (max-width: $mainbreakpoint) {
+    max-width: 45rem;
     line-height: 1.3;
   }
 }
@@ -216,6 +235,10 @@ ul, li {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.centered {
+  text-align: center;
 }
 
 /**/
@@ -250,8 +273,8 @@ ul, li {
   color: white;
 
   .content {
-    padding: 2rem 1rem;
-    padding-left: (8.25rem + 1.8124rem);
+    // padding: 2rem 1rem;
+    // padding-left: (8.25rem + 1.8124rem);
   }
 
   h1, h2 {
@@ -281,62 +304,64 @@ ul, li {
   // margin: 0 auto;
   max-width: $contentwidth;
   margin: 0 auto;
+  padding: 2rem 1rem;
+  padding-left: (8.25rem + 1.8124rem);
 
   @media screen and (max-width: $mainbreakpoint) {
     margin: 0 auto;
   }
 }
 
-#maps {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: $mapwidth;
-  z-index: -1;
+// #maps {
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+//   width: $mapwidth;
+//   z-index: -1;
 
-  @media screen and (max-width: $mapwidth) {
-    width: 100%;
-  }
-}
+//   @media screen and (max-width: $mapwidth) {
+//     width: 100%;
+//   }
+// }
 
-#snap {
-  width: 550px;
-  height: 400px;
-  background-color: $bubblecolor;
-  border-radius: 20px;
-  // box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
-  @media screen and (max-width: 550px) {
-    width: auto;
-    height: 100%;
-  }
-}
+// #snap {
+//   width: 550px;
+//   height: 400px;
+//   background-color: $bubblecolor;
+//   border-radius: 20px;
+//   // box-shadow: 0 0 10px 0px rgba(0,0,0,0.5);
+//   @media screen and (max-width: 550px) {
+//     width: auto;
+//     height: 100%;
+//   }
+// }
 
 /* CONTENT */
-.bubble {
-  position: relative;
-  // width: 60%;
-  // padding: 1px ($radius * 2);
-  // margin: $linksize 10px;
-  // background-color: $bubblecolor;
-  // border-radius: ($radius * 4) $radius;
+// .bubble {
+//   position: relative;
+//   // width: 60%;
+//   // padding: 1px ($radius * 2);
+//   // margin: $linksize 10px;
+//   // background-color: $bubblecolor;
+//   // border-radius: ($radius * 4) $radius;
 
-  h2 {
-    // @include fancy-shadow($bubblecolor);
-  }
+//   h2 {
+//     // @include fancy-shadow($bubblecolor);
+//   }
 
-  p {
-    margin-right: 1rem;
-  }
+//   p {
+//     margin-right: 1rem;
+//   }
 
-  @media screen and (max-width: $mobilebreakpoint) {
-    // width: auto;
-    // margin-left: 30px;
-    // margin-right: 30px;
-    // padding: 1px $radius;
-    // border-radius: $radius;
-    // padding: $radius $radius*2;
-  }
-}
+//   @media screen and (max-width: $mobilebreakpoint) {
+//     // width: auto;
+//     // margin-left: 30px;
+//     // margin-right: 30px;
+//     // padding: 1px $radius;
+//     // border-radius: $radius;
+//     // padding: $radius $radius*2;
+//   }
+// }
 
 .biglink {
   text-transform: uppercase;
@@ -434,231 +459,231 @@ ul, li {
 /* END LINK BARS */
 
 /* ICONS */
-#part3 {
-  position: relative;
-  @include clearfix;
+// #part3 {
+//   position: relative;
+//   @include clearfix;
 
-  #animation {
-    display: none;
-    position: absolute;
-    width: 550px;
-    height: 400px;
-    top: 0;
-    left: 410px;
-    // @include vendor-prefix(box-shadow, 0 0 10px 0 rgba(0,0,0,0.5));
-    // border-radius: 20px;
+//   #animation {
+//     display: none;
+//     position: absolute;
+//     width: 550px;
+//     height: 400px;
+//     top: 0;
+//     left: 410px;
+//     // @include vendor-prefix(box-shadow, 0 0 10px 0 rgba(0,0,0,0.5));
+//     // border-radius: 20px;
 
-    @media screen and (max-width: $mainbreakpoint) {
-      display: block;
-      position: relative;
-      top: auto;
-      left: auto;
-      margin-right: auto;
-      margin-left: auto;
-    }
+//     @media screen and (max-width: $mainbreakpoint) {
+//       display: block;
+//       position: relative;
+//       top: auto;
+//       left: auto;
+//       margin-right: auto;
+//       margin-left: auto;
+//     }
 
-    @media screen and (max-width: 550px) {
-      // border-radius: 20px;
-      // background: url("{{ site.baseurl }}/images/delmonicos.gif") no-repeat scroll 0% 0% / 100% auto transparent;
-      height: 264px;
-      // @include vendor-prefix(box-shadow, none);
+//     @media screen and (max-width: 550px) {
+//       // border-radius: 20px;
+//       // background: url("{{ site.baseurl }}/images/delmonicos.gif") no-repeat scroll 0% 0% / 100% auto transparent;
+//       height: 264px;
+//       // @include vendor-prefix(box-shadow, none);
 
-      // svg {
-      //   display: none;
-      // }
-    }
-  }
+//       // svg {
+//       //   display: none;
+//       // }
+//     }
+//   }
 
-  ul {
-    width: 410px;
-    // padding-top: 2rem;
-    // padding-bottom: 2rem;
+//   ul {
+//     width: 410px;
+//     // padding-top: 2rem;
+//     // padding-bottom: 2rem;
 
-    @media screen and (max-width: $mainbreakpoint) {
-      font-size: 1.2rem;
-      width: auto;
-      min-width: 280px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+//     @media screen and (max-width: $mainbreakpoint) {
+//       font-size: 1.2rem;
+//       width: auto;
+//       min-width: 280px;
+//       max-width: 600px;
+//       margin: 0 auto;
+//     }
 
-    @media screen and (max-width: $mobilebreakpoint) {
-      padding-top: 0;
-    }
-  }
+//     @media screen and (max-width: $mobilebreakpoint) {
+//       padding-top: 0;
+//     }
+//   }
 
-  li {
-    clear: both;
-    // padding: 1px;
-    margin: $radius*3 0 0 0;
-    // padding: $radius ($radius * 2);
-    text-align: left;
-    // @include titlestyle;
-    // text-align: right;
+//   li {
+//     clear: both;
+//     // padding: 1px;
+//     margin: $radius*3 0 0 0;
+//     // padding: $radius ($radius * 2);
+//     text-align: left;
+//     // @include titlestyle;
+//     // text-align: right;
 
-    @media screen and (max-width: $mainbreakpoint) {
-      text-align: center;
-      margin-top: $radius;
-      padding: $radius;
-      // @include fancy-shadow;
-    }
-  }
-}
+//     @media screen and (max-width: $mainbreakpoint) {
+//       text-align: center;
+//       margin-top: $radius;
+//       padding: $radius;
+//       // @include fancy-shadow;
+//     }
+//   }
+// }
 
-#part6 {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: $linkmargin;
+// #part6 {
+//   width: 90%;
+//   margin-left: auto;
+//   margin-right: auto;
+//   margin-bottom: $linkmargin;
 
-  ul {
-    @include clearfix;
-  }
+//   ul {
+//     @include clearfix;
+//   }
 
-  li {
-    position: relative;
-    float: left;
-    width: 50%;
-    height: 340px;
-    padding: $radius ($radius * 2);
-    color: $textcolor;
-    background-color: $iconcolor;
-    @include clearfix;
+//   li {
+//     position: relative;
+//     float: left;
+//     width: 50%;
+//     height: 340px;
+//     padding: $radius ($radius * 2);
+//     color: $textcolor;
+//     background-color: $iconcolor;
+//     @include clearfix;
 
-    @media screen and (max-width: $mobilebreakpoint) {
-      float: none;
-      width: auto;
-      height: auto;
-      padding-bottom: 100px;
-      border-radius: 0;
-    }
+//     @media screen and (max-width: $mobilebreakpoint) {
+//       float: none;
+//       width: auto;
+//       height: auto;
+//       padding-bottom: 100px;
+//       border-radius: 0;
+//     }
 
-    a {
-      display: inline-block;
-      background-color: $linkcolor;
-      color: $pagecolor;
-      padding: 0 10px;
-      border-radius: 5px;
-    }
+//     a {
+//       display: inline-block;
+//       background-color: $linkcolor;
+//       color: $pagecolor;
+//       padding: 0 10px;
+//       border-radius: 5px;
+//     }
 
-    h3, p {
-      color: $pagecolor;
-    }
+//     h3, p {
+//       color: $pagecolor;
+//     }
 
-    &:nth-child(2n) {
-      float: right;
-      text-align: left;
+//     &:nth-child(2n) {
+//       float: right;
+//       text-align: left;
 
-      @media screen and (max-width: $mobilebreakpoint) {
-        float: none;
-      }
-    }
+//       @media screen and (max-width: $mobilebreakpoint) {
+//         float: none;
+//       }
+//     }
 
-    &:nth-child(2), &:nth-child(3) {
-      background-color: $bubblecolor;
+//     &:nth-child(2), &:nth-child(3) {
+//       background-color: $bubblecolor;
 
-      h3, .icon, p {
-        color: $headingcolor;
-      }
-    }
+//       h3, .icon, p {
+//         color: $headingcolor;
+//       }
+//     }
 
-    &:nth-child(1) {
-      border-radius: $radius 0 0 0;
+//     &:nth-child(1) {
+//       border-radius: $radius 0 0 0;
 
-      @media screen and (max-width: $mobilebreakpoint) {
-        border-radius: $radius $radius 0 0;
-      }
-    }
+//       @media screen and (max-width: $mobilebreakpoint) {
+//         border-radius: $radius $radius 0 0;
+//       }
+//     }
 
-    &:nth-child(2) {
-      border-radius: 0 $radius 0 0;
+//     &:nth-child(2) {
+//       border-radius: 0 $radius 0 0;
 
-      @media screen and (max-width: $mobilebreakpoint) {
-        border-radius: 0;
-      }
-    }
+//       @media screen and (max-width: $mobilebreakpoint) {
+//         border-radius: 0;
+//       }
+//     }
 
-    &:nth-child(3) {
-      border-radius: 0 0 0 $radius;
+//     &:nth-child(3) {
+//       border-radius: 0 0 0 $radius;
 
-      @media screen and (max-width: $mobilebreakpoint) {
-        border-radius: 0;
-        background-color: $headingcolor;
+//       @media screen and (max-width: $mobilebreakpoint) {
+//         border-radius: 0;
+//         background-color: $headingcolor;
 
-        h3, .icon, p {
-          color: $bubblecolor;
-        }
-      }
-    }
+//         h3, .icon, p {
+//           color: $bubblecolor;
+//         }
+//       }
+//     }
 
-    &:nth-child(4) {
-      border-radius: 0 0 $radius 0;
+//     &:nth-child(4) {
+//       border-radius: 0 0 $radius 0;
 
-      @media screen and (max-width: $mobilebreakpoint) {
-        border-radius: 0 0 $radius $radius;
-        background-color: $bubblecolor;
+//       @media screen and (max-width: $mobilebreakpoint) {
+//         border-radius: 0 0 $radius $radius;
+//         background-color: $bubblecolor;
 
-        h3, .icon, p {
-          color: $headingcolor;
-        }
-      }
-    }
-  }
+//         h3, .icon, p {
+//           color: $headingcolor;
+//         }
+//       }
+//     }
+//   }
 
-  .icon {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    font-size: 150px;
-    bottom: 0;
-    right: ($radius * 2);
-    color: $pagecolor;
+//   .icon {
+//     position: absolute;
+//     width: 150px;
+//     height: 150px;
+//     font-size: 150px;
+//     bottom: 0;
+//     right: ($radius * 2);
+//     color: $pagecolor;
 
-    &.left {
-      right: auto;
-      left: ($radius * 2);
-    }
+//     &.left {
+//       right: auto;
+//       left: ($radius * 2);
+//     }
 
-    @media screen and (max-width: $mobilebreakpoint) {
-      width: 100px;
-      height: 100px;
-      font-size: 100px;
-    }
-  }
-}
+//     @media screen and (max-width: $mobilebreakpoint) {
+//       width: 100px;
+//       height: 100px;
+//       font-size: 100px;
+//     }
+//   }
+// }
 
-.regular {
-  // margin-left: auto;
-  // margin-right: auto;
-  border-radius: $radius;
+// .regular {
+//   // margin-left: auto;
+//   // margin-right: auto;
+//   border-radius: $radius;
 
-  @media screen and (max-width: $mainbreakpoint) {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-}
+//   @media screen and (max-width: $mainbreakpoint) {
+//     margin-left: 30px;
+//     margin-right: 30px;
+//   }
+// }
 
-#part7, #part8 {
-  width: 50%;
+// #part7, #part8 {
+//   width: 50%;
 
-  @media screen and (max-width: $mainbreakpoint) {
-    margin-left: auto;
-    margin-right: auto;
-  }
+//   @media screen and (max-width: $mainbreakpoint) {
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
 
-  @media screen and (max-width: $mobilebreakpoint) {
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 400px;
-  }
+//   @media screen and (max-width: $mobilebreakpoint) {
+//     width: auto;
+//     margin-left: auto;
+//     margin-right: auto;
+//     max-width: 400px;
+//   }
 
-  @media screen and (max-width: 550px) {
-    margin-left: $radius*2;
-    margin-right: $radius*2;
-    max-width: 100%;
-  }
-}
+//   @media screen and (max-width: 550px) {
+//     margin-left: $radius*2;
+//     margin-right: $radius*2;
+//     max-width: 100%;
+//   }
+// }
 
 .fineprint {
   margin: 10rem $mapwidth 4rem 0;
@@ -698,106 +723,84 @@ ul, li {
 }
 
 /* MAPS */
-$mapshadow: 5px;
+
 .map {
   position: relative;
-  float: left;
   clear: both;
   margin: 0;
-  height: 500px;
-  background-size: $mapwidth;
-  background-attachment: fixed;
+  height: 200px;
+  // background-size: cover;
+  // background-attachment: fixed;
   background-repeat: no-repeat;
   width: 100%;
-  background-position: right 0;
-  border-top: 1px solid $pagecolor;
-  border-left: 2px solid $headingcolor;
+  background-position: center 0;
+  // border-top: 1px solid $pagecolor;
+  border-bottom: 1px solid $pagecolor;
   // @include vendor-prefix(box-shadow, inset ($mapshadow * 2) 0 $mapshadow (-$mapshadow * 2) #000);
 
   &:nth-child(1), &:nth-child(2) {
     border-top: none;
   }
 
-  @media screen and (max-width: $mapwidth) {
-    border-left: none;
+  @media screen and (max-width: $mainbreakpoint) {
+    // border-left: none;
     // @include vendor-prefix(box-shadow, none);
   }
 
   h2 {
     position: absolute;
-    right: 10px;
+    right: 0;
+    left: 0;
     font-family: $mainfont;
     font-style: normal;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0 10px 0 0;
     color: #fff;
-    text-align: right;
+    width: 5rem;
+    text-align: center;
     @include vendor-prefix('text-shadow', 0 0 4px #000);
 
     @media screen and (max-width: $mobilebreakpoint) {
       display: none;
     }
 
+    &.top:before, &.bottom:after {
+        display: block;
+        position: absolute;
+        left: 0;
+        content: "";
+        width: $timelinearrow;
+        height: $timelinearrow;
+        border: $timelinearrow solid transparent;
+    }
+
     &.top {
-      top: 0;
+      top: $timelinearrow;
+
+      &:before {
+        top: -$timelinearrow*2;
+        border-bottom-color: $nypllightgreen;
+      }
     }
 
     &.bottom {
-      bottom: 0;
+      bottom: $timelinearrow;
+
+      &:after {
+        bottom: -$timelinearrow*2;
+        border-top-color: $nypllightgreen;
+      }
     }
   }
 }
 
-.map1660 {
-  background-image: url("{{ site.baseurl }}/images/lo.1660.jpg");
-}
-
-.map1766 {
-  background-image: url("{{ site.baseurl }}/images/lo.1766.jpg");
-}
-
-.map1797 {
-  background-image: url("{{ site.baseurl }}/images/lo.1797.jpg");
-}
-
-.map1817 {
-  background-image: url("{{ site.baseurl }}/images/lo.1817.jpg");
-}
-
-.map1830 {
-  background-image: url("{{ site.baseurl }}/images/lo.1830.jpg");
-}
-
-.map1841 {
-  background-image: url("{{ site.baseurl }}/images/lo.1841.jpg");
-}
-
-.map1849 {
-  background-image: url("{{ site.baseurl }}/images/lo.1849.jpg");
-}
-
-.map1857 {
-  background-image: url("{{ site.baseurl }}/images/lo.1857.jpg");
-}
-
-.map1878 {
-  background-image: url("{{ site.baseurl }}/images/lo.1878.jpg");
-}
-
-.map1913 {
-  background-image: url("{{ site.baseurl }}/images/lo.1913.jpg");
-}
-
-.map1920 {
-  background-image: url("{{ site.baseurl }}/images/lo.1920.jpg");
-}
-
-.map1921 {
-  background-image: url("{{ site.baseurl }}/images/lo.1921.jpg");
-}
-
-.map2014 {
-  background-image: url("{{ site.baseurl }}/images/lo.2014.jpg");
+@each $year in 1660, 1766, 1797, 1817, 1830, 1841, 1849, 1857, 1878, 1913, 1920, 1921, 2014 {
+  .map#{$year} {
+    background-image: url("{{ site.baseurl }}/images/layer_#{$year}.jpg");
+    h2 {
+      @include map_left($year);
+    }
+  }
 }
 
 #footer {
@@ -842,7 +845,6 @@ $mapshadow: 5px;
 //     display: block;
 //     padding-top: 66.65%;
 
-$projectborder: 4px;
 
 #projects {
   @include clearfix;
@@ -852,29 +854,35 @@ $projectborder: 4px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .projects li {
-  width: $contentwidth / 3;
+  width: 32%;
   box-sizing: border-box;
 }
 
-.featured li {
-  width: 100%;
+li.project-container {
+  &.featured {
+    width: 100%;
+    .project-image-container {
+      height: 20rem;
+    }
+  }
+
+  &.project {
+    width: 49%;
+  }
 }
 
-.featured .project-container {
-
-}
-
-.featured .project-image-container {
+.project-image-container {
   width: 100%;
 }
 
 .project-container {
   position: relative;
   background-color: $pagecolor;
-  padding: 10px;
+  // padding: 10px;
 }
 
 .project-container h3 {
@@ -883,11 +891,11 @@ $projectborder: 4px;
   left: 0;
   padding: 10px;
   background-color: $pagecolor;
+  line-height: 1.1;
   margin: 0;
-  border: $projectborder solid $linkcolor;
-  border-top: none;
-  border-left: none;
+  border-bottom: $projectborder solid $linkcolor;
   display: inline;
+  width: 80%;
   -webkit-box-decoration-break: clone;
 }
 
