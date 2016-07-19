@@ -414,15 +414,6 @@ ul, li {
   font-size: 0.7rem;
   line-height: 1.4;
 
-  @media screen and (max-width: $mainbreakpoint) {
-    margin-left: $radius*2;
-    margin-right: $radius*2;
-    text-align: center;
-    background-color: $bubblecolor;
-    border-radius: $radius;
-    padding: $radius;
-  }
-
   p {
     max-width: 40rem;
     text-align: center;
