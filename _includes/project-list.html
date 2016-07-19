@@ -1,8 +1,16 @@
-<h2 class="">{{ include.title }}</h2>
-<ul class="projects">
-{% for project in site.data.projects %}
+{% for category in site.data.projects %}
+  {% if category.type == include.type %}
+  {% assign the_category = category %}
+  {% endif %}
+{% endfor %}
 
-  {% if project.category == include.type %}
+<h2 class="project-type">{{ the_category.title }}</h2>
+
+<p class="minor-headline">{{ the_category.description }}</p>
+
+<ul class="projects">
+{% for project in the_category.projects %}
+
   <li class="project-container {{ project.category }}">
       <div class="project-image-container">
         <a href="{{ project.url }}" class="noborder">
@@ -31,6 +39,5 @@
       </div>
   </li>
 
-  {% endif %}
 {% endfor %}
 </ul>

@@ -5,7 +5,7 @@ $nyplred: #ed1c24;
 $nypldarkgreen: #437529;
 $nypllightgreen: lighten($nypldarkgreen, 20%);
 
-$basefontsize: 16px;
+$basefontsize: 18px;
 $pagecolor: darken(#fff, 5%);
 $textcolor: darken(#424143, 10%);
 $headingcolor: darken(#67666A, 10%);
@@ -312,7 +312,7 @@ ul, li {
   position: relative;
   clear: both;
   margin: 0;
-  height: 200px;
+  height: 133px;
   // background-size: cover;
   // background-attachment: fixed;
   background-repeat: no-repeat;
@@ -429,6 +429,12 @@ ul, li {
   @include clearfix;
 }
 
+h2.project-type {
+  border-top: 2px solid $textcolor;
+  padding-top: 1rem;
+  font-family: $mainfont;
+}
+
 .projects {
   display: flex;
   flex-direction: row;
@@ -446,27 +452,21 @@ li.project-container {
   margin-bottom: 2rem;
 
   h3 {
-    position: absolute;
     font-family: $mainfont;
-    bottom: 0;
-    left: 0;
-    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    padding: 1rem 0 0 0;
     background-color: $pagecolor;
     line-height: 1;
     margin: 0;
-    border-right: $projectborder solid $linkcolor;
-    display: inline;
-    width: 80%;
-    -webkit-box-decoration-break: clone;
+    border-top: $projectborder solid $linkcolor;
   }
 
   p {
-    padding: 0 0.5rem;
+    padding: 0;
   }
 
   .project-image-container {
     position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 
     a {
       display: block;
@@ -483,15 +483,26 @@ li.project-container {
 
   }
 
+  .project-description {
+    padding-top: 1rem;
+  }
+
   &.featured {
     width: 100%;
 
     h3 {
       font-size: 2rem;
-      // height: 20rem;
-      width: 32%;
-      // border-top: none;
-      // border-right: $projectborder solid $linkcolor;
+      position: absolute;
+      font-family: $mainfont;
+      bottom: 0;
+      left: 0;
+      background-color: $pagecolor;
+      line-height: 1;
+      margin: 0;
+      border-top: none;
+      border-right: $projectborder solid $linkcolor;
+      width: 49%;
+      -webkit-box-decoration-break: clone;
     }
 
     .project-image-container {
@@ -505,7 +516,6 @@ li.project-container {
 
     h3 {
       font-size: 1.5rem;
-      width: 65%;
     }
   }
 

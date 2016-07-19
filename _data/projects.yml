@@ -2,104 +2,120 @@
 ## Featured
 ################################################################################
 
-- name: Surveyor
-  image: surveyor.jpg
-  url: http://spacetime.nypl.org/surveyor
-  contribute: http://spacetime.nypl.org/surveyor
-  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  github: https://github.com/nypl-spacetime/surveyor
-  category: featured
+- type: featured
+  title: New &#38; Featured
+  description: the description of FEATURED is here and is super interesting!
+  projects:
+    - name: Surveyor
+      image: surveyor.jpg
+      url: http://spacetime.nypl.org/surveyor
+      contribute: http://spacetime.nypl.org/surveyor
+      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      github: https://github.com/nypl-spacetime/surveyor
+      category: featured
 
-- name: Maps by Decade
-  image: maps-by-decade.jpg
-  url: http://spacetime.nypl.org/maps-by-decade/maps-by-decade
-  description: Move through the decades to see a snapshot of the library's street-scale, New York City maps from that era.
-  category: featured
+    - name: Maps by Decade
+      image: maps-by-decade.jpg
+      url: http://spacetime.nypl.org/maps-by-decade/maps-by-decade
+      description: Move through the decades to see a snapshot of the library's street-scale, New York City maps from that era.
+      category: featured
 
 ################################################################################
 ## Projects
 ################################################################################
 
-- name: Building Inspector
-  image: buildinginspector.jpg
-  url: http://buildinginspector.nypl.org
-  description: Kill time and make history with this game for transcribing place names, addresses, and building information from old maps.
-  github: https://github.com/nypl-spacetime/building-inspector
-  contribute: http://buildinginspector.nypl.org/
-  category: project
+- type: project
+  title: Projects
+  description: the description of PROJECTSSS is here and is super interesting!
+  projects:
+    - name: Building Inspector
+      image: buildinginspector.jpg
+      url: http://buildinginspector.nypl.org
+      description: Kill time and make history with this game for transcribing place names, addresses, and building information from old maps.
+      github: https://github.com/nypl-spacetime/building-inspector
+      contribute: http://buildinginspector.nypl.org/
+      category: project
 
-- name: Map Warper
-  image: mapwarper.jpg
-  url: http://maps.nypl.org
-  contribute: http://maps.nypl.org
-  description: An online tool for browsing and rectifying thousands of public domain maps all free to use without restriction.
-  github: https://github.com/nypl-spacetime/nypl-warper
-  category: project
+    - name: Map Warper
+      image: mapwarper.jpg
+      url: http://maps.nypl.org
+      contribute: http://maps.nypl.org
+      description: An online tool for browsing and rectifying thousands of public domain maps all free to use without restriction.
+      github: https://github.com/nypl-spacetime/nypl-warper
+      category: project
 
 ################################################################################
 ## Sketches
 ################################################################################
 
-- name: Street View, Then &amp; Now
-  image: fifthave.jpg
-  url: http://publicdomain.nypl.org/fifth-avenue/
-  description: Take a tour of the Fifth Avenue, past and present! Compare the photos from the 1911 Fifth Avenue from Start to Finish collection with 2015's Google Street View.
-  category: sketch
+- type: sketch
+  title: Tools &#38; Experiments
+  description: the description of SKETCHORZ is here and is super interesting!
+  projects:
+    - name: Street View, Then &amp; Now
+      image: fifthave.jpg
+      url: http://publicdomain.nypl.org/fifth-avenue/
+      description: Take a tour of the Fifth Avenue, past and present! Compare the photos from the 1911 Fifth Avenue from Start to Finish collection with 2015's Google Street View.
+      category: sketch
 
-- name: Navigating the Green Book
-  image: greenbooks.jpg
-  url: http://publicdomain.nypl.org/greenbook-map/
-  description: In the age of segregation, the Green Book listed hotels, restaurants, bars, and gas stations where black travelers were welcomed. Map out trips you would take with this tool.
-  category: sketch
+    - name: Navigating the Green Book
+      image: greenbooks.jpg
+      url: http://publicdomain.nypl.org/greenbook-map/
+      description: In the age of segregation, the Green Book listed hotels, restaurants, bars, and gas stations where black travelers were welcomed. Map out trips you would take with this tool.
+      category: sketch
 
-- name: ScrollNYC
-  image: scroll.jpg
-  url: http://spacetime.nypl.org/scrollnyc
-  description: Peel away layers of the city's history with this visualization layering maps from 1660 through 2014.
-  category: sketch
+    - name: ScrollNYC
+      image: scroll.jpg
+      url: http://spacetime.nypl.org/scrollnyc
+      description: Peel away layers of the city's history with this visualization layering maps from 1660 through 2014.
+      category: sketch
 
 ################################################################################
 ## Resources
 ################################################################################
 
-- name: Digital Collections
-  image: digitalcollections.jpg
-  url: http://digitalcollections.nypl.org/
-  description: The Library's database of digitized collections with new items being added every day, featuring prints, photographs, maps, manuscripts, streaming video, and more.
-  category: resource
+- type: resource
+  title: Related resources
+  description: the description of RESOURCE is here and is super interesting!
+  projects:
+    - name: Digital Collections
+      image: digitalcollections.jpg
+      url: http://digitalcollections.nypl.org/
+      description: The Library's database of digitized collections with new items being added every day, featuring prints, photographs, maps, manuscripts, streaming video, and more.
+      category: resource
 
-- name: Visualize the Public Domain
-  image: digitalcollections.jpg
-  url: http://publicdomain.nypl.org/pd-visualization/
-  description: The Library's database of digitized collections with new items being added every day, featuring maps, prints, photographs, manuscripts, streaming video, and more.
-  category: resource
+    - name: Visualize the Public Domain
+      image: digitalcollections.jpg
+      url: http://publicdomain.nypl.org/pd-visualization/
+      description: The Library's database of digitized collections with new items being added every day, featuring maps, prints, photographs, manuscripts, streaming video, and more.
+      category: resource
 
-- name: Oral History
-  image: oralhistory.jpg
-  url: http://oralhistory.nypl.org/
-  description: The New York Public Library's Community Oral History Project is an initiative taking place at NYPL branches that aims to document, preserve, and celebrate the rich history of the city's unique neighborhoods by collecting the stories of people who have experienced it firsthand.
-  category: resource
+    - name: Oral History
+      image: oralhistory.jpg
+      url: http://oralhistory.nypl.org/
+      description: The New York Public Library's Community Oral History Project is an initiative taking place at NYPL branches that aims to document, preserve, and celebrate the rich history of the city's unique neighborhoods by collecting the stories of people who have experienced it firsthand.
+      category: resource
 
-- name: Photographers’ Identities Catalog
-  image: pic.jpg
-  url: http://pic.nypl.org/
-  description: Photographers’ Identities Catalog (PIC) is an experimental interface to a collection of biographical data describing photographers, studios, manufacturers, and others involved in the production of photographic images. The vast and growing resource is created through extensive original research by NYPL Photography Collection staff.
-  category: resource
+    - name: Photographers’ Identities Catalog
+      image: pic.jpg
+      url: http://pic.nypl.org/
+      description: Photographers’ Identities Catalog (PIC) is an experimental interface to a collection of biographical data describing photographers, studios, manufacturers, and others involved in the production of photographic images. The vast and growing resource is created through extensive original research by NYPL Photography Collection staff.
+      category: resource
 
-- name: Emigrant City
-  image: emigrant.jpg
-  url: http://emigrantcity.nypl.org/#/data
-  description: An experimental resource for searching and exporting over 10,000 transcribed records from the mortgage and bond ledgers of the Emigrant Savings Bank. Browse and download the records, or pitch in on verifying their transcriptions!
-  category: resource
+    - name: Emigrant City
+      image: emigrant.jpg
+      url: http://emigrantcity.nypl.org/#/data
+      description: An experimental resource for searching and exporting over 10,000 transcribed records from the mortgage and bond ledgers of the Emigrant Savings Bank. Browse and download the records, or pitch in on verifying their transcriptions!
+      category: resource
 
-- name: Menus
-  image: menus.jpg
-  url: http://menus.nypl.org/
-  description: Search and explore the dishes and locations of 17,545 historic menus from New York City and beyond.
-  category: resource
+    - name: Menus
+      image: menus.jpg
+      url: http://menus.nypl.org/
+      description: Search and explore the dishes and locations of 17,545 historic menus from New York City and beyond.
+      category: resource
 
-- name: Stereogranimator
-  image: stereo.jpg
-  url: http://stereo.nypl.org/
-  description: Create and share 3D images from the stereograph collections of The New York Public Library (and others). You can even use your own Flickr photos.
-  category: resource
+    - name: Stereogranimator
+      image: stereo.jpg
+      url: http://stereo.nypl.org/
+      description: Create and share 3D images from the stereograph collections of The New York Public Library (and others). You can even use your own Flickr photos.
+      category: resource
