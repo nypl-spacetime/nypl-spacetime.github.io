@@ -85,7 +85,7 @@
       category: resource
 
     - name: Visualize the Public Domain
-      image: digitalcollections.jpg
+      image: visualizedc.jpg
       url: http://publicdomain.nypl.org/pd-visualization/
       description: The Library's database of digitized collections with new items being added every day, featuring maps, prints, photographs, manuscripts, streaming video, and more.
       category: resource
@@ -108,7 +108,7 @@
       description: An experimental resource for searching and exporting over 10,000 transcribed records from the mortgage and bond ledgers of the Emigrant Savings Bank. Browse and download the records, or pitch in on verifying their transcriptions!
       category: resource
 
-    - name: What's on the menu?
+    - name: Menus
       image: menus.jpg
       url: http://menus.nypl.org/
       description: Search and explore the dishes and locations of 17,545 historic menus from New York City and beyond.
