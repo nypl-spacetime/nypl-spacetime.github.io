@@ -274,6 +274,10 @@ ul, li {
     margin: 0;
     color: white;
   }
+
+  h2 {
+    font-family: $mainfont;
+  }
 }
 
 .knightlogo {
@@ -341,7 +345,6 @@ ul, li {
     color: #fff;
     width: 5rem;
     text-align: center;
-    @include vendor-prefix('text-shadow', 0 0 4px #000);
 
     @media screen and (max-width: $mobilebreakpoint) {
       display: none;
@@ -429,7 +432,7 @@ ul, li {
 }
 
 h2.project-type {
-  border-top: 2px solid $textcolor;
+  border-top: 1px solid $textcolor;
   padding-top: 1em;
   font-family: $mainfont;
 }
@@ -444,6 +447,31 @@ h2.project-type {
 .projects li {
   width: 32%;
   box-sizing: border-box;
+}
+
+.cta {
+  position: absolute;
+  display: block;
+  background-color: $linkcolor;
+  border-radius: 1rem;
+  border: 2px solid $linkcolor;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  top: -4.6rem;
+  right: 1rem;
+  transition: all 0.1s;
+  padding: 0.6rem 1rem 0.4rem;
+
+  &:link, &:visited {
+    color: white;
+  }
+
+  &:hover {
+    color: $nypldarkgreen;
+    border-color: $nypldarkgreen;
+    background-color: white;
+  }
 }
 
 li.project-container {
@@ -505,6 +533,10 @@ li.project-container {
       -webkit-box-decoration-break: clone;
     }
 
+    .cta {
+      top: -2rem;
+    }
+
     .project-image-container {
       height: 20rem;
     }
@@ -519,31 +551,4 @@ li.project-container {
     }
   }
 
-}
-
-.cta {
-  position: absolute;
-  display: block;
-  width: 8rem;
-  height: 8rem;
-  background-color: $linkcolor;
-  border-radius: 16rem;
-  border: 2px solid $linkcolor;
-  color: white;
-  line-height: 7;
-  text-transform: uppercase;
-  text-align: center;
-  top: -6rem;
-  right: 1rem;
-  transition: all 0.1s;
-
-  &:link, &:visited {
-    color: white;
-  }
-
-  &:hover {
-    color: $nypldarkgreen;
-    border-color: $nypldarkgreen;
-    background-color: white;
-  }
 }
