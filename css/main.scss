@@ -128,7 +128,7 @@ html {
 
 body {
   margin: 0 auto;
-  padding: 0 0 4rem;
+  padding: 0;
   @include textstyle;
   font-size: $basefontsize;
   line-height: 1.65;
@@ -265,10 +265,9 @@ ul, li {
 #subheader {
   background-color: $nypllightgreen;
   color: white;
+  padding: 2rem 0;
 
   .content {
-    // padding: 2rem 1rem;
-    // padding-left: (8.25rem + 1.8124rem);
   }
 
   h1, h2 {
@@ -319,7 +318,7 @@ ul, li {
   width: 100%;
   background-position: center 0;
   // border-top: 1px solid $pagecolor;
-  border-bottom: 1px solid $pagecolor;
+  // border-bottom: 1px solid $pagecolor;
   // @include vendor-prefix(box-shadow, inset ($mapshadow * 2) 0 $mapshadow (-$mapshadow * 2) #000);
 
   &:nth-child(1), &:nth-child(2) {
@@ -363,7 +362,7 @@ ul, li {
 
       &:before {
         top: -$timelinearrow*2;
-        border-bottom-color: $nypllightgreen;
+        border-bottom-color: white;
       }
     }
 
@@ -372,7 +371,7 @@ ul, li {
 
       &:after {
         bottom: -$timelinearrow*2;
-        border-top-color: $nypllightgreen;
+        border-top-color: white;
       }
     }
   }
@@ -431,7 +430,7 @@ ul, li {
 
 h2.project-type {
   border-top: 2px solid $textcolor;
-  padding-top: 1rem;
+  padding-top: 1em;
   font-family: $mainfont;
 }
 
@@ -485,6 +484,7 @@ li.project-container {
 
   .project-description {
     padding-top: 1rem;
+    position: relative;
   }
 
   &.featured {
@@ -521,8 +521,29 @@ li.project-container {
 
 }
 
-.button {
-  display: inline-block;
-  margin: 0 1rem 0 0;
-  line-height: 1;
+.cta {
+  position: absolute;
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  background-color: $linkcolor;
+  border-radius: 16rem;
+  border: 2px solid $linkcolor;
+  color: white;
+  line-height: 7;
+  text-transform: uppercase;
+  text-align: center;
+  top: -6rem;
+  right: 1rem;
+  transition: all 0.1s;
+
+  &:link, &:visited {
+    color: white;
+  }
+
+  &:hover {
+    color: $nypldarkgreen;
+    border-color: $nypldarkgreen;
+    background-color: white;
+  }
 }

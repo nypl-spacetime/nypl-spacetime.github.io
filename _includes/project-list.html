@@ -19,20 +19,16 @@
         <h3><a href="{{ project.url }}" class="noborder">{{ project.name }}</a></h3>
       </div>
       <div class="project-description">
-        {% if project.github || project.contribute %}
-        <p>
-        {% endif %}
-        {% if project.github %}
-        <a class="button" href="{{ project.github }}">
-          View project on GitHub
-        </a>
-        {% endif %}
         {% if project.contribute %}
-        <a class="button" href="{{ project.contribute }}">
+        <a class="cta" href="{{ project.contribute }}">
           Contribute!
         </a>
         {% endif %}
-        {% if project.github || project.contribute %}
+        {% if project.github %}
+        <p>
+        <a href="{{ project.github }}">
+          View project source code on GitHub
+        </a>
         </p>
         {% endif %}
         <p>{{ project.description}}</p>
