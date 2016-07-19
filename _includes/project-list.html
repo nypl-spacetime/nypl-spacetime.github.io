@@ -5,10 +5,11 @@
   {% if project.category == include.type %}
   <li class="project-container {{ project.category }}">
       <div class="project-image-container">
-        <a href="{{ project.url }}" style="background-image: url({{ site.baseurl}}/images/projects/{{ project.image }});">
+        <a href="{{ project.url }}">
+          <img class="project-image" src="{{ site.baseurl}}/images/projects/{{ project.image }}" />
         </a>
+        <h3><a href="{{ project.url }}">{{ project.name }}</a></h3>
       </div>
-      <h3>{{ project.name }}</h3>
       <div class="project-description">
         <p>{{ project.description}}</p>
         {% if project.github %}

@@ -9,7 +9,7 @@ $basefontsize: 16px;
 $pagecolor: darken(#fff, 5%);
 $textcolor: darken(#424143, 10%);
 $headingcolor: darken(#67666A, 10%);
-$linkcolor: #F85200;
+$linkcolor: $nypllightgreen;// #F85200;
 $bubblecolor: lighten($pagecolor, 10%);//#DFDFDF;
 $iconcolor: #807F83;
 $radius: 10px;
@@ -863,79 +863,70 @@ ul, li {
 }
 
 li.project-container {
+  background-color: $pagecolor;
+
+  h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    background-color: $pagecolor;
+    line-height: 1;
+    margin: 0;
+    border-right: $projectborder solid $linkcolor;
+    display: inline;
+    width: 80%;
+    -webkit-box-decoration-break: clone;
+  }
+
+  p {
+    padding: 0 0.5rem;
+  }
+
+  .project-image-container {
+    position: relative;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    img.project-image {
+      display: block;
+      width: 100%;
+    }
+
+  }
+
   &.featured {
     width: 100%;
+
+    h3 {
+      font-size: 2rem;
+      // height: 20rem;
+      width: 32%;
+      // border-top: none;
+      // border-right: $projectborder solid $linkcolor;
+    }
+
     .project-image-container {
       height: 20rem;
     }
+
   }
 
   &.project {
     width: 49%;
+
+    h3 {
+      font-size: 1.5rem;
+      width: 65%;
+    }
   }
-}
 
-.project-image-container {
-  width: 100%;
-}
-
-.project-container {
-  position: relative;
-  background-color: $pagecolor;
-  // padding: 10px;
-}
-
-.project-container h3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 10px;
-  background-color: $pagecolor;
-  line-height: 1.1;
-  margin: 0;
-  border-bottom: $projectborder solid $linkcolor;
-  display: inline;
-  width: 80%;
-  -webkit-box-decoration-break: clone;
-}
-
-.project-image-container {
-  position: relative;
-}
-
-.project-image-container:after {
-  display: block;
-  content: '';
-  padding-bottom: 100%;
-}
-
-.featured .project-image-container:after {
-  padding-bottom: 25%;
-}
-
-.project-image-container a {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.project-container img.project-image {
-  width: 100%;
-  border: $projectborder solid $linkcolor;
-  border-bottom-width: $projectborder * 0.5;
-  border-right: none;
-  border-left: none;
-  transition: all .05s ease-in-out;
-}
-
-.project-container p {
-  // margin: 0;
-  // font-size: 1rem;
-  // line-height: 1.2;
 }
 
 .button {
