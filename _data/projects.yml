@@ -4,13 +4,13 @@
 
 - type: featured
   title: New &#38; Featured
-  description: the description of FEATURED is here and is super interesting!
+  description: New to the Space/Time Directory or looking to contribute? Start with our featured projects and sketches.
   projects:
     - name: Surveyor
       image: surveyor.jpg
       url: http://spacetime.nypl.org/surveyor
       contribute: http://spacetime.nypl.org/surveyor
-      description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      description: Help put Library materials on the map! Discover Library materials through the lens of geography and help identify locations depicted in our vast collections.
       github: https://github.com/nypl-spacetime/surveyor
       category: featured
 
@@ -26,7 +26,7 @@
 
 - type: project
   title: Projects
-  description: the description of PROJECTSSS is here and is super interesting!
+  description: Contribute to the Space/Time Directory and explore library materials with these interactive tools built on historic maps, our vast photography collections, and more!
   projects:
     - name: Building Inspector
       image: buildinginspector.jpg
@@ -50,7 +50,7 @@
 
 - type: sketch
   title: Tools &#38; Experiments
-  description: the description of SKETCHORZ is here and is super interesting!
+  description: Take a peek into the Space/Time Directory workshop! We're sharing prototypes, proof of concepts, and visualizations the project as they're made.
   projects:
     - name: Street View, Then &amp; Now
       image: fifthave.jpg
@@ -76,7 +76,7 @@
 
 - type: resource
   title: Related resources
-  description: the description of RESOURCE is here and is super interesting!
+  description: Browse related Library resources including digitized materials, data sets, APIs, and much more!
   projects:
     - name: Digital Collections
       image: digitalcollections.jpg
