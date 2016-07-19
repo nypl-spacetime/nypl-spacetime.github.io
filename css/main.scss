@@ -1,12 +1,13 @@
 ---
 ---
 
+
 $nyplred: #ed1c24;
 $nypldarkgreen: #437529;
 $nypllightgreen: lighten($nypldarkgreen, 20%);
 
 $basefontsize: 18px;
-$pagecolor: darken(#fff, 5%);
+$pagecolor: darken(#fff, 3%);
 $textcolor: darken(#424143, 10%);
 $headingcolor: darken(#67666A, 10%);
 $linkcolor: $nypllightgreen;
@@ -21,7 +22,7 @@ $contentwidth: 1024px;
 $projectborder: 3px;
 $timelinearrow: 1rem;
 
-$mainbreakpoint: 980px;
+$mainbreakpoint: $contentwidth;
 $mobilebreakpoint: 800px;
 
 $mainfont: "kievit light", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -123,20 +124,22 @@ html {
 
 html {
   background-color: $pagecolor;
+  font-size: $basefontsize;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    font-size: $basefontsize * 0.8;
+    line-height: 1.65 * 0.8;
+  }
 }
 
 body {
   margin: 0 auto;
   padding: 0;
   @include textstyle;
-  font-size: $basefontsize;
-  line-height: 1.65;
   color: $textcolor;
-
-  @media screen and (max-width: $mainbreakpoint) {
-    font-size: $basefontsize * 0.9;
-  }
+  background-color: $pagecolor;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -157,12 +160,12 @@ h1 {
   margin-bottom: 0;
 
   @media screen and (max-width: $mainbreakpoint) {
-    font-size: 3rem;
+    // font-size: 3rem;
   }
 
   @media screen and (max-width: $mobilebreakpoint) {
-    text-align: center;
-    font-size: 2rem;
+    // text-align: center;
+    // font-size: 2rem;
   }
 }
 
@@ -171,24 +174,25 @@ h2 {
   margin-left: -8rem;
 
   @media screen and (max-width: $mainbreakpoint) {
+    margin-left: 0;
   }
 }
 
 p {
-  max-width: 50rem;
+  max-width: 36rem;
   margin-top: 0;
 
   &.major-headline {
-    font-size: 2rem;
   }
 
   &.minor-headline {
+    max-width: 60rem;
     font-size: 1.5rem;
   }
 
   @media screen and (max-width: $mainbreakpoint) {
-    max-width: 45rem;
-    line-height: 1.3;
+    max-width: none;
+    // line-height: 1.3;
   }
 }
 
@@ -197,6 +201,10 @@ blockquote {
   font-size: 2rem;
   line-height: 1.5;
   margin-bottom: 1em;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    font-size: 1.5rem;
+  }
 }
 
 a {
@@ -255,6 +263,9 @@ ul, li {
   white-space: nowrap;
 
   @media screen and (max-width: $mainbreakpoint) {
+    background: url("{{ site.baseurl}}/images/nypl_mark.svg") no-repeat scroll 0px 0px/3rem auto white;
+    height: 3.1rem;
+    width: 3rem;
     // float: none;
     // margin: 0 auto;
     // text-align: center;
@@ -277,6 +288,9 @@ ul, li {
 
   h2 {
     font-family: $mainfont;
+  }
+
+  @media screen and (max-width: $mainbreakpoint) {
   }
 }
 
@@ -306,6 +320,7 @@ ul, li {
 
   @media screen and (max-width: $mainbreakpoint) {
     margin: 0 auto;
+    padding: 2rem;
   }
 }
 
@@ -346,18 +361,14 @@ ul, li {
     width: 5rem;
     text-align: center;
 
-    @media screen and (max-width: $mobilebreakpoint) {
-      display: none;
-    }
-
     &.top:before, &.bottom:after {
-        display: block;
-        position: absolute;
-        left: 0;
-        content: "";
-        width: $timelinearrow;
-        height: $timelinearrow;
-        border: $timelinearrow solid transparent;
+      display: block;
+      position: absolute;
+      left: 0;
+      content: "";
+      width: $timelinearrow;
+      height: $timelinearrow;
+      border: $timelinearrow solid transparent;
     }
 
     &.top {
@@ -367,6 +378,10 @@ ul, li {
         top: -$timelinearrow*2;
         border-bottom-color: white;
       }
+
+      @media screen and (max-width: $mainbreakpoint) {
+        transform: scale(0.5) translateY(-2rem);
+      }
     }
 
     &.bottom {
@@ -375,6 +390,10 @@ ul, li {
       &:after {
         bottom: -$timelinearrow*2;
         border-top-color: white;
+      }
+
+      @media screen and (max-width: $mainbreakpoint) {
+        transform: scale(0.5) translateY(2rem);
       }
     }
   }
@@ -395,7 +414,7 @@ ul, li {
   font-size: 0.7rem;
   line-height: 1.4;
 
-  @media screen and (max-width: $mobilebreakpoint) {
+  @media screen and (max-width: $mainbreakpoint) {
     margin-left: $radius*2;
     margin-right: $radius*2;
     text-align: center;
@@ -447,6 +466,10 @@ h2.project-type {
 .projects li {
   width: 32%;
   box-sizing: border-box;
+
+  @media screen and (max-width: $mainbreakpoint) {
+    width: 100%;
+  }
 }
 
 .cta {
@@ -472,6 +495,10 @@ h2.project-type {
     border-color: $nypldarkgreen;
     background-color: white;
   }
+
+  @media screen and (max-width: $mainbreakpoint) {
+    top: -7rem;
+  }
 }
 
 li.project-container {
@@ -485,15 +512,23 @@ li.project-container {
     line-height: 1;
     margin: 0;
     border-top: $projectborder solid $linkcolor;
+
+    @media screen and (max-width: $mainbreakpoint) {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+    }
   }
 
   p {
     padding: 0;
+    max-width: 100%;
   }
 
   .project-image-container {
     position: relative;
     margin-bottom: 0;
+    overflow: hidden;
 
     a {
       display: block;
@@ -508,6 +543,9 @@ li.project-container {
       width: 100%;
     }
 
+    @media screen and (max-width: $mainbreakpoint) {
+      max-height: 300px;
+    }
   }
 
   .project-description {
@@ -527,18 +565,29 @@ li.project-container {
       background-color: $pagecolor;
       line-height: 1;
       margin: 0;
-      border-top: none;
-      border-right: $projectborder solid $linkcolor;
+      border-top: $projectborder solid $linkcolor;
       width: 49%;
       -webkit-box-decoration-break: clone;
+
+      @media screen and (max-width: $mainbreakpoint) {
+        width: 100%;
+      }
     }
 
     .cta {
       top: -2rem;
+
+      @media screen and (max-width: $mainbreakpoint) {
+        top: -7rem;
+      }
     }
 
     .project-image-container {
       height: 20rem;
+
+      @media screen and (max-width: $mainbreakpoint) {
+        height: auto;
+      }
     }
 
   }
@@ -548,6 +597,10 @@ li.project-container {
 
     h3 {
       font-size: 1.5rem;
+    }
+
+    @media screen and (max-width: $mainbreakpoint) {
+      width: 100%;
     }
   }
 
