@@ -5,27 +5,29 @@
   {% if project.category == include.type %}
   <li class="project-container {{ project.category }}">
       <div class="project-image-container">
-        <a href="{{ project.url }}">
+        <a href="{{ project.url }}" class="noborder">
           <img class="project-image" src="{{ site.baseurl}}/images/projects/{{ project.image }}" />
         </a>
-        <h3><a href="{{ project.url }}">{{ project.name }}</a></h3>
+        <h3><a href="{{ project.url }}" class="noborder">{{ project.name }}</a></h3>
       </div>
       <div class="project-description">
-        <p>{{ project.description}}</p>
-        {% if project.github %}
+        {% if project.github || project.contribute %}
         <p>
-          <a href="{{ project.github }}">
-            View project on GitHub
-          </a>
-        </p>
+        {% endif %}
+        {% if project.github %}
+        <a class="button" href="{{ project.github }}">
+          View project on GitHub
+        </a>
         {% endif %}
         {% if project.contribute %}
-        <p>
-          <a class="button" href="{{ project.contribute }}">
-            Contribute!
-          </a>
+        <a class="button" href="{{ project.contribute }}">
+          Contribute!
+        </a>
+        {% endif %}
+        {% if project.github || project.contribute %}
         </p>
         {% endif %}
+        <p>{{ project.description}}</p>
       </div>
   </li>
 

@@ -9,8 +9,8 @@ $basefontsize: 16px;
 $pagecolor: darken(#fff, 5%);
 $textcolor: darken(#424143, 10%);
 $headingcolor: darken(#67666A, 10%);
-$linkcolor: $nypllightgreen;// #F85200;
-$bubblecolor: lighten($pagecolor, 10%);//#DFDFDF;
+$linkcolor: $nypllightgreen;
+$bubblecolor: lighten($pagecolor, 10%);
 $iconcolor: #807F83;
 $radius: 10px;
 $linkmargin: 60px;
@@ -102,22 +102,6 @@ $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-icon_citizens:before {
-  content: "\e601";
-}
-
-.icon-icon_advisors:before {
-  content: "\e600";
-}
-
-.icon-icon_developers:before {
-  content: "\e602";
-}
-
-.icon-icon_partners:before {
-  content: "\e603";
 }
 
 .icon-icon_lion:before {
@@ -220,7 +204,20 @@ p {
 
 a {
   color: $linkcolor;
+  border-bottom: 1px solid $linkcolor;
   text-decoration: none;
+
+  &:visited {
+    color: darken($linkcolor, 10%);
+  }
+
+  &:hover {
+    color: $linkcolor;
+  }
+
+  &.noborder {
+    border: none;
+  }
 }
 
 b, strong {
@@ -312,69 +309,6 @@ ul, li {
   }
 }
 
-.biglink {
-  text-transform: uppercase;
-  font-size: 2rem;
-  @include titlestyle;
-
-  @media screen and (max-width: $mainbreakpoint) {
-    font-size: 1.2rem;
-  }
-}
-
-.next {
-  position: relative;
-  width: 30%;
-  margin-left: 40%;
-  padding: 20px;
-  background-color: $bubblecolor;
-  border-radius: $radius;
-  text-align: center;
-
-  @media screen and (max-width: $mainbreakpoint) {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.fineprint {
-  margin: 10rem $mapwidth 4rem 0;
-  text-align: right;
-
-  @media screen and (max-width: $mobilebreakpoint) {
-    margin-left: $radius*2;
-    margin-right: $radius*2;
-    text-align: center;
-    background-color: $bubblecolor;
-    border-radius: $radius;
-    padding: $radius;
-  }
-
-  p {
-    width: 50%;
-    margin-left: 45%;
-
-    @media screen and (max-width: $mobilebreakpoint) {
-      width: auto;
-      margin-left: 0;
-    }
-  }
-}
-
-.thanks {
-  position: absolute;
-  bottom: 10px;
-  right: 100%;
-  width: 240px;
-  font-size: 0.7rem;
-  line-height: 1.5;
-
-  @media screen and (max-width: $mobilebreakpoint) {
-    display: none;
-  }
-}
-
 /* MAPS */
 
 .map {
@@ -457,8 +391,8 @@ ul, li {
 }
 
 #footer {
-  margin: 20rem $mapwidth 0 0;
-  text-align: right;
+  margin-top: 20rem;
+  margin-bottom: 20rem;
   font-size: 0.7rem;
   line-height: 1.4;
 
@@ -472,13 +406,8 @@ ul, li {
   }
 
   p {
-    width: 50%;
-    margin-left: 45%;
-
-    @media screen and (max-width: $mobilebreakpoint) {
-      width: auto;
-      margin-left: 0;
-    }
+    max-width: 40rem;
+    text-align: center;
   }
 
   .nypl {
@@ -583,18 +512,7 @@ li.project-container {
 }
 
 .button {
-  background-color: $linkcolor;
-  border-radius: 28px;
   display: inline-block;
-  cursor: pointer;
-  color: white;
-  padding: 10px 13px;
-  text-decoration:none;
-  margin: 0 auto;
-}
-
-.github {
-  width: 1rem;
-  top: 3px;
-  position: relative;
+  margin: 0 1rem 0 0;
+  line-height: 1;
 }
