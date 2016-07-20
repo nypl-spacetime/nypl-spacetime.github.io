@@ -1,3 +1,7 @@
+---
+layout:
+---
+
 var SP = {}; // the animation code
 
 (function(){
@@ -26,7 +30,7 @@ var SP = {}; // the animation code
 
     // var shadow = s.filter(Snap.filter.shadow(0, 0, 1, "#000", 0.5));
 
-    var url = "img/delmonicos.svg";
+    var url = "{{ site.baseurl }}/images/delmonicos.svg";
 
     var letters, text, lettersnext, textnext, usatext, lettersexport
         , textexport, json, menu, news, photo, browser
@@ -328,14 +332,14 @@ $( document ).ready(function() {
 
   if (!firstmap && isdevice) {
     firstmap = true;
-    $(".map").first().remove();
+    // $(".map").first().remove();
   }
 
 
-  gifWidth();
-  orderMaps();
-  mapBackground();
-  updateScroll()
+  // gifWidth();
+  // orderMaps();
+  // mapBackground();
+  // updateScroll()
 
   function gifWidth() {
     var winw = $(window).width();
@@ -423,41 +427,46 @@ $( document ).ready(function() {
     var wintop = $(window).scrollTop();
     var winw = $(window).width();
     var winh = $(window).height();
-    var parttop = $("#part3").offset().top;
-    var deltatop = wintop - parttop + margin;
-    var ani = $("#animation");
-    var h = ani.height();
-    var nexttop = $("h2.part4").offset().top - margin; // minus a small margin
-    if (wintop+winh*.80 >= parttop) {
-      // if (winw < mobilewidth) {
-      //   anistopped = true;
-      //   anistarted = false;
-      //   return;
-      // }
-      if (!anistarted) {
-        if (winw >= responsivewidth) ani.fadeIn();
-        anistarted = true;
-        SP.end();
-      }
-      // ani.width(550);
-      // ani.height(400);
-      if (winw < breakpoint) {
-        ani.css("top", 0);
-        return;
-      }
-      if (deltatop <= 0) deltatop = 0;
-      if (wintop+h+margin >= nexttop) deltatop = nexttop-h-parttop;
-      ani.css("top", deltatop);
+
+    if (document.getElementById("animation")) {
+      var ani = $("#animation");
+      var parttop = $("#part3").offset().top;
+      var deltatop = wintop - parttop + margin;
+      var h = ani.height();
+      var nexttop = $("h2.part4").offset().top - (margin*3); // minus a small margin
+      if (wintop+winh*.80 >= parttop) {
+        // if (winw < mobilewidth) {
+        //   anistopped = true;
+        //   anistarted = false;
+        //   return;
+        // }
+        if (!anistarted) {
+          if (winw >= responsivewidth) ani.fadeIn();
+          anistarted = true;
+          SP.end();
+        }
+        // ani.width(550);
+        // ani.height(400);
+        if (winw < breakpoint) {
+          ani.css("top", 0);
+          return;
+        }
+        if (deltatop <= 0) deltatop = 0;
+        if (wintop+h+margin >= nexttop) deltatop = nexttop-h-parttop;
+        ani.css("top", deltatop);
+    }
+
+
     }
   }
 
   $(window).resize( function (e) {
-    gifWidth();
-    mapBackground();
+    // gifWidth();
+    // mapBackground();
   });
 
   $(window).scroll( function (e) {
-    updateScroll();
+    // updateScroll();
   });
 
 });

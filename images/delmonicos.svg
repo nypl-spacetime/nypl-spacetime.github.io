@@ -1,3 +1,6 @@
+---
+layout:
+---
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="550px" height="400px" viewBox="0 0 550 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
@@ -10,14 +13,14 @@
         <rect fill="#D8D8D8" sketch:type="MSShapeGroup" x="0" y="0" width="550" height="400" rx="20"></rect>
       </clipPath>
       <image
-        xlink:href="img/usa.png"
+        xlink:href="{{ site.baseurl }}/images/usa.png"
         style="clip-path:url(#usa-mask);"
         x="0"
         y="0"
         width="550"
         height="400"
         id="usa" />
-            <text id="usa-text" sketch:type="MSTextLayer" font-family="'rooney-sans', Verdana, sans-serif" font-size="32" font-style="italic" font-weight="900" fill="#000000">
+            <text id="usa-text" sketch:type="MSTextLayer" font-family="'kievit bold', Helvetica, sans-serif" font-size="32" font-style="normal" font-weight="900" fill="#000000">
                 <tspan x="20" y="340">BUILD A SPACE/TIME DIRECTORY</tspan>
                 <tspan x="20" y="370">FOR YOUR CITY!</tspan>
             </text>
@@ -46,7 +49,7 @@
         <rect id="view" fill="#F1F1F1" sketch:type="MSShapeGroup" x="0" y="70" width="420" height="290"></rect>
       </clipPath>
       <image
-        xlink:href="img/oldnyc.png"
+        xlink:href="{{ site.baseurl }}/images/oldnyc.png"
         style="clip-path:url(#mask);"
         x="54"
         y="-27"
@@ -54,7 +57,7 @@
         height="414"
         id="oldnyc" />
             </g>
-                <image id="photo" xlink:href="img/delmonicos.jpg" x="12" y="166" width="172" height="116" />
+                <image id="photo" xlink:href="{{ site.baseurl }}/images/delmonicos.jpg" x="12" y="166" width="172" height="116" />
             <g id="news" sketch:type="MSLayerGroup" transform="translate(360.000000, 142.000000)">
                 <rect id="Rectangle-7" stroke="#000000" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="176" height="164"></rect>
                 <rect id="Rectangle-7" fill="#DFDFDF" sketch:type="MSShapeGroup" x="10" y="10" width="30" height="144"></rect>
