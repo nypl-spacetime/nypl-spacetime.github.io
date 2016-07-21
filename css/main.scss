@@ -450,7 +450,7 @@ ul, li {
   @include clearfix;
 }
 
-h2.project-type {
+h2.bordered {
   border-top: 1px solid $textcolor;
   padding-top: 1em;
   font-family: $mainfont;
