@@ -255,10 +255,10 @@ ul, li {
 .nypllogo {
   display: block;
   // float: left;
-  height: 3.5rem;
-  width: 6.25rem;
+  height: 4rem;
+  width: 7rem;
   overflow: hidden;
-  background: url("{{ site.baseurl}}/images/nypl.svg") no-repeat scroll 0px 0px/6.25rem auto white;
+  background: url("{{ site.baseurl}}/images/nypl.svg") no-repeat scroll 0px 0px/7rem auto white;
   text-indent: 12rem;
   white-space: nowrap;
 
