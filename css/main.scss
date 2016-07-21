@@ -274,7 +274,8 @@ ul, li {
 }
 
 #subheader {
-  background-color: $nypllightgreen;
+  background: black no-repeat center -3rem fixed url({{ site.baseurl}}/images/subheader.jpg);
+  background-size: auto;
   color: white;
   padding: 2rem 0;
 
@@ -286,11 +287,19 @@ ul, li {
     color: white;
   }
 
+  h1 {
+    @media screen and (max-width: $mainbreakpoint) {
+      font-size: 2rem;
+    }
+  }
+
   h2 {
     font-family: $mainfont;
   }
 
   @media screen and (max-width: $mainbreakpoint) {
+    // background-size: auto;
+    background-position: center -11rem;
   }
 }
 
