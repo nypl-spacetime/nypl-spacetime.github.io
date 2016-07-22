@@ -24,6 +24,12 @@
           Contribute!
         </a>
         {% endif %}
+        {% if project.explore %}
+        <a class="cta" href="{{ project.explore }}">
+          Explore!
+        </a>
+        {% endif %}
+        <p>{{ project.description}}</p>
         {% if project.github %}
         <p>
         <a href="{{ project.github }}">
@@ -31,7 +37,6 @@
         </a>
         </p>
         {% endif %}
-        <p>{{ project.description}}</p>
       </div>
   </li>
 

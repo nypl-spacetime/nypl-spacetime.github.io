@@ -17,6 +17,7 @@
     - name: Maps by Decade
       image: maps-by-decade.jpg
       url: http://spacetime.nypl.org/maps-by-decade/maps-by-decade
+      explore: http://spacetime.nypl.org/maps-by-decade/maps-by-decade
       description: Move through the decades to see a snapshot of the library's street-scale, New York City maps from that era.
       category: featured
 
