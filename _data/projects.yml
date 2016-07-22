@@ -87,19 +87,19 @@
     - name: Visualize the Public Domain
       image: visualizedc.jpg
       url: http://publicdomain.nypl.org/pd-visualization/
-      description: The Library's database of digitized collections with new items being added every day, featuring maps, prints, photographs, manuscripts, streaming video, and more.
+      description: An experiment to help patrons understand and explore what is contained in this release. Browse by century, genre, collection, or color.
       category: resource
 
     - name: Oral History
       image: oralhistory.jpg
       url: http://oralhistory.nypl.org/
-      description: The New York Public Library's Community Oral History Project is an initiative taking place at NYPL branches that aims to document, preserve, and celebrate the rich history of the city's unique neighborhoods by collecting the stories of people who have experienced it firsthand.
+      description: The Community Oral History Project documents, preserves, and celebrates the history of NYC's unique neighborhoods with stories from people who have experienced it firsthand.
       category: resource
 
     - name: Photographers’ Identities Catalog
       image: pic.jpg
       url: http://pic.nypl.org/
-      description: Photographers’ Identities Catalog (PIC) is an experimental interface to a collection of biographical data describing photographers, studios, manufacturers, and others involved in the production of photographic images. The vast and growing resource is created through extensive original research by NYPL Photography Collection staff.
+      description: An experimental interface to a collection of biographical data describing photographers, studios, manufacturers, and others involved in the production of photographic images.
       category: resource
 
     - name: Emigrant City
@@ -108,14 +108,14 @@
       description: An experimental resource for searching and exporting over 10,000 transcribed records from the mortgage and bond ledgers of the Emigrant Savings Bank. Browse and download the records, or pitch in on verifying their transcriptions!
       category: resource
 
-    - name: Menus
-      image: menus.jpg
-      url: http://menus.nypl.org/
-      description: Search and explore the dishes and locations of 17,545 historic menus from New York City and beyond.
-      category: resource
-
     - name: Stereogranimator
       image: stereo.jpg
       url: http://stereo.nypl.org/
       description: Create and share 3D images from the stereograph collections of The New York Public Library (and others). You can even use your own Flickr photos.
+      category: resource
+
+    - name: Menus
+      image: menus.jpg
+      url: http://menus.nypl.org/
+      description: Search and explore the dishes and locations of 17,545 historic menus from New York City and beyond.
       category: resource
