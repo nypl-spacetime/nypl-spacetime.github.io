@@ -10,7 +10,7 @@
       image: surveyor.jpg
       url: http://spacetime.nypl.org/surveyor
       contribute: http://spacetime.nypl.org/surveyor
-      description: Help put Library materials on the map! Discover Library materials through the lens of geography and help identify locations depicted in our vast collections.
+      description: Help put Library materials on the map! Discover NYPL collections through the lens of geography and help identify locations depicted in our vast collections.
       github: https://github.com/nypl-spacetime/surveyor
       category: featured
 
@@ -18,7 +18,7 @@
       image: maps-by-decade.jpg
       url: http://spacetime.nypl.org/maps-by-decade
       explore: http://spacetime.nypl.org/maps-by-decade
-      description: Move through the decades to see a snapshot of the library's street-scale, New York City maps from that era.
+      description: Move through the decades to see a snapshot of the NYPL's street-scale, New York City maps from that era.
       category: featured
 
 ################################################################################
@@ -41,7 +41,7 @@
       image: mapwarper.jpg
       url: http://maps.nypl.org
       contribute: http://maps.nypl.org
-      description: An online tool for browsing and rectifying thousands of public domain maps all free to use without restriction.
+      description: An online tool for browsing and rectifying thousands of public domain maps, all free to use without restriction.
       github: https://github.com/nypl-spacetime/nypl-warper
       category: project
 
@@ -53,22 +53,23 @@
   title: Tools &#38; Experiments
   description: Take a peek into the Space/Time Directory workshop! We're sharing prototypes, proof of concepts, and visualizations the project as they're made.
   projects:
-    - name: Street View, Then &amp; Now
-      image: fifthave.jpg
-      url: http://publicdomain.nypl.org/fifth-avenue/
-      description: Take a tour of the Fifth Avenue, past and present! Compare the photos from the 1911 Fifth Avenue from Start to Finish collection with 2015's Google Street View.
-      category: sketch
-
-    - name: Navigating the Green Book
-      image: greenbooks.jpg
-      url: http://publicdomain.nypl.org/greenbook-map/
-      description: In the age of segregation, the Green Book listed hotels, restaurants, bars, and gas stations where black travelers were welcomed. Map out trips you would take with this tool.
-      category: sketch
 
     - name: ScrollNYC
       image: scroll.jpg
       url: http://spacetime.nypl.org/scrollnyc
       description: Peel away layers of the city's history with this visualization layering maps from 1660 through 2014.
+      category: sketch
+
+    - name: Street View, Then &amp; Now
+      image: fifthave.jpg
+      url: http://publicdomain.nypl.org/fifth-avenue/
+      description: Take a tour of the Fifth Avenue, past and present! Compare the photos of Fifth Avenue in 1911 and today.
+      category: sketch
+
+    - name: Navigating the Green Book
+      image: greenbooks.jpg
+      url: http://publicdomain.nypl.org/greenbook-map/
+      description: In the age of segregation, the Green Book listed hotels, restaurants, bars, and gas stations where Black travelers were welcomed. Map out trips you would take with this tool.
       category: sketch
 
 ################################################################################
@@ -79,34 +80,34 @@
   title: Related resources
   description: Browse related Library resources including digitized materials, data sets, APIs, and much more!
   projects:
-    - name: Digital Collections
+    - name: NYPL's Digital Collections
       image: digitalcollections.jpg
       url: http://digitalcollections.nypl.org/
-      description: The Library's database of digitized collections with new items being added every day, featuring prints, photographs, maps, manuscripts, streaming video, and more.
+      description: NYPL's database of digitized collections with new items being added every day, featuring prints, photographs, maps, manuscripts, streaming video, and more.
       category: resource
 
     - name: Visualize the Public Domain
       image: visualizedc.jpg
       url: http://publicdomain.nypl.org/pd-visualization/
-      description: An experiment to help patrons understand and explore what is contained in this release. Browse by century, genre, collection, or color.
+      description: An experiment to help patrons understand and explore what is contained in <a href="publicdomain.nypl.org">NYPL's Public Domain release</a>. Browse by century, genre, collection, or color.
       category: resource
 
-    - name: Oral History
+    - name: NYPL Community Oral History Project
       image: oralhistory.jpg
       url: http://oralhistory.nypl.org/
-      description: The Community Oral History Project documents, preserves, and celebrates the history of NYC's unique neighborhoods with stories from people who have experienced it firsthand.
+      description: NYPL's Community Oral History Project documents, preserves, and celebrates the history of NYC's unique neighborhoods with stories from people who have experienced it firsthand.
       category: resource
 
     - name: Photographers’ Identities Catalog
       image: pic.jpg
       url: http://pic.nypl.org/
-      description: An experimental interface to a collection of biographical data describing photographers, studios, manufacturers, and others involved in the production of photographic images.
+      description: An experimental interface of biographical data describing photographers, studios, manufacturers, and others involved in the production of photographic images.
       category: resource
 
     - name: Emigrant City
       image: emigrant.jpg
       url: http://emigrantcity.nypl.org/#/data
-      description: An experimental resource for searching and exporting over 10,000 transcribed records from the mortgage and bond ledgers of the Emigrant Savings Bank. Browse and download the records, or pitch in on verifying their transcriptions!
+      description: Over 10,000 records transcribed from the historic mortgage and bond ledgers of the Emigrant Savings Bank. Browse and download the records, or pitch in on verifying their transcriptions!
       category: resource
 
     - name: Stereogranimator
@@ -115,7 +116,7 @@
       description: Create and share 3D images from the stereograph collections of The New York Public Library (and others). You can even use your own Flickr photos.
       category: resource
 
-    - name: Menus
+    - name: What's on the menu?
       image: menus.jpg
       url: http://menus.nypl.org/
       description: Search and explore the dishes and locations of 17,545 historic menus from New York City and beyond.
