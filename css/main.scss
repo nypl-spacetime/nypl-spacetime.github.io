@@ -182,6 +182,20 @@ p {
   max-width: 36rem;
   margin-top: 0;
 
+  &.tagline {
+    margin-top: 0.5rem;
+    margin-left: -8rem;
+    color: $headingcolor;
+    line-height: 1.3;
+    font-size: 1.5em;
+    @include titlestyle;
+
+    @media screen and (max-width: $mainbreakpoint) {
+      margin-left: 0;
+      line-height: 1;
+    }
+  }
+
   &.major-headline {
   }
 
@@ -282,7 +296,7 @@ ul, li {
   .content {
   }
 
-  h1, h2 {
+  h1, h2, .tagline {
     margin: 0;
     color: white;
   }
@@ -293,7 +307,7 @@ ul, li {
     }
   }
 
-  h2 {
+  h2, .tagline {
     font-family: $mainfont;
   }
 
