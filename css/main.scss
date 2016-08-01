@@ -237,6 +237,11 @@ a {
   &.noborder {
     border: none;
   }
+
+  &[name] {
+    text-decoration: none;
+    border: none;
+  }
 }
 
 b, strong {
