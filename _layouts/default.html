@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="{{ site.baseurl }}css/main.css" />
   </head>
   <body>
+    <div id="skip" tabindex="-1"><a href="#mainContent">Skip to Main Content</a></div>
     {% include header.html %}
+    <a name="mainContent"></a>
     {{ content }}
     {% include footer.html %}
     <script>

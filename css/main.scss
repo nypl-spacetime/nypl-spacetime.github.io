@@ -262,6 +262,18 @@ ul, li {
   text-align: center;
 }
 
+#skip {
+  display: block;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  font-size: 13px;
+  z-index: 1000;
+}
+
 /**/
 #header {
   border-top: 2px solid $nypldarkgreen;

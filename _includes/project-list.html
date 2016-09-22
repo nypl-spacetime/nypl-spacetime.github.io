@@ -13,12 +13,16 @@
   <li class="project-container {{ project.category }}">
       <div class="project-image-container">
         {% if project.url %}
-        <a href="{{ project.url }}">
+        <a href="{{ project.url }}" title="visit {{ project.name }}">
         {% else %}
-        <a>
+        <!-- no a -->
         {% endif %}
           <img class="project-image" src="{{ site.baseurl}}/images/projects/{{ project.image }}" alt="{{ project.alt }}" />
+        {% if project.url %}
         </a>
+        {% else %}
+        <!-- no /a -->
+        {% endif %}
         <h3>
           {% if project.url %}
           <a href="{{ project.url }}" name="{{ project.name | slugify: 'raw' }}" title="visit {{ project.name }}">{{ project.name }}</a>
