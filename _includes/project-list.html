@@ -12,19 +12,19 @@
 {% for project in the_category.projects %}
   <li class="project-container {{ project.category }}">
       <div class="project-image-container">
-        <a href="{{ project.url }}" class="noborder">
+        <a href="{{ project.url }}" class="noborder" title="visit {{ project.name }}">
           <img class="project-image" src="{{ site.baseurl}}/images/projects/{{ project.image }}" alt="{{ project.alt }}" />
         </a>
-        <h3><a href="{{ project.url }}" class="noborder" name="{{ project.name | slugify: 'raw' }}">{{ project.name }}</a></h3>
+        <h3><a href="{{ project.url }}" class="noborder" name="{{ project.name | slugify: 'raw' }}" title="visit {{ project.name }}">{{ project.name }}</a></h3>
       </div>
       <div class="project-description">
         {% if project.contribute %}
-        <a class="cta" href="{{ project.contribute }}">
+        <a class="cta" href="{{ project.contribute }}" title="contribute to {{ project.name }}">
           Contribute!
         </a>
         {% endif %}
         {% if project.explore %}
-        <a class="cta" href="{{ project.explore }}">
+        <a class="cta" href="{{ project.explore }}" title="explore {{ project.name }}">
           Explore!
         </a>
         {% endif %}

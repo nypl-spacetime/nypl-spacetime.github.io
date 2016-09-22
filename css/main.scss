@@ -564,6 +564,7 @@ li.project-container {
 
     @media screen and (max-width: $mainbreakpoint) {
       max-height: 300px;
+      overflow: hidden;
     }
   }
 
