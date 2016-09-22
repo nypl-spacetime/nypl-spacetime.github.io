@@ -13,7 +13,7 @@
   <li class="project-container {{ project.category }}">
       <div class="project-image-container">
         {% if project.url %}
-        <a href="{{ project.url }}" title="visit {{ project.name }}">
+        <a href="{{ project.url }}" title="visit {{ project.name }}" aria-hidden="true">
         {% else %}
         <!-- no a -->
         {% endif %}
@@ -46,7 +46,7 @@
         {% if project.github %}
         <p>
         <a href="{{ project.github }}">
-          View project source code on GitHub
+          Get project source code on GitHub
         </a>
         </p>
         {% endif %}
