@@ -22,7 +22,7 @@ $contentwidth: 1024px;
 $projectborder: 3px;
 $timelinearrow: 1rem;
 
-$mainbreakpoint: $contentwidth;
+$mainbreakpoint: 800px; //$contentwidth;
 $mobilebreakpoint: 800px;
 
 $mainfont: "kievit light", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -547,7 +547,7 @@ li.project-container {
   .project-image-container {
     position: relative;
     margin-bottom: 0;
-    // overflow: hidden;
+    overflow: hidden;
 
     a {
       display: block;

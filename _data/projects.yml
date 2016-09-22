@@ -1,27 +1,46 @@
 ################################################################################
-## Featured
+## Coming Soon
 ################################################################################
 
 - type: featured
-  title: New &#38; Featured
-  description: New to the Space/Time Directory or looking to contribute? Start with our featured projects and sketches.
+  title: Coming Soon
+  description:
   projects:
     - name: Surveyor
       image: surveyor.jpg
-      url: http://spacetime.nypl.org/surveyor
       alt: Surveyor
-      contribute: http://spacetime.nypl.org/surveyor
       description: Help put NYPL collections on the map! Discover Library materials through the lens of geography and help identify locations depicted in our vast collections.
-      github: https://github.com/nypl-spacetime/surveyor
       category: featured
-
     - name: Maps by Decade
       image: maps-by-decade.jpg
-      url: http://spacetime.nypl.org/maps-by-decade
       alt: Maps by Decade
-      explore: http://spacetime.nypl.org/maps-by-decade
       description: Move through the decades to see a snapshot of the NYPL's street-scale, New York City maps from that era.
       category: featured
+
+################################################################################
+## Featured
+################################################################################
+
+# - type: featured
+#   title: New &#38; Featured
+#   description: New to the Space/Time Directory or looking to contribute? Start with our featured projects and sketches.
+#   projects:
+#     - name: Surveyor
+#       image: surveyor.jpg
+#       url: http://spacetime.nypl.org/surveyor
+#       alt: Surveyor
+#       contribute: http://spacetime.nypl.org/surveyor
+#       description: Help put NYPL collections on the map! Discover Library materials through the lens of geography and help identify locations depicted in our vast collections.
+#       github: https://github.com/nypl-spacetime/surveyor
+#       category: featured
+#
+#     - name: Maps by Decade
+#       image: maps-by-decade.jpg
+#       url: http://spacetime.nypl.org/maps-by-decade
+#       alt: Maps by Decade
+#       explore: http://spacetime.nypl.org/maps-by-decade
+#       description: Move through the decades to see a snapshot of the NYPL's street-scale, New York City maps from that era.
+#       category: featured
 
 ################################################################################
 ## Projects

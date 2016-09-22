@@ -12,10 +12,20 @@
 {% for project in the_category.projects %}
   <li class="project-container {{ project.category }}">
       <div class="project-image-container">
-        <a href="{{ project.url }}" class="noborder">
+        {% if project.url %}
+        <a href="{{ project.url }}">
+        {% else %}
+        <a>
+        {% endif %}
           <img class="project-image" src="{{ site.baseurl}}/images/projects/{{ project.image }}" alt="{{ project.alt }}" />
         </a>
-        <h3><a href="{{ project.url }}" class="noborder" name="{{ project.name | slugify: 'raw' }}">{{ project.name }}</a></h3>
+        <h3>
+          {% if project.url %}
+          <a href="{{ project.url }}" name="{{ project.name | slugify: 'raw' }}">{{ project.name }}</a>
+          {% else %}
+          <a name="{{ project.name | slugify: 'raw' }}">{{ project.name }}</a>
+          {% endif %}
+        </h3>
       </div>
       <div class="project-description">
         {% if project.contribute %}
