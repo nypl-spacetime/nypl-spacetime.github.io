@@ -10,7 +10,7 @@ $basefontsize: 18px;
 $pagecolor: darken(#fff, 3%);
 $textcolor: darken(#424143, 10%);
 $headingcolor: darken(#67666A, 10%);
-$linkcolor: $nypllightgreen;
+$linkcolor: $nypldarkgreen;
 $bubblecolor: lighten($pagecolor, 10%);
 $iconcolor: #807F83;
 $radius: 10px;
@@ -108,7 +108,7 @@ $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu
 .icon-icon_lion:before {
   content: "\e604";
   display: block;
-  font-size: 30px;
+  font-size: 1.67em;
   margin-bottom: 5px;
 }
 
@@ -181,6 +181,20 @@ h2 {
 p {
   max-width: 36rem;
   margin-top: 0;
+
+  &.tagline {
+    margin-top: 0.5rem;
+    margin-left: -8rem;
+    color: $headingcolor;
+    line-height: 1.3;
+    font-size: 1.5em;
+    @include titlestyle;
+
+    @media screen and (max-width: $mainbreakpoint) {
+      margin-left: 0;
+      line-height: 1;
+    }
+  }
 
   &.major-headline {
   }
@@ -282,7 +296,7 @@ ul, li {
   .content {
   }
 
-  h1, h2 {
+  h1, h2, .tagline {
     margin: 0;
     color: white;
   }
@@ -293,7 +307,7 @@ ul, li {
     }
   }
 
-  h2 {
+  h2, .tagline {
     font-family: $mainfont;
   }
 
@@ -528,7 +542,7 @@ li.project-container {
   .project-image-container {
     position: relative;
     margin-bottom: 0;
-    overflow: hidden;
+    // overflow: hidden;
 
     a {
       display: block;
