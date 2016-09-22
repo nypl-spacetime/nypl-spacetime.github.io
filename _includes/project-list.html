@@ -21,20 +21,20 @@
         </a>
         <h3>
           {% if project.url %}
-          <a href="{{ project.url }}" name="{{ project.name | slugify: 'raw' }}">{{ project.name }}</a>
+          <a href="{{ project.url }}" name="{{ project.name | slugify: 'raw' }}" title="visit {{ project.name }}">{{ project.name }}</a>
           {% else %}
-          <a name="{{ project.name | slugify: 'raw' }}">{{ project.name }}</a>
+          <a name="{{ project.name | slugify: 'raw' }}" title="visit {{ project.name }}">{{ project.name }}</a>
           {% endif %}
         </h3>
       </div>
       <div class="project-description">
         {% if project.contribute %}
-        <a class="cta" href="{{ project.contribute }}">
+        <a class="cta" href="{{ project.contribute }}" title="contribute to {{ project.name }}">
           Contribute!
         </a>
         {% endif %}
         {% if project.explore %}
-        <a class="cta" href="{{ project.explore }}">
+        <a class="cta" href="{{ project.explore }}" title="explore {{ project.name }}">
           Explore!
         </a>
         {% endif %}
