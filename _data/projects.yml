@@ -1,23 +1,4 @@
 ################################################################################
-## Coming Soon
-################################################################################
-
-- type: featured
-  title: Coming Soon
-  description:
-  projects:
-    - name: Surveyor
-      image: surveyor.jpg
-      alt: Surveyor
-      description: Help put NYPL collections on the map! Discover Library materials through the lens of geography and help identify locations depicted in our vast collections.
-      category: featured
-    - name: Maps by Decade
-      image: maps-by-decade.jpg
-      alt: Maps by Decade
-      description: Move through the decades to see a snapshot of the NYPL's street-scale, New York City maps from that era.
-      category: featured
-
-################################################################################
 ## Featured
 ################################################################################
 
