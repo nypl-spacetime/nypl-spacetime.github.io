@@ -1,4 +1,4 @@
-baseurl: 'http://spacetime.nypl.org/jk-test/'
+baseurl: ''
 
 defaults:
   -
