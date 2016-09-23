@@ -262,16 +262,29 @@ ul, li {
   text-align: center;
 }
 
-#skip {
+#skip a {
+  border: none;
+  color: $linkcolor;
   display: block;
+  font-size: 13px;
   position: absolute;
   left: -10000px;
-  top: auto;
+  line-height: 2;
+  top: 7px;
   width: 1px;
   height: 1px;
   overflow: hidden;
-  font-size: 13px;
+  padding: 5px 10px 3px;
   z-index: 1000;
+
+  &:focus {
+    box-shadow: 0 0 5px $linkcolor;
+    outline: 0;
+    left: 7px;
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
 }
 
 /**/
