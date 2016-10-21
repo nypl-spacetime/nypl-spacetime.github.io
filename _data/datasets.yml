@@ -14,5 +14,6 @@ datasets:
       license: CC0
 
     - name: oldnyc
-      description: Contains the location of 39516 photos from <a href="http://digitalcollections.nypl.org/collections/photographic-views-of-new-york-city-1870s-1970s-from-the-collections-of-the-ne-2#/?tab=about">Photographic Views of New York City, 1870s-1970s</a> collection, taken from Dan Vanderkam's <a href="https://www.oldnyc.org/">OldNYC</a> project
+      description: Contains the location of 39516 photos from <a href="http://digitalcollections.nypl.org/collections/photographic-views-of-new-york-city-1870s-1970s-from-the-collections-of-the-ne-2#/?tab=about">Photographic Views of New York City, 1870s-1970s</a> collection, taken from Dan Vanderkam's <a href="https://www.oldnyc.org/">OldNYC</a> project.
+      website: http://oldnyc.org
       license: Apache

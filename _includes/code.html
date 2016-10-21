@@ -1,0 +1,27 @@
+<h2 class="bordered"><a name="code">Code</a></h2>
+<p>
+  The table below lists open source repositories made for the NYC Space/Time Directory that might be useful in other projects, too.
+  More repositories can be found on <a href="https://github.com/nypl-spacetime/">Space/Time's GitHub page</a>.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Repository</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for repo in site.data.github.repos %}
+    <tr>
+      <td>
+        <div class="monospace-name">
+          <a href="https://github.com/nypl-spacetime/{{ repo.name }}">{{ repo.name }}</a>
+        </div>
+      </td>
+      <td>
+        {{ repo.description }}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
