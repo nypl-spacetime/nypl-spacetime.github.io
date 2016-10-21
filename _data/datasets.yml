@@ -7,7 +7,7 @@ datasets:
       license: CC0
 
     - name: nyc-wards
-      description: Boundaries of Manhattans administrative regions, from 1703 to 1895
+      description: Boundaries of Manhattan's administrative regions, from 1703 to 1895
       website:
       license: CC0
 
