@@ -1,0 +1,56 @@
+<h2 class="bordered"><a name="data">Data</a></h2>
+<p>
+  The table below lists datasets used in the NYC Space/Time Directory. The data files are in the <a href="http://ndjson.org/">NDJSON format</a> (one JSON object per line) — for more information about the Space/Time data model, <a href="https://github.com/nypl-spacetime/ontology">see GitHub</a>.
+</p>
+<p>
+  See the <a href="https://github.com/nypl-spacetime/spacetime-data/">spacetime-data</a> repository on GitHub for examples on how to use Space/Time data.
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Dataset</th>
+      <th colspan="3">Data</th>
+      <th>License</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for dataset in site.data.datasets.datasets %}
+    <tr>
+      <td>
+        <div class="monospace-name">{{ dataset.name }}</div>
+        <div class="project-description">{{ dataset.description }}</div>
+        {% if dataset.website %}
+        <div>
+          <a href="{{ dataset.website }}">{{ dataset.website }}</a>
+        </div>
+        {% endif %}
+        <div><a href="https://github.com/nypl-spacetime/etl-{{ dataset.name }}">ETL module</a><sup>*</sup></div>
+      </td>
+      <td>
+        <a href="{{ site.data.datasets.s3-url }}{{ dataset.name }}/{{ dataset.name }}.objects.ndjson">
+          Objects
+        </a>
+      </td>
+      <td>
+        <a href="{{ site.data.datasets.s3-url }}{{ dataset.name }}/{{ dataset.name }}.dataset.json">
+          Meta
+        </a>
+      </td>
+      <td>
+        <a href="{{ site.data.datasets.s3-url }}{{ dataset.name }}/{{ dataset.name }}.zip">
+          ZIP
+        </a>
+      </td>
+      <td>
+        {{ dataset.license }}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<p class="footnote">
+  <sup>*</sup>
+  ETL (<a href="https://en.wikipedia.org/wiki/Extract,_transform,_load">extract, transform, load</a>)
+  modules are used by <a href="https://github.com/nypl-spacetime/spacetime-etl">spacetime-etl</a>, and will typically download data from an external dataset or API,
+  and transform that data to the Space/Time data model.
+</p>

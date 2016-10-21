@@ -1,7 +1,6 @@
 ---
 ---
 
-
 $nyplred: #ed1c24;
 $nypldarkgreen: #437529;
 $nypllightgreen: lighten($nypldarkgreen, 20%);
@@ -30,16 +29,18 @@ $headerfont: "kievit bold", "Helvetica Neue Condensed Black", Helvetica, Arial, 
 $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
 
 @font-face {
-    font-family:"kievit light";
-    font-style:normal;
-    font-weight:800;
-    src:url("http://ux-static.nypl.org.s3-website-us-east-1.amazonaws.com/ff_kievit_web/KievitWeb-Light.woff") format('woff');}
+  font-family:"kievit light";
+  font-style:normal;
+  font-weight:800;
+  src: url("http://ux-static.nypl.org.s3-website-us-east-1.amazonaws.com/ff_kievit_web/KievitWeb-Light.woff") format('woff');
+}
 
 @font-face {
-    font-family:"kievit bold";
-    font-style:bold;
-    font-weight:800;
-    src:url("http://ux-static.nypl.org.s3-website-us-east-1.amazonaws.com/ff_kievit_web/KievitWeb-Bold.woff") format('woff');}
+  font-family:"kievit bold";
+  font-style:bold;
+  font-weight:800;
+  src:url("http://ux-static.nypl.org.s3-website-us-east-1.amazonaws.com/ff_kievit_web/KievitWeb-Bold.woff") format('woff');
+}
 
 @mixin titlestyle {
   font-family: $headerfont;
@@ -227,7 +228,7 @@ a {
   text-decoration: none;
 
   &:visited {
-    color: darken($linkcolor, 10%);
+    color: $linkcolor;
   }
 
   &:hover {
@@ -351,16 +352,6 @@ ul, li {
   display: inline-block;
   width: 200px;
   height: 33px;
-
-  @media screen and (max-width: $mainbreakpoint) {
-    // width: 90%;
-    // height: auto;
-    // max-width: 300px;
-
-    // img {
-    //   width: 100%;
-    // }
-  }
 }
 
 /* MAIN STRUCTURE */
@@ -375,89 +366,9 @@ ul, li {
     margin: 0 auto;
     padding: 2rem;
   }
-}
 
-/* MAPS */
-
-.map {
-  position: relative;
-  clear: both;
-  margin: 0;
-  height: 133px;
-  // background-size: cover;
-  // background-attachment: fixed;
-  background-repeat: no-repeat;
-  width: 100%;
-  background-position: center 0;
-  // border-top: 1px solid $pagecolor;
-  // border-bottom: 1px solid $pagecolor;
-  // @include vendor-prefix(box-shadow, inset ($mapshadow * 2) 0 $mapshadow (-$mapshadow * 2) #000);
-
-  &:nth-child(1), &:nth-child(2) {
-    border-top: none;
-  }
-
-  @media screen and (max-width: $mainbreakpoint) {
-    // border-left: none;
-    // @include vendor-prefix(box-shadow, none);
-  }
-
-  h2 {
-    position: absolute;
-    right: 0;
-    left: 0;
-    font-family: $mainfont;
-    font-style: normal;
-    font-size: 2rem;
-    margin: 0 10px 0 0;
-    color: #fff;
-    width: 5rem;
-    text-align: center;
-
-    &.top:before, &.bottom:after {
-      display: block;
-      position: absolute;
-      left: 0;
-      content: "";
-      width: $timelinearrow;
-      height: $timelinearrow;
-      border: $timelinearrow solid transparent;
-    }
-
-    &.top {
-      top: $timelinearrow;
-
-      &:before {
-        top: -$timelinearrow*2;
-        border-bottom-color: white;
-      }
-
-      @media screen and (max-width: $mainbreakpoint) {
-        transform: scale(0.5) translateY(-2rem);
-      }
-    }
-
-    &.bottom {
-      bottom: $timelinearrow;
-
-      &:after {
-        bottom: -$timelinearrow*2;
-        border-top-color: white;
-      }
-
-      @media screen and (max-width: $mainbreakpoint) {
-        transform: scale(0.5) translateY(2rem);
-      }
-    }
-  }
-}
-
-@each $year in 1660, 1766, 1797, 1817, 1830, 1841, 1849, 1857, 1878, 1913, 1920, 1921, 2014 {
-  .map#{$year} {
-    background-image: url("{{ site.baseurl }}/images/layer_#{$year}.jpg");
-    h2 {
-      @include map_left($year);
-    }
+  img {
+    width: 100%;
   }
 }
 
@@ -483,12 +394,47 @@ ul, li {
   }
 
 }
-//
-// .collection-item-wrapper:after {
-//     content: '';
-//     display: block;
-//     padding-top: 66.65%;
 
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+table thead tr th {
+  text-align: left;
+  border-bottom: 3px solid #437529;
+  font-weight: bold;
+}
+
+table .monospace-name {
+  font-family: monospace;
+  white-space: nowrap;
+}
+
+table .project-description {
+  padding: .5em;
+}
+
+.footnote {
+  padding: .5em;
+  width: 100%;
+  font-style: italic;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+
+table td, table th {
+  vertical-align: top;
+  padding: 16px;
+}
+
+table th {
+  padding-bottom: 4px;
+}
 
 #projects {
   @include clearfix;
@@ -507,6 +453,24 @@ h2.bordered {
   justify-content: space-between;
 }
 
+pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+code {
+  word-break: normal;
+  white-space: pre;
+  max-width: auto;
+  line-height: inherit;
+  word-wrap: normal;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
 .projects li {
   width: 32%;
   box-sizing: border-box;
@@ -516,33 +480,34 @@ h2.bordered {
   }
 }
 
-.cta {
+.contribute {
   position: absolute;
   display: block;
   background-color: $linkcolor;
-  border-radius: 1rem;
+  border-radius: .3rem;
   border: 2px solid $linkcolor;
   color: white;
   text-transform: uppercase;
   text-align: center;
-  top: -4.6rem;
-  right: 1rem;
-  transition: all 0.1s;
-  padding: 0.6rem 1rem 0.4rem;
+
+  right: .5rem;
+  top: .5rem;
+  // transition: all 0.1s;
+  padding: 0.3rem .5rem 0;
 
   &:link, &:visited {
     color: white;
   }
 
-  &:hover {
-    color: $nypldarkgreen;
-    border-color: $nypldarkgreen;
-    background-color: white;
-  }
+  // &:hover {
+  //   color: $nypldarkgreen;
+  //   border-color: $nypldarkgreen;
+  //   background-color: white;
+  // }
 
-  @media screen and (max-width: $mainbreakpoint) {
-    top: -7rem;
-  }
+  // @media screen and (max-width: $mainbreakpoint) {
+  //   top: -7rem;
+  // }
 }
 
 li.project-container {
@@ -576,8 +541,8 @@ li.project-container {
 
     a {
       display: block;
-      width: 100%;
-      height: 100%;
+      // width: 100%;
+      // height: 100%;
       overflow: hidden;
       z-index: 1;
     }

@@ -1,0 +1,22 @@
+s3-url: http://s3.amazonaws.com/spacetime-nypl-org/datasets/
+
+datasets:
+    - name: mapwarper
+      description: Boundaries of thousands of maps from <a href="http://maps.nypl.org/warper/">Map Warper</a>, NYPL's tool for rectifying historical maps
+      website: http://maps.nypl.org/
+      license: CC0
+
+    - name: nyc-wards
+      description: Boundaries of Manhattan's administrative regions, from 1703 to 1895
+      website:
+      license: CC0
+
+    - name: 1854-street-centerlines
+      description: Manhattan and Brooklyn street centerlines, traced from a 1854 fire insurance map
+      website: http://mgiraldo.github.io/centerlines
+      license: CC0
+
+    - name: oldnyc
+      description: Contains the location of 39516 photos from <a href="http://digitalcollections.nypl.org/collections/photographic-views-of-new-york-city-1870s-1970s-from-the-collections-of-the-ne-2#/?tab=about">Photographic Views of New York City, 1870s-1970s</a> collection, taken from Dan Vanderkam's <a href="https://www.oldnyc.org/">OldNYC</a> project.
+      website: http://oldnyc.org
+      license: Apache

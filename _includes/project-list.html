@@ -1,17 +1,22 @@
-{% for category in site.data.projects %}
-  {% if category.type == include.type %}
-    {% assign the_category = category %}
+{% for project in site.data.projects %}
+  {% if project.type == include.type %}
+    {% assign category = project %}
   {% endif %}
 {% endfor %}
 
-<h2 class="bordered"><a name="{{ the_category.title | slugify: 'raw' }}">{{ the_category.title }}</a></h2>
+<h2 class="bordered"><a name="{{ category.title | slugify: 'raw' }}">{{ category.title }}</a></h2>
 
-<p>{{ the_category.description }}</p>
+<p>{{ category.description }}</p>
 
 <ul class="projects">
-{% for project in the_category.projects %}
+{% for project in category.projects %}
   <li class="project-container {{ project.category }}">
       <div class="project-image-container">
+        {% if project.contribute %}
+        <a class="contribute" href="{{ project.contribute }}" title="contribute to {{ project.name }}">
+          Contribute!
+        </a>
+        {% endif %}
         {% if project.url %}
         <a href="{{ project.url }}" title="visit {{ project.name }}" aria-hidden="true">
         {% else %}
@@ -32,21 +37,11 @@
         </h3>
       </div>
       <div class="project-description">
-        {% if project.contribute %}
-        <a class="cta" href="{{ project.contribute }}" title="contribute to {{ project.name }}">
-          Contribute!
-        </a>
-        {% endif %}
-        {% if project.explore %}
-        <a class="cta" href="{{ project.explore }}" title="explore {{ project.name }}">
-          Explore!
-        </a>
-        {% endif %}
         <p>{{ project.description}}</p>
         {% if project.github %}
         <p>
         <a href="{{ project.github }}">
-          Get project source code on GitHub
+          View project source code on GitHub
         </a>
         </p>
         {% endif %}
