@@ -1,12 +1,19 @@
 repos:
+  - name: brick-by-brick
+    description: Simple JSON API for small crowdsourcing apps used in different NYC Space/Time Directory projects
+
+  # https://github.com/nypl-spacetime/ocr-scripts
+
   - name: spacetime-etl
     description: Extract/Transform/Load tool for Space/Time data
 
-  - name: brick-by-brick
-    description: Simple JSON API for small crowdsourcing apps used in different NYC Space/Time Directory projects
 
   - name: spacetime-cli
     description: Command line tools for NYC Space/Time Directory data
 
-  - name: group-maps
-    description: Selects a set of maps from NYC Space/Time Directory database, and groups them in bands of a configurable amount of years
+  # - name: group-maps
+  #   description: Selects a set of maps from NYC Space/Time Directory database, and groups them in bands of a configurable amount of years
+
+  # https://github.com/nypl-spacetime/brick-specification
+  # https://github.com/nypl-spacetime/express-pg-oauth
+  # https://github.com/nypl-spacetime/hocr-detect-columns
