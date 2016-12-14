@@ -9,7 +9,7 @@
   <thead>
     <tr>
       <th>Dataset</th>
-      <th colspan="3">Data</th>
+      <th colspan="2">Data</th>
       <th>License</th>
     </tr>
   </thead>
@@ -21,24 +21,18 @@
         <div class="project-description">{{ dataset.description }}</div>
       </td>
       <td>
-        <a href="{{ site.data.datasets.s3-url }}{{ dataset.name }}/{{ dataset.name }}.objects.ndjson">
-          Objects
-        </a>
-      </td>
-      <td>
-        <a href="{{ site.data.datasets.s3-url }}{{ dataset.name }}/{{ dataset.name }}.dataset.json">
-          Meta
-        </a>
-      </td>
-      <td>
         <a href="{{ site.data.datasets.s3-url }}{{ dataset.name }}/{{ dataset.name }}.zip">
           ZIP
         </a>
       </td>
       <td>
+        <a href="{{ site.data.datasets.s3-url }}{{ dataset.name }}/{{ dataset.name }}.geojson">
+          GeoJSON
+        </a>
+      </td>
+      <td>
         {{ dataset.license }}
       </td>
-    </tr>
     {% endfor %}
   </tbody>
 </table>
