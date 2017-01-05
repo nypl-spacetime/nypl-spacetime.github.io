@@ -30,8 +30,12 @@
           GeoJSON
         </a>
       </td>
-      <td>
+      <td nowrap>
+        {% if site.data.licenses[dataset.license] %}
+        <a href="{{ site.data.licenses[dataset.license] }}">{{ dataset.license }}</a>
+        {% else %}
         {{ dataset.license }}
+        {% endif %}
       </td>
     {% endfor %}
   </tbody>
