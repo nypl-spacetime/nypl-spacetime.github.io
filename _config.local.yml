@@ -1,0 +1,9 @@
+baseurl: ''
+s3-url: http://spacetime-s3-datasets.dev/
+
+defaults:
+  -
+    scope:
+      path: ''
+    values:
+      layout: default

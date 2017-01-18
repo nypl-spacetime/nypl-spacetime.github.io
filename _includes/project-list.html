@@ -4,8 +4,8 @@
   {% endif %}
 {% endfor %}
 
-<h2 class="bordered"><a name="{{ category.title | slugify: 'raw' }}">{{ category.title }}</a></h2>
-
+{% assign id=category.title | slugify: 'raw' %}
+{% include anchor.html tag="h2" class="bordered" text=category.title id=id %}
 <p>{{ category.description }}</p>
 
 <ul class="projects">

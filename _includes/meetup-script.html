@@ -1,0 +1,24 @@
+<script>
+  function meetups(data) {
+    var tr = d3.select('#meetups tbody').selectAll('tr')
+      .data(data.results).enter()
+      .append('tr')
+
+    tr.append('td')
+      .append('a')
+      .attr('href', function (d) {
+        return d.event_url
+      })
+      .text(function (d) {
+        return d.name
+      })
+
+    tr.append('td')
+      .text(function (d) {
+        return moment(new Date(d.time)).format('MMMM Do YYYY, h:mm A')
+      })
+  }
+</script>
+<script src="https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_urlname=historical-data-and-maps-at-nypl&callback=meetups&page=200&fields=&order=time&status=past%2Cupcoming&desc=false&sig_id=127432242&sig=cfebd1d8fdd4aeef25cd9ad7685d003eb030d4e2">
+</script>
+

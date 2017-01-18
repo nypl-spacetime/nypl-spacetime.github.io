@@ -1,4 +1,5 @@
 baseurl: ''
+s3-url: http://s3.amazonaws.com/spacetime-nypl-org/datasets/
 
 defaults:
   -

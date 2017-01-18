@@ -1,0 +1,97 @@
+<!-- This is a doT.js template (http:olado.github.io/doT/), see script.js -->
+<div class="dataset-details-period-hover-box" id="dataset-details-period-hover-box-{{=it.id}}">
+  <div class="arrow-box">
+    <div class="dataset-details-period-hover-box-year"></div>
+    <div class="dataset-details-period-hover-box-value"></div>
+  </div>
+</div>
+<table>
+  <tbody>
+  {{ for(var prop in it.dataset) { }}
+    <tr>
+      <td>{{=prop}}</td>
+      <td>{{=it.dataset[prop]}}</td>
+    </tr>
+  {{ } }}
+  <tr>
+    <td rowspan="3">Data</td>
+    <td><a href="{{=it.s3Url}}{{=it.id}}/{{=it.id}}.zip">Complete dataset</a> (ZIP)</td>
+  </tr>
+  <tr>
+    <td><a href="{{=it.s3Url}}{{=it.id}}/{{=it.id}}.objects.ndjson">Objects</a> (NDJSON)</td>
+  </tr>
+  <tr>
+    <td>
+      <a href="{{=it.s3Url}}{{=it.id}}/{{=it.id}}.geojson">
+        Download GeoJSON file</a> — or <a href="http://geojson.io/#data=data:text/x-url,{{=encodeURIComponent(it.s3Url + it.id + '/' + it.id + '.sample.geojson')}}">view sample GeoJSON in geojson.io
+      </a>
+    </td>
+  </tr>
+  {{? it.stats.objects }}
+  <tr>
+    <td rowspan="1">Objects</td>
+    <td>{{=it.stats.objects.count}}</td>
+  </tr>
+  <tr>
+  <!-- <td>
+    {{~it.stats.objects.types :value}}
+      <code>{{=value}}</code>
+    {{~}}
+  </td> -->
+  </tr>
+  {{?}}
+  {{? it.stats.objects && it.stats.objects.decades }}
+  <tr>
+    <td>Period</td>
+    <td>
+      <svg class="dataset-details-period"
+        aria-labelledby="dataset-details-period-title-{{=it.id}} dataset-details-period-desc-{{=it.id}}" role="img">
+        <title id="dataset-details-period-title-{{=it.id}}">A bar chart distribution of dataset's objects per decade</title>
+        <desc id="dataset-details-period-desc-{{=it.id}}">
+          {{=it.stats.objects.decadesDesc}}
+        </desc>
+        <g x="0" y="0" width="100%" height="90px" transform="scale(1, .82)">
+        {{~it.stats.objects.decades :value:index}}
+          {{? index > 0 && index < it.stats.objects.decades.length}}
+          <line class="dataset-details-period-line" x1="{{= 100 / it.stats.objects.decades.length * index }}%" y1="0" x2="{{= 100 / it.stats.objects.decades.length * index }}%" y2="100%" />
+          {{?}}
+          <rect class="dataset-details-period-bar" id="dataset-details-period-bar-{{=it.id}}-{{=index}}"
+            x="{{= 100 / it.stats.objects.decades.length * index + .4 }}%"
+            y="{{= 100 - value.percentage }}%"
+            width="{{=100 / it.stats.objects.decades.length - .8}}%"
+            height="{{=value.percentage}}%" />
+          <rect class="dataset-details-period-hover"
+            data-year="{{=value.year}}" data-value="{{=value.value}}"
+            data-for="dataset-details-period-bar-{{=it.id}}-{{=index}}"
+            data-dataset="{{=it.id}}"
+            onmouseover="datasetDetailsPeriodMouseOver(this)"
+            onmouseout="datasetDetailsPeriodMouseOut(this)"
+            x="{{= 100 / it.stats.objects.decades.length * index }}%"
+            y="0%"
+            width="{{= 100 / it.stats.objects.decades.length }}%"
+            height="100%" />
+        {{~}}
+        </g>
+        <g x="0" y="0" width="100%" height="90px">
+        {{~it.stats.objects.decades :value:index}}
+          {{? index % 2 === 1 && index < it.stats.objects.decades.length}}
+          <text x="{{=100 / it.stats.objects.decades.length * index}}%" y="100%" text-anchor="middle" >
+            {{=value.year}}
+          </text>
+          {{?}}
+        {{~}}
+        </g>
+      </svg>
+    </td>
+  </tr>
+  {{?}}
+  <tr>
+    <td>Conversion script</td>
+    <td><a href="https://github.com/nypl-spacetime/etl-{{=it.id}}">https://github.com/nypl-spacetime/etl-{{=it.id}}</a></td>
+  </tr>
+  <tr>
+    <td>Last updated</td>
+    <td id="dataset-details-{{=it.id}}-last-updated"></td>
+  </tr>
+  </tbody>
+</table>

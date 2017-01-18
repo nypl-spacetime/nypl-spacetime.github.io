@@ -179,6 +179,31 @@ h2 {
   }
 }
 
+
+.anchor {
+  a {
+    text-decoration: none;
+    border: none;
+    float: left;
+    padding-right: 4px;
+    margin-left: -24px;
+    // line-height: 1;
+  }
+
+  & a svg {
+    color: #000;
+    vertical-align: middle;
+    visibility: hidden;
+  }
+
+  &:hover svg {
+    visibility: visible;
+  }
+}
+
+
+
+
 p {
   max-width: 36rem;
   margin-top: 0;
@@ -417,13 +442,113 @@ table .project-description {
   padding: .5em;
 }
 
+.dataset-details-on {
+  display: none;
+}
+
+.dataset-details-on table {
+  margin-bottom: 0;
+  margin-left: 1em;
+}
+
+.dataset-details-on table td {
+  padding: 3px 0;
+}
+
+.dataset-details-on table td:first-child:not(:last-child) {
+  white-space: nowrap;
+}
+
+.dataset-details-on table td:first-child:not(:last-child):after {
+  content: ":";
+}
+
+.dataset-details-period {
+  padding: 0;
+  margin: 0;
+  padding-right: 1em;
+  height: 100px;
+  width: 100%;
+  display: flex;
+}
+
+svg.dataset-details-period .dataset-details-period-bar {
+  fill: #437529;
+}
+
+svg.dataset-details-period .dataset-details-period-hover {
+  fill: none;
+  pointer-events: all;
+}
+
+svg.dataset-details-period .dataset-details-period-line {
+  stroke-dasharray: 3, 6;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.3);
+}
+
+.dataset-details-period-hover-box {
+  display: none;
+  position: fixed;
+  pointer-events: none;
+  text-align: center;
+  line-height: 1.2em;
+}
+
+.dataset-details-period-hover-box-year {
+  font-family: "kievit bold";
+}
+
+.arrow-box {
+  left: -50%;
+  position: relative;
+  background: #ffffff;
+  border: 2px solid #1e6907;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.arrow-box:after, .arrow-box:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.arrow-box:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-top-color: #ffffff;
+  border-width: 10px;
+  margin-left: -10px;
+}
+
+.arrow-box:before {
+  //rgb(67, 117, 41)
+  border-color: rgba(30, 105, 7, 0);
+  border-top-color: #1e6907;
+  border-width: 13px;
+  margin-left: -13px;
+}
+
+tr.no-padding-bottom td {
+  padding-bottom: 0;
+}
+
+tr.no-padding-top td {
+  padding-top: 0;
+}
+
 .footnote {
   padding: .5em;
   width: 100%;
   font-style: italic;
 }
 
-table tbody tr:nth-child(odd) {
+table tbody tr.odd {
   background-color: #f4f4f4;
 }
 
@@ -469,6 +594,14 @@ code {
   line-height: inherit;
   word-wrap: normal;
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.dataset-draft {
+  background-color: #437529;
+  color: #f7f7f7;
+  padding: 6px 6px;
+  border-radius: 4px;
+  font-weight: bold;
 }
 
 .projects li {

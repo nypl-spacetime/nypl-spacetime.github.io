@@ -1,11 +1,11 @@
-<h2 class="bordered"><a name="data">Data</a></h2>
+{% include anchor.html tag="h2" class="bordered" text="Data" id="data" %}
 <p>
   The table below lists datasets used in the NYC Space/Time Directory. The data files are in the <a href="http://ndjson.org/">NDJSON format</a> (one JSON object per line) — for more information about the Space/Time data model, <a href="https://github.com/nypl-spacetime/ontology">see GitHub</a>.
 </p>
 <p>
   See the <a href="https://github.com/nypl-spacetime/spacetime-data/">spacetime-data</a> repository on GitHub for examples on how to use Space/Time data.
 </p>
-<table>
+<table id="datasets">
   <thead>
     <tr>
       <th>Dataset</th>
@@ -15,18 +15,27 @@
   </thead>
   <tbody>
     {% for dataset in site.data.datasets.datasets %}
-    <tr>
+    {% capture evenodd %}{% cycle 'odd', 'even' %}{% endcapture %}
+    <tr class="{{ evenodd }} no-padding-bottom">
       <td>
-        <div class="monospace-name">{{ dataset.name }}</div>
+        <div>
+          {% assign id=dataset.name | prepend: 'data-' %}
+          {% include anchor.html tag="span" class="monospace-name" text=dataset.name id=id %}
+          {% if dataset.draft %}
+          <span class="monospace-name dataset-draft">
+            draft
+          </span>
+          {% endif %}
+        </div>
         <div class="project-description">{{ dataset.description }}</div>
       </td>
       <td>
-        <a href="{{ site.data.datasets.s3-url }}{{ dataset.name }}/{{ dataset.name }}.zip">
+        <a href="{{ site.s3-url }}{{ dataset.name }}/{{ dataset.name }}.zip">
           ZIP
         </a>
       </td>
       <td>
-        <a href="{{ site.data.datasets.s3-url }}{{ dataset.name }}/{{ dataset.name }}.geojson">
+        <a href="{{ site.s3-url }}{{ dataset.name }}/{{ dataset.name }}.geojson">
           GeoJSON
         </a>
       </td>
@@ -37,6 +46,17 @@
         {{ dataset.license }}
         {% endif %}
       </td>
+    </tr>
+    {% assign details-id=dataset.name | prepend: 'dataset-details-' %}
+    <tr class="{{ evenodd }} dataset-details-off no-padding-top" id="{{ details-id }}-off">
+      <td colspan="4">
+        <a class="dataset-view-details" href="javascript:void(0)" data-dataset-details-id="{{ details-id }}" data-dataset-name="{{ dataset.name }}">View details</a>
+      </td>
+    </tr>
+    <tr class="{{ evenodd }} dataset-details-on no-padding-top" id="{{ details-id }}-on">
+      <td colspan="4" id="{{ details-id }}-content" ></td>
+    </tr>
     {% endfor %}
   </tbody>
 </table>
+<!-- <p>TODO: add paragraph explaining what draft dataset is</p> -->

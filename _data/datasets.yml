@@ -1,5 +1,3 @@
-s3-url: http://s3.amazonaws.com/spacetime-nypl-org/datasets/
-
 datasets:
     - name: mapwarper
       description: Boundaries of thousands of maps from <a href="http://maps.nypl.org/warper/">Map Warper</a>, NYPL's tool for rectifying historical maps
@@ -23,7 +21,7 @@ datasets:
     #   license: CC0
 
     - name: 1854-street-centerlines
-      description: Manhattan and Brooklyn street centerlines, traced from a 1854 fire insurance map by <a href="http://mgiraldo.github.io/centerlines">Mauricio Giraldo</a>
+      description: Manhattan and Brooklyn street centerlines, traced from a 1854 fire insurance atlas by <a href="http://mgiraldo.github.io/centerlines">Mauricio Giraldo</a>
       license: CC0
 
     - name: oldnyc
