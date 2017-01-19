@@ -84,7 +84,9 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
       }
 
       var datasetTransform = {
-        website: (value) => '<a href="' + value + '">' + value + '</a>'
+        website: function (value) {
+          return '<a href="' + value + '">' + value + '</a>'
+        }
         // author: TODO: Bert Spaan <bertspaan@nypl.org>
       }
 
