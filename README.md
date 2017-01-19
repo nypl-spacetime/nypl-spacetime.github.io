@@ -1,6 +1,6 @@
 # NYC Space/Time Directory
 
-Repository for the promotional website for the NYC Space/Time Directory.
+Website of NYPL's [NYC Space/Time Directory](http://spacetime.nypl.org) project.
 
 # License
 
