@@ -24,15 +24,20 @@ d3.text('js/dataset-details.html', function (text) {
 })
 
 function datasetDetailsPeriodMouseOver (element) {
-  var hoverBox = d3.select('#dataset-details-period-hover-box-' + element.dataset.dataset)
+  var dataset = element.getAttribute('data-dataset')
+  var value = element.getAttribute('data-value')
+  var year = element.getAttribute('data-year')
+  var htmlFor = element.getAttribute('data-for')
+
+  var hoverBox = d3.select('#dataset-details-period-hover-box-' + dataset)
 
   hoverBox.select('.dataset-details-period-hover-box-year')
-    .html(element.dataset.year + ' - ' + (parseInt(element.dataset.year) + 9))
+    .html(year + ' - ' + (parseInt(year) + 9))
 
   hoverBox.select('.dataset-details-period-hover-box-value')
-    .html(formatNumber(element.dataset.value) + (element.dataset.value === 1 ? ' object' : ' objects'))
+    .html(formatNumber(value) + (value === 1 ? ' object' : ' objects'))
 
-  var bar = d3.select('#' + element.dataset.for).node()
+  var bar = d3.select('#' + htmlFor).node()
   var rect = bar.getBoundingClientRect()
 
   var top = rect.top - 75
@@ -45,7 +50,9 @@ function datasetDetailsPeriodMouseOver (element) {
 }
 
 function datasetDetailsPeriodMouseOut (element) {
-  d3.select('#dataset-details-period-hover-box-' + element.dataset.dataset)
+  var dataset = element.getAttribute('data-dataset')
+
+  d3.select('#dataset-details-period-hover-box-' + dataset)
     .style('display', 'none')
 }
 
