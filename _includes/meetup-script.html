@@ -1,7 +1,9 @@
 <script>
   function meetups(data) {
     var tr = d3.select('#meetups tbody').selectAll('tr')
-      .data(data.results).enter()
+      .data(data.results.sort(function (a, b) {
+        return new Date(b.time) - new Date(a.time)
+      })).enter()
       .append('tr')
 
     tr.append('td')
