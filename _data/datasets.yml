@@ -15,14 +15,19 @@ datasets:
       description: Boundaries of Manhattan's administrative regions, from 1703 to 1895
       license: CC0
 
+    - name: nyc-streets
+      description: Manhattan and Brooklyn streets, traced from New York City insurance atlases
+      license: CC0
+
     # - name: enumeration-districts
     #   draft: true
     #   description: 1900 census enumeration districts for Manhattan and the Bronx, traced from <a href="https://digitalcollections.nypl.org/items/0cabe3d0-3d50-0134-a8e0-00505686a51c">maps created by Barbara Hillman</a>
     #   license: CC0
 
-    - name: 1854-street-centerlines
-      description: Manhattan and Brooklyn street centerlines, traced from a 1854 fire insurance atlas by <a href="http://mgiraldo.github.io/centerlines">Mauricio Giraldo</a>
-      license: CC0
+    # - name: building-inspector-nyc-streets
+    #   draft: true
+    #   description: Links Building Inspector addresses to historical streets
+    #   license: CC0
 
     - name: oldnyc
       description: Contains the location of 39516 photos from <a href="http://digitalcollections.nypl.org/collections/photographic-views-of-new-york-city-1870s-1970s-from-the-collections-of-the-ne-2#/?tab=about">Photographic Views of New York City, 1870s-1970s</a> collection, taken from Dan Vanderkam's <a href="https://www.oldnyc.org/">OldNYC</a>
