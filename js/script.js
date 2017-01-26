@@ -66,7 +66,12 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
     var dataset = this.dataset.datasetName
 
     var statusUrl = s3Url + dataset + '/' + statusFilename
-    d3.json(statusUrl, function (statusJson) {
+    d3.json(statusUrl, function (err, statusJson) {
+      if (err) {
+        console.error(err.message)
+        return
+      }
+
       d3.selectAll('#datasets .dataset-details-off')
         .style('display', 'table-row')
 
