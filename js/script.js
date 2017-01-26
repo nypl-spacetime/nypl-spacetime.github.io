@@ -68,7 +68,7 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
     var statusUrl = s3Url + dataset + '/' + statusFilename
     d3.json(statusUrl, function (err, statusJson) {
       if (err) {
-        console.error(err.message)
+        console.error(err)
         return
       }
 
