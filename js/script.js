@@ -65,17 +65,17 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
     var id = this.dataset.datasetDetailsId
     var dataset = this.dataset.datasetName
 
-    d3.selectAll('#datasets .dataset-details-off')
-      .style('display', 'table-row')
-
-    d3.selectAll('#datasets .dataset-details-on')
-      .style('display', 'none')
-
-    d3.select('#' + id + '-off')
-      .style('display', 'none')
-
     var statusUrl = s3Url + dataset + '/' + statusFilename
     d3.json(statusUrl, function (statusJson) {
+      d3.selectAll('#datasets .dataset-details-off')
+        .style('display', 'table-row')
+
+      d3.selectAll('#datasets .dataset-details-on')
+        .style('display', 'none')
+
+      d3.select('#' + id + '-off')
+        .style('display', 'none')
+
       var templateData = {
         s3Url: s3Url,
         id: statusJson.dataset.id,
