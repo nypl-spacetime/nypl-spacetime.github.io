@@ -433,7 +433,7 @@ table thead tr th {
   font-weight: bold;
 }
 
-table .monospace-name {
+.monospace-name {
   font-family: monospace;
   white-space: nowrap;
 }
@@ -596,12 +596,23 @@ code {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
-.dataset-draft {
-  background-color: #437529;
+.dataset-type {
   color: #f7f7f7;
   padding: 6px 6px;
   border-radius: 4px;
   font-weight: bold;
+}
+
+.dataset-type-draft {
+  background-color: #15bdb9;
+}
+
+.dataset-type-crowdsourced {
+  background-color: #ff00b3;
+}
+
+dl.dataset-types dd, dl.dataset-types dt {
+  margin-bottom: .5em;
 }
 
 .projects li {

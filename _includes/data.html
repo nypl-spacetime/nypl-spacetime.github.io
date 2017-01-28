@@ -21,9 +21,9 @@
         <div>
           {% assign id=dataset.name | prepend: 'data-' %}
           {% include anchor.html tag="span" class="monospace-name" text=dataset.name id=id %}
-          {% if dataset.draft %}
-          <span class="monospace-name dataset-draft">
-            draft
+          {% if dataset.type %}
+          <span class="monospace-name dataset-type dataset-type-{{ dataset.type }}" title="{{ site.data.datasets.types[dataset.type].title }}">
+            {{ site.data.datasets.types[dataset.type].code }}
           </span>
           {% endif %}
         </div>
@@ -59,4 +59,19 @@
     {% endfor %}
   </tbody>
 </table>
-<!-- <p>TODO: add paragraph explaining what draft dataset is</p> -->
+
+<h3>{% include anchor.html tag="span" text='Dataset types' id='dataset-types' %}</h3>
+<dl class="dataset-types">
+  {% for type in site.data.datasets.types %}
+  <dt>
+    <span class="monospace-name dataset-type dataset-type-{{ type[0] }}">
+      {{ type[1].title }}
+    </span>
+  </dt>
+  <dd>
+    <p>
+      {{ type[1].description }}
+    </p>
+  </dd>
+  {% endfor %}
+</dl>
