@@ -1,6 +1,6 @@
 <script>
   function meetups(data) {
-    var tr = d3.select('#meetups tbody').selectAll('tr')
+    var tr = d3.select('#meetups-table tbody').selectAll('tr')
       .data(data.results.sort(function (a, b) {
         return new Date(b.time) - new Date(a.time)
       })).enter()
