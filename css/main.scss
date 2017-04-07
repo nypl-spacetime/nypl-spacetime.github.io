@@ -597,8 +597,9 @@ code {
 }
 
 .dataset-type {
+  display: inline-block;
   color: #f7f7f7;
-  padding: 6px 6px;
+  padding: 0px 6px;
   border-radius: 4px;
   font-weight: bold;
 }
@@ -609,6 +610,10 @@ code {
 
 .dataset-type-crowdsourced {
   background-color: #ff00b3;
+}
+
+.dataset-type-inferred {
+  background-color: #d34026;
 }
 
 dl.dataset-types dd, dl.dataset-types dt {
@@ -720,7 +725,7 @@ li.project-container {
       line-height: 1;
       margin: 0;
       border-top: $projectborder solid $linkcolor;
-      width: 49%;
+      width: 50%;
       -webkit-box-decoration-break: clone;
 
       @media screen and (max-width: $mainbreakpoint) {
