@@ -2,10 +2,10 @@
 ## Featured
 ################################################################################
 
-# - type: featured
-#   title: New &#38; Featured
-#   description: New to the Space/Time Directory or looking to contribute? Start with our featured projects and sketches.
-#   projects:
+- type: featured
+  title: New &#38; Featured
+  # description: New to the Space/Time Directory or looking to contribute? Start with our featured projects and sketches.
+  projects:
 #     - name: Surveyor
 #       image: surveyor.jpg
 #       url: http://spacetime.nypl.org/surveyor
@@ -15,12 +15,13 @@
 #       github: https://github.com/nypl-spacetime/surveyor
 #       category: featured
 #
-#     - name: Maps by Decade
-#       image: maps-by-decade.jpg
-#       url: http://spacetime.nypl.org/maps-by-decade
-#       alt: Maps by Decade
-#       description: Move through the decades to see a snapshot of the NYPL's street-scale, New York City maps from that era.
-#       category: featured
+    - name: Maps by Decade
+      image: maps-by-decade.jpg
+      url: http://spacetime.nypl.org/maps-by-decade
+      alt: Maps by Decade
+      description: Maps by Decade shows digitized New York City street maps from the New York Public Library's Map Division published between 1850 and 1950, grouped by decade. Use it to compare urban geography across time, and marvel at the countours of New York City's past.
+
+      category: featured
 
 ################################################################################
 ## Projects
@@ -82,7 +83,7 @@
 ################################################################################
 
 - type: resource
-  title: Related resources
+  title: Related Resources
   description: Browse related Library resources including digitized materials, data sets, APIs, and much more!
   projects:
     - name: NYPL Digital Collections
