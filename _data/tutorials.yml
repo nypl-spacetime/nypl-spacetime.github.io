@@ -1,0 +1,11 @@
+- title: 'From Paper Maps to the Web: A DIY Digital Maps Primer'
+  url: https://www.nypl.org/blog/2015/01/05/web-maps-primer
+  tools: <a href="http://maps.nypl.org/warper/">Map Warper</a>, <a href="http://geojson.io/">GeoJSON</a>, <a href="https://www.mapbox.com/mapbox.js/api/v3.0.1/">Mapbox.js</a>
+
+- title: 'Historical Addresses & NYC Space/Time Directory Data'
+  url: https://github.com/nypl-spacetime/tutorial-historical-addresses#tutorial-historical-addresses--nyc-spacetime-directory
+  tools: <a href="http://spacetime.nypl.org/#data">Space/Time data</a>, <a href="http://leafletjs.com/">Leaflet</a>, <a href="https://d3js.org/">D3.js</a>
+
+- title: 'Tracing Historical Streets with QGIS'
+  url: https://github.com/nypl-spacetime/qgis-trace-tutorial#tutorial-tracing-historical-streets-with-qgis
+  tools: <a href="http://www.qgis.org/">QGIS</a>, <a href="http://maps.nypl.org/warper">Map Warper</a>
