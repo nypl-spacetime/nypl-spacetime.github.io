@@ -6,21 +6,21 @@
   title: New &#38; Featured
   # description: New to the Space/Time Directory or looking to contribute? Start with our featured projects and sketches.
   projects:
-#     - name: Surveyor
-#       image: surveyor.jpg
-#       url: http://spacetime.nypl.org/surveyor
-#       alt: Surveyor
-#       contribute: http://spacetime.nypl.org/surveyor
-#       description: Help put NYPL collections on the map! Discover Library materials through the lens of geography and help identify locations depicted in our vast collections.
-#       github: https://github.com/nypl-spacetime/surveyor
-#       category: featured
+    - name: Surveyor
+      image: surveyor.jpg
+      url: http://spacetime.nypl.org/surveyor
+      alt: Surveyor
+      contribute: http://spacetime.nypl.org/surveyor
+      description: Help us put our collections of historical photographs on the map! Discover Library materials through the lens of geography and help identify locations depicted in our vast collections.
+      github: https://github.com/nypl-spacetime/surveyor
+      category: featured
 #
     - name: Maps by Decade
       image: maps-by-decade.jpg
       url: http://spacetime.nypl.org/maps-by-decade
       alt: Maps by Decade
       description: Maps by Decade shows digitized New York City street maps from the New York Public Library's Map Division published between 1850 and 1950, grouped by decade. Use it to compare urban geography across time, and marvel at the countours of New York City's past.
-
+      github: https://github.com/nypl-spacetime/maps-by-decade
       category: featured
 
 ################################################################################
