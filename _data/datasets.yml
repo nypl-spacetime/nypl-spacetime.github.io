@@ -1,7 +1,7 @@
 datasets:
     - name: mapwarper
       type: crowdsourced
-      description: Boundaries of thousands of maps from <a href="http://maps.nypl.org/warper/">Map Warper</a>, NYPL's tool for rectifying historical maps
+      description: Boundaries of thousands of maps from <a href="http://maps.nypl.org/warper/">Map Warper</a>, NYPL’s tool for rectifying historical maps
       license: CC0
 
     - name: building-inspector
@@ -10,11 +10,11 @@ datasets:
       license: CC0
 
     - name: perris-atlas-footprints
-      description: Building footprints from William Perris' 1854 Maps of the City of New York, traced by NYPL librarians
+      description: Building footprints from William Perris’ 1854 Maps of the City of New York, traced by NYPL librarians
       license: CC0
 
     - name: nyc-wards
-      description: Boundaries of Manhattan's administrative regions, from 1703 to 1895
+      description: Boundaries of Manhattan’s administrative regions, from 1703 to 1895
       license: CC0
 
     - name: nyc-streets
@@ -32,7 +32,7 @@ datasets:
       license: CC0
 
     - name: oldnyc
-      description: Contains the location of 39516 photos from <a href="http://digitalcollections.nypl.org/collections/photographic-views-of-new-york-city-1870s-1970s-from-the-collections-of-the-ne-2#/?tab=about">Photographic Views of New York City, 1870s-1970s</a> collection, taken from Dan Vanderkam's <a href="https://www.oldnyc.org/">OldNYC</a>
+      description: Contains the location of 39516 photos from <a href="http://digitalcollections.nypl.org/collections/photographic-views-of-new-york-city-1870s-1970s-from-the-collections-of-the-ne-2#/?tab=about">Photographic Views of New York City, 1870s-1970s</a> collection, taken from Dan Vanderkam’s <a href="https://www.oldnyc.org/">OldNYC</a>
       license: CC BY-NC
 
     - name: surveyor
