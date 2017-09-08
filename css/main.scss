@@ -201,9 +201,6 @@ h2 {
   }
 }
 
-
-
-
 p {
   max-width: 36rem;
   margin-top: 0;
@@ -268,6 +265,10 @@ a {
     text-decoration: none;
     border: none;
   }
+}
+
+a.no-border {
+  border: none;
 }
 
 b, strong {
