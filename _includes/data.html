@@ -22,9 +22,11 @@
           {% assign id=dataset.name | prepend: 'data-' %}
           {% include anchor.html tag="span" class="monospace-name" text=dataset.name id=id %}
           {% if dataset.type %}
-          <span class="monospace-name dataset-type dataset-type-{{ dataset.type }}" title="{{ site.data.datasets.types[dataset.type].title }}">
-            {{ site.data.datasets.types[dataset.type].code }}
-          </span>
+            {% for type in dataset.type %}
+              <span class="monospace-name dataset-type dataset-type-{{ type }}" title="{{ site.data.datasets.types[type].title }}">
+                {{ site.data.datasets.types[type].code }}
+              </span>
+            {% endfor %}
           {% endif %}
         </div>
         <div class="project-description">{{ dataset.description }}</div>
