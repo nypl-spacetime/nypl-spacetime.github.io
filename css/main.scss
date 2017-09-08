@@ -382,11 +382,11 @@ ul, li {
 
 /* MAIN STRUCTURE */
 .content {
-  // margin: 0 auto;
   max-width: $contentwidth;
   margin: 0 auto;
   padding: 2rem 1rem 0;
   padding-left: (8.25rem + 1.8124rem);
+  overflow: hidden;
 
   @media screen and (max-width: $mainbreakpoint) {
     margin: 0 auto;
@@ -422,6 +422,9 @@ ul, li {
 }
 
 table {
+  display: block;
+  overflow-x: auto;
+
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
