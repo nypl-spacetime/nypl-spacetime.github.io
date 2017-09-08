@@ -19,8 +19,16 @@
       image: maps-by-decade.jpg
       url: http://spacetime.nypl.org/maps-by-decade
       alt: Maps by Decade
-      description: Maps by Decade shows digitized New York City street maps from the New York Public Library's Map Division published between 1850 and 1950, grouped by decade. Use it to compare urban geography across time, and marvel at the countours of New York City's past.
+      description: Maps by Decade shows digitized New York City street maps from the New York Public Library’s Map Division published between 1850 and 1950, grouped by decade. Use it to compare urban geography across time, and marvel at the countours of New York City’s past.
       github: https://github.com/nypl-spacetime/maps-by-decade
+      category: featured
+
+    - name: Digital Collections Tab
+      image: digital-collections-tab.jpg
+      url: https://www.nypl.org/blog/2017/08/31/digital-collections-tab
+      alt: Digital Collections Tab
+      description: View a historic image from the New York Public Library’s Digital Collections, every time you open a new tab.
+      github: https://github.com/nypl-spacetime/digital-collections-tab
       category: featured
 
 ################################################################################
@@ -55,13 +63,13 @@
 
 - type: sketch
   title: Tools &#38; Experiments
-  description: Take a peek into the Space/Time Directory workshop! We're sharing prototypes, proof of concepts, and visualizations the project as they're made.
+  description: Take a peek into the Space/Time Directory workshop! We’re sharing prototypes, proof of concepts, and visualizations the project as they’re made.
   projects:
     - name: ScrollNYC
       image: scroll.jpg
       url: http://spacetime.nypl.org/scrollnyc
       alt: ScrollNYC
-      description: Peel away layers of the city's history with this visualization layering maps from 1660 through 2014.
+      description: Peel away layers of the city’s history with this visualization layering maps from 1660 through 2014.
       category: sketch
 
     - name: Street View, Then &amp; Now
@@ -90,7 +98,7 @@
       image: digitalcollections.jpg
       url: http://digitalcollections.nypl.org/
       alt: NYPL Digital Collections
-      description: NYPL's database of digitized collections with new items being added every day, featuring prints, photographs, maps, manuscripts, streaming video, and more.
+      description: NYPL’s database of digitized collections with new items being added every day, featuring prints, photographs, maps, manuscripts, streaming video, and more.
       category: resource
 
     - name: Visualize the Public Domain
@@ -104,7 +112,7 @@
       image: oralhistory.jpg
       url: http://oralhistory.nypl.org/
       alt: NYPL Community Oral History Project
-      description: The Community Oral History Project documents, preserves, and celebrates the history of NYC's unique neighborhoods with stories from people who have experienced it firsthand.
+      description: The Community Oral History Project documents, preserves, and celebrates the history of NYC’s unique neighborhoods with stories from people who have experienced it firsthand.
       category: resource
 
     - name: Photographers’ Identities Catalog
@@ -128,9 +136,9 @@
       description: Create and share 3D images from the stereograph collections of The New York Public Library (and others). You can even use your own Flickr photos.
       category: resource
 
-    - name: What's on the Menu?
+    - name: What’s on the Menu?
       image: menus.jpg
       url: http://menus.nypl.org/
-      alt: What's on the Menu?
+      alt: What’s on the Menu?
       description: Search and explore the dishes and locations of 17,545 historic menus from New York City and beyond.
       category: resource

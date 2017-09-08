@@ -721,7 +721,7 @@ li.project-container {
 
     h3 {
       font-size: 2rem;
-      position: absolute;
+      // position: absolute;
       font-family: $mainfont;
       bottom: 0;
       left: 0;
@@ -729,7 +729,7 @@ li.project-container {
       line-height: 1;
       margin: 0;
       border-top: $projectborder solid $linkcolor;
-      width: 50%;
+      // width: 50%;
       -webkit-box-decoration-break: clone;
 
       @media screen and (max-width: $mainbreakpoint) {
@@ -746,7 +746,7 @@ li.project-container {
     }
 
     .project-image-container {
-      height: 20rem;
+      //height: 20rem;
 
       @media screen and (max-width: $mainbreakpoint) {
         height: auto;
