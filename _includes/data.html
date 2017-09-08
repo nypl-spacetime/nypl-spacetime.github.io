@@ -5,62 +5,64 @@
 <p>
   See the <a href="https://github.com/nypl-spacetime/spacetime-data/">spacetime-data</a> repository on GitHub for examples on how to use Space/Time data.
 </p>
-<table id="datasets">
-  <thead>
-    <tr>
-      <th>Dataset</th>
-      <th colspan="2">Data</th>
-      <th>License</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for dataset in site.data.datasets.datasets %}
-    {% capture evenodd %}{% cycle 'odd', 'even' %}{% endcapture %}
-    <tr class="{{ evenodd }} no-padding-bottom">
-      <td>
-        <div>
-          {% assign id=dataset.name | prepend: 'data-' %}
-          {% include anchor.html tag="span" class="monospace-name" text=dataset.name id=id %}
-          {% if dataset.type %}
-            {% for type in dataset.type %}
-              <span class="monospace-name dataset-type dataset-type-{{ type }}" title="{{ site.data.datasets.types[type].title }}">
-                {{ site.data.datasets.types[type].code }}
-              </span>
-            {% endfor %}
+<div class="table-container">
+  <table id="datasets">
+    <thead>
+      <tr>
+        <th>Dataset</th>
+        <th colspan="2">Data</th>
+        <th>License</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for dataset in site.data.datasets.datasets %}
+      {% capture evenodd %}{% cycle 'odd', 'even' %}{% endcapture %}
+      <tr class="{{ evenodd }} no-padding-bottom">
+        <td>
+          <div>
+            {% assign id=dataset.name | prepend: 'data-' %}
+            {% include anchor.html tag="span" class="monospace-name dataset-name" text=dataset.name id=id %}
+            {% if dataset.type %}
+              {% for type in dataset.type %}
+                <span class="monospace-name dataset-type dataset-type-{{ type }}" title="{{ site.data.datasets.types[type].title }}">
+                  {{ site.data.datasets.types[type].code }}
+                </span>
+              {% endfor %}
+            {% endif %}
+          </div>
+          <div class="project-description">{{ dataset.description }}</div>
+        </td>
+        <td>
+          <a href="{{ site.s3-url }}{{ dataset.name }}/{{ dataset.name }}.zip">
+            ZIP
+          </a>
+        </td>
+        <td>
+          <a href="{{ site.s3-url }}{{ dataset.name }}/{{ dataset.name }}.geojson">
+            GeoJSON
+          </a>
+        </td>
+        <td nowrap>
+          {% if site.data.licenses[dataset.license] %}
+          <a href="{{ site.data.licenses[dataset.license] }}">{{ dataset.license }}</a>
+          {% else %}
+          {{ dataset.license }}
           {% endif %}
-        </div>
-        <div class="project-description">{{ dataset.description }}</div>
-      </td>
-      <td>
-        <a href="{{ site.s3-url }}{{ dataset.name }}/{{ dataset.name }}.zip">
-          ZIP
-        </a>
-      </td>
-      <td>
-        <a href="{{ site.s3-url }}{{ dataset.name }}/{{ dataset.name }}.geojson">
-          GeoJSON
-        </a>
-      </td>
-      <td nowrap>
-        {% if site.data.licenses[dataset.license] %}
-        <a href="{{ site.data.licenses[dataset.license] }}">{{ dataset.license }}</a>
-        {% else %}
-        {{ dataset.license }}
-        {% endif %}
-      </td>
-    </tr>
-    {% assign details-id=dataset.name | prepend: 'dataset-details-' %}
-    <tr class="{{ evenodd }} dataset-details-off no-padding-top" id="{{ details-id }}-off">
-      <td colspan="4">
-        <a class="dataset-view-details" href="javascript:void(0)" data-dataset-details-id="{{ details-id }}" data-dataset-name="{{ dataset.name }}">View details</a>
-      </td>
-    </tr>
-    <tr class="{{ evenodd }} dataset-details-on no-padding-top" id="{{ details-id }}-on">
-      <td colspan="4" id="{{ details-id }}-content" ></td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+        </td>
+      </tr>
+      {% assign details-id=dataset.name | prepend: 'dataset-details-' %}
+      <tr class="{{ evenodd }} dataset-details-off no-padding-top" id="{{ details-id }}-off">
+        <td colspan="4">
+          <a class="dataset-view-details" href="javascript:void(0)" data-dataset-details-id="{{ details-id }}" data-dataset-name="{{ dataset.name }}">View details</a>
+        </td>
+      </tr>
+      <tr class="{{ evenodd }} dataset-details-on no-padding-top" id="{{ details-id }}-on">
+        <td colspan="4" id="{{ details-id }}-content" ></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 
 <h3>{% include anchor.html tag="span" text='Dataset types' id='dataset-types' %}</h3>
 <dl class="dataset-types">

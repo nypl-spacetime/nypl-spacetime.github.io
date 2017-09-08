@@ -11,41 +11,41 @@
 <ul class="projects">
 {% for project in category.projects %}
   <li class="project-container {{ project.category }}">
-      <div class="project-image-container">
-        {% if project.contribute %}
-        <a class="contribute" href="{{ project.contribute }}" title="contribute to {{ project.name }}">
-          Contribute!
-        </a>
-        {% endif %}
+    <div class="project-image-container">
+      {% if project.contribute %}
+      <a class="contribute" href="{{ project.contribute }}" title="contribute to {{ project.name }}">
+        Contribute!
+      </a>
+      {% endif %}
+      {% if project.url %}
+      <a href="{{ project.url }}" title="visit {{ project.name }}" aria-hidden="true">
+      {% else %}
+      <!-- no a -->
+      {% endif %}
+        <img class="project-image" src="{{ site.baseurl}}/images/projects/{{ project.image }}" alt="{{ project.alt }}" />
+      {% if project.url %}
+      </a>
+      {% else %}
+      <!-- no /a -->
+      {% endif %}
+      <h3>
         {% if project.url %}
-        <a href="{{ project.url }}" title="visit {{ project.name }}" aria-hidden="true">
+        <a href="{{ project.url }}" name="{{ project.name | slugify: 'raw' }}" title="visit {{ project.name }}">{{ project.name }}</a>
         {% else %}
-        <!-- no a -->
+        <a name="{{ project.name | slugify: 'raw' }}" title="visit {{ project.name }}">{{ project.name }}</a>
         {% endif %}
-          <img class="project-image" src="{{ site.baseurl}}/images/projects/{{ project.image }}" alt="{{ project.alt }}" />
-        {% if project.url %}
-        </a>
-        {% else %}
-        <!-- no /a -->
-        {% endif %}
-        <h3>
-          {% if project.url %}
-          <a href="{{ project.url }}" name="{{ project.name | slugify: 'raw' }}" title="visit {{ project.name }}">{{ project.name }}</a>
-          {% else %}
-          <a name="{{ project.name | slugify: 'raw' }}" title="visit {{ project.name }}">{{ project.name }}</a>
-          {% endif %}
-        </h3>
-      </div>
-      <div class="project-description">
-        <p>{{ project.description}}</p>
-        {% if project.github %}
-        <p>
-        <a href="{{ project.github }}">
-          View project source code on GitHub
-        </a>
-        </p>
-        {% endif %}
-      </div>
+      </h3>
+    </div>
+    <div class="project-description">
+      <p>{{ project.description}}</p>
+      {% if project.github %}
+      <p>
+      <a href="{{ project.github }}">
+        View project source code on GitHub
+      </a>
+      </p>
+      {% endif %}
+    </div>
   </li>
 {% endfor %}
 </ul>

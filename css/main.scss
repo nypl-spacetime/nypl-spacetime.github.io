@@ -24,36 +24,6 @@ $timelinearrow: 1rem;
 $mainbreakpoint: 800px; //$contentwidth;
 $mobilebreakpoint: 800px;
 
-$mainfont: "kievit light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$headerfont: "kievit bold", "Helvetica Neue Condensed Black", Helvetica, Arial, sans-serif;
-$mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
-
-@font-face {
-  font-family:"kievit light";
-  font-style:normal;
-  font-weight:800;
-  src: url("http://ux-static.nypl.org.s3-website-us-east-1.amazonaws.com/ff_kievit_web/KievitWeb-Light.woff") format('woff');
-}
-
-@font-face {
-  font-family:"kievit bold";
-  font-style:bold;
-  font-weight:800;
-  src:url("http://ux-static.nypl.org.s3-website-us-east-1.amazonaws.com/ff_kievit_web/KievitWeb-Bold.woff") format('woff');
-}
-
-@mixin titlestyle {
-  font-family: $headerfont;
-  font-style: normal;
-  font-weight: 900;
-}
-
-@mixin textstyle {
-  font-family: $mainfont;
-  font-style: normal;
-  font-weight: 400;
-}
-
 @mixin clearfix {
   &:after {
     content: "";
@@ -61,59 +31,6 @@ $mapfont: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu
     clear: both;
   }
 }
-
-@mixin fancy-shadow ($color: $pagecolor) {
-  @include vendor-prefix('text-shadow', -1px -1px 0 $color, 1px -1px 0 $color, 1px 1px 0 $color, -1px 1px 0 $color, -2px 2px 0 $color);
-}
-
-@mixin vendor-prefix($name, $argument...) {
-  -webkit-#{$name}: #{$argument};
-  -ms-#{$name}: #{$argument};
-  -moz-#{$name}: #{$argument};
-  -o-#{$name}: #{$argument};
-  #{$name}: #{$argument};
-}
-
-@mixin map_left($year) {
-  $left: ($year - 1660)/(2016 - 1660) * 100;
-  left: 0% + $left;
-}
-
-/* icomoon stuff */
-
-@font-face {
-  font-family: 'icomoon';
-  src:url('../fonts/icomoon.eot?-8w9jy8');
-  src:url('../fonts/icomoon.eot?#iefix-8w9jy8') format('embedded-opentype'),
-    url('../fonts/icomoon.woff?-8w9jy8') format('woff'),
-    url('../fonts/icomoon.ttf?-8w9jy8') format('truetype'),
-    url('../fonts/icomoon.svg?-8w9jy8#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-icon_lion:before {
-  content: "\e604";
-  display: block;
-  font-size: 1.67em;
-  margin-bottom: 5px;
-}
-
-/* /icomoon */
 
 html {
   box-sizing: border-box;
@@ -127,7 +44,6 @@ html {
   background-color: $pagecolor;
   font-size: $basefontsize;
   line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
 
   @media screen and (max-width: $mainbreakpoint) {
     font-size: $basefontsize * 0.8;
@@ -138,7 +54,10 @@ html {
 body {
   margin: 0 auto;
   padding: 0;
-  @include textstyle;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 17px;
+
   color: $textcolor;
   background-color: $pagecolor;
 }
@@ -146,10 +65,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: $headingcolor;
   line-height: 1.3;
-  @include titlestyle;
 
   @media screen and (max-width: $mainbreakpoint) {
-    line-height: 1;
+    line-height: 1.2;
   }
 }
 
@@ -187,7 +105,6 @@ h2 {
     float: left;
     padding-right: 4px;
     margin-left: -24px;
-    // line-height: 1;
   }
 
   & a svg {
@@ -211,7 +128,6 @@ p {
     color: $headingcolor;
     line-height: 1.3;
     font-size: 1.5em;
-    @include titlestyle;
 
     @media screen and (max-width: $mainbreakpoint) {
       margin-left: 0;
@@ -272,7 +188,7 @@ a.no-border {
 }
 
 b, strong {
-  @include titlestyle;
+  // @include titlestyle;
 }
 
 samp {
@@ -364,10 +280,6 @@ ul, li {
     }
   }
 
-  h2, .tagline {
-    font-family: $mainfont;
-  }
-
   @media screen and (max-width: $mainbreakpoint) {
     // background-size: auto;
     background-position: center -11rem;
@@ -414,17 +326,21 @@ ul, li {
     display: block;
   }
 
-  .icon-icon_lion {
-    color: $textcolor;
+  .nypl-icon {
+    width: 2.5em;
     display: block;
+    margin: 0 auto;
+    padding: 5px;
   }
 
 }
 
-table {
-  display: block;
+.table-container {
+  width: 100%;
   overflow-x: auto;
+}
 
+table {
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
@@ -572,7 +488,6 @@ table th {
 h2.bordered {
   border-top: 1px solid $textcolor;
   padding-top: 1em;
-  font-family: $mainfont;
 }
 
 .projects {
@@ -606,6 +521,13 @@ code {
   padding: 0px 6px;
   border-radius: 4px;
   font-weight: bold;
+}
+
+.dataset-name {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.08);
+  padding: 0px 6px;
+  border-radius: 4px;
 }
 
 .dataset-type-draft {
@@ -668,10 +590,10 @@ li.project-container {
   margin-bottom: 2rem;
 
   h3 {
-    font-family: $mainfont;
+
     padding: 1rem 0 0 0;
     background-color: $pagecolor;
-    line-height: 1;
+    line-height: 1.2;
     margin: 0;
     border-top: $projectborder solid $linkcolor;
 
@@ -721,12 +643,10 @@ li.project-container {
 
     h3 {
       font-size: 2rem;
-      // position: absolute;
-      font-family: $mainfont;
       bottom: 0;
       left: 0;
       background-color: $pagecolor;
-      line-height: 1;
+      line-height: 1.2;
       margin: 0;
       border-top: $projectborder solid $linkcolor;
       // width: 50%;

@@ -1,20 +1,56 @@
 repos:
   - name: brick-by-brick
     description: Simple JSON API for small crowdsourcing apps used in different NYC Space/Time Directory projects
+    technology: Node.js + PostgreSQL
 
   - name: Leaflet.GeotagPhoto
     description: Leaflet plugin for photo geotagging
+    technology: JavaScript + Leaflet
 
   - name: spacetime-etl
-    description: Extract/Transform/Load tool for Space/Time data
+    description: Extract/Transform/Load tool for NYC Space/Time Directory data
+    technology: Node.js
 
   - name: spacetime-cli
     description: Command line tools for NYC Space/Time Directory data
+    technology: Node.js
 
-  # - name: group-maps
-  #   description: Selects a set of maps from NYC Space/Time Directory database, and groups them in bands of a configurable amount of years
+  - name: dc-download
+    description: Command-line tool for downloading images from <a href="https://digitalcollections.nypl.org/">Digital Collections</a>
+    technology: Node.js
 
-  # https://github.com/nypl-spacetime/brick-specification
-  # https://github.com/nypl-spacetime/express-pg-oauth
-  # https://github.com/nypl-spacetime/hocr-detect-columns
-  # https://github.com/nypl-spacetime/ocr-scripts
+  - name: maps-by-decade
+    description: Maps by Decade shows New York City street maps, grouped by decade.
+    technology: JavaScript + React
+
+  - name: surveyor
+    description: Web interface for crowdsourced geotagging of historical photos
+    technology: JavaScript + React
+
+  - name: interactive-architecture
+    description: Interactive architecture diagrams with SVG
+    technology: JavaScript
+
+  - name: hocr-detect-columns
+    description: Detects columns and connects indented lines in <a href="https://en.wikipedia.org/wiki/HOCR">hOCR files</a>
+    technology: Node.js
+
+  - name: nyc-street-normalizer
+    description: Module to normalize New York City street and avenue names
+    technology: Node.js
+
+  - name: city-directory-entry-parser
+    description: Module to parse lines from OCR’d New York City directories into separate fields, such as names, occupations, and addresses.
+    technology: Node.js
+
+  - name: building-inspector
+    description: Crowdsourced extraction and correction of building footprints and addresses from historical maps
+    technology: Ruby on Rails
+
+  - name: nypl-warper
+    description: Web interface for crowdsourced georectification of historical maps
+    technology: Ruby on Rails
+
+  - name: map-vectorizer
+    description: Python tools which use computer vision to extract building outlines and other features from historical building atlases
+    technology: Python

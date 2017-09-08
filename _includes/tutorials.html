@@ -2,23 +2,25 @@
 <p>
   The following tutorials demonstrate how you can use tools and datasets from the NYC Space/Time Directory:
 </p>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Tools used</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for tutorial in site.data.tutorials %}
-    <tr>
-      <td>
-        <a href="{{ tutorial.url }}">{{ tutorial.title }}</a>
-      </td>
-      <td>
-        {{ tutorial.tools }}
-      </td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Tools used</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tutorial in site.data.tutorials %}
+      <tr>
+        <td>
+          <a href="{{ tutorial.url }}">{{ tutorial.title }}</a>
+        </td>
+        <td>
+          {{ tutorial.tools }}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
