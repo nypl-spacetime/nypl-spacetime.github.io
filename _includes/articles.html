@@ -1,0 +1,45 @@
+{% include anchor.html tag="h2" class="bordered" text="Articles" id="articles" %}
+<p>
+The following posts have been published about the NYC Space/Time Directory on NYPL’s blog:
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for article in site.data.articles.nypl %}
+    <tr>
+      <td>
+        <a href="{{ article.url }}">{{ article.title }}</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<p>
+Other websites and publications have also written stories about the project:
+</p>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Website</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for article in site.data.articles.other %}
+    <tr>
+      <td>
+        <a href="{{ article.url }}">{{ article.title }}</a>
+      </td>
+      <td>
+        {{ article.publisher }}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
