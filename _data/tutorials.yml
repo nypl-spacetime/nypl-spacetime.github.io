@@ -9,3 +9,7 @@
 - title: 'Tracing Historical Streets with QGIS'
   url: https://github.com/nypl-spacetime/qgis-trace-tutorial#tutorial-tracing-historical-streets-with-qgis
   tools: <a href="http://www.qgis.org/">QGIS</a>, <a href="http://maps.nypl.org/warper">Map Warper</a>
+
+- title: DIY Historic Walking Tours
+  url: https://github.com/nypl-spacetime/diy-historic-walking-tours
+  tools: <a href="http://maps.nypl.org/warper/">Map Warper</a>, <a href="http://geojson.io/">GeoJSON</a>, <a href="http://leafletjs.com/">Leaflet</a>
