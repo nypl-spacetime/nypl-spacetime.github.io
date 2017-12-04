@@ -31,14 +31,14 @@ datasets:
       description: Building Inspector addresses combined with data from the <code>nyc-streets</code> dataset — for more information, see <a href="http://bertspaan.nl/west-village">bertspaan.nl/west-village</a>
       license: CC0
 
-    # - name: city-directories
-    #   description:
-    #   license: CC0
+    - name: city-directories
+      description: People and their professions and addresses, extracted with OCR software from historical New York City Directories
+      license: CC0
 
-    # - name: emigrant-city
-    #   type: crowdsourced
-    #   description:
-    #   license: CC0
+    - name: emigrant-city
+      type: crowdsourced
+      description: Transcribed and geocoded 19th and early 20th century real estate records from the Emigrant Savings Bank
+      license: CC0
 
     - name: oldnyc
       description: Contains the location of 39516 photos from <a href="http://digitalcollections.nypl.org/collections/photographic-views-of-new-york-city-1870s-1970s-from-the-collections-of-the-ne-2#/?tab=about">Photographic Views of New York City, 1870s-1970s</a> collection, taken from Dan Vanderkam’s <a href="https://www.oldnyc.org/">OldNYC</a>
@@ -53,9 +53,9 @@ datasets:
       description: Churches in New York City, 1790 to 1856 — from <a href="http://press.uchicago.edu/ucp/books/book/chicago/E/bo24204663.html">Evangelical Gotham&#58; Religion and the Making of New York City</a> by <a href="http://press.uchicago.edu/ucp/books/author/R/K/au24204666.html">Kyle Roberts</a>
       license: CC BY-NC
 
-    # - name: spacetime-graph
-    #   description:
-    #   license: CC0
+    - name: spacetime-graph
+      description: Graph of <em>all data</em> from <em>all dataset</em> in the NYC Space/Time Directory, connected and grouped by their relations
+      license: CC0
 
 types:
     draft:
