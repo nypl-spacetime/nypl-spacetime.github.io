@@ -1,5 +1,5 @@
 baseurl: ''
-s3-url: http://spacetime-s3-datasets.dev/
+s3-url: http://spacetime-s3-datasets.localhost/
 
 defaults:
   -
