@@ -18,7 +18,7 @@ datasets:
       license: CC0
 
     - name: nyc-streets
-      description: Manhattan and Brooklyn streets, traced from New York City insurance atlases
+      description: Historical streets, traced from New York City insurance atlases
       license: CC0
 
     - name: enumeration-districts
@@ -26,10 +26,19 @@ datasets:
       description: 1900 census enumeration districts for Manhattan and the Bronx, traced from <a href="https://digitalcollections.nypl.org/items/0cabe3d0-3d50-0134-a8e0-00505686a51c">maps created by Barbara Hillman</a>
       license: CC0
 
-    - name: building-inspector-nyc-streets
-      type: [draft, inferred]
+    - name: addresses
+      type: inferred
       description: Building Inspector addresses combined with data from the <code>nyc-streets</code> dataset — for more information, see <a href="http://bertspaan.nl/west-village">bertspaan.nl/west-village</a>
       license: CC0
+
+    # - name: city-directories
+    #   description:
+    #   license: CC0
+
+    # - name: emigrant-city
+    #   type: crowdsourced
+    #   description:
+    #   license: CC0
 
     - name: oldnyc
       description: Contains the location of 39516 photos from <a href="http://digitalcollections.nypl.org/collections/photographic-views-of-new-york-city-1870s-1970s-from-the-collections-of-the-ne-2#/?tab=about">Photographic Views of New York City, 1870s-1970s</a> collection, taken from Dan Vanderkam’s <a href="https://www.oldnyc.org/">OldNYC</a>
@@ -43,6 +52,10 @@ datasets:
     - name: nyc-churches
       description: Churches in New York City, 1790 to 1856 — from <a href="http://press.uchicago.edu/ucp/books/book/chicago/E/bo24204663.html">Evangelical Gotham&#58; Religion and the Making of New York City</a> by <a href="http://press.uchicago.edu/ucp/books/author/R/K/au24204666.html">Kyle Roberts</a>
       license: CC BY-NC
+
+    # - name: spacetime-graph
+    #   description:
+    #   license: CC0
 
 types:
     draft:
