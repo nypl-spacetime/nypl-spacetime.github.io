@@ -117,8 +117,9 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
         contributors: function (contributors) {
           return contributors
             .map(function (contributor) {
+              console.log(contributor)
               var title = contributor.title + (contributor.role ? (' (' + contributor.role + ')') : '')
-              var href = contributor.email ? ('mailto:' + contributor.mailto) : contributor.path
+              var href = contributor.email ? ('mailto:' + contributor.email) : contributor.path
               return makeLink(href, title)
             })
         }
