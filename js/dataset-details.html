@@ -7,24 +7,35 @@
 </div>
 <table>
   <tbody>
-  {{ for(var prop in it.dataset) { }}
+  {{ for(var field in it.fields) { }}
     <tr>
-      <td>{{=prop}}</td>
-      <td>{{=it.dataset[prop]}}</td>
+      <td rowspan="{{=it.fields[field].length}}">{{=field}}</td>
+      <td>{{=it.fields[field][0]}}</td>
     </tr>
+    {{ for(var index = 1; index < it.fields[field].length; index++) { }}
+    <tr>
+      <td>{{=it.fields[field][index]}}</td>
+    </tr>
+    {{ } }}
   {{ } }}
   <tr>
     <td rowspan="3">Data</td>
-    <td><a href="{{=it.s3Url}}{{=it.id}}/{{=it.id}}.zip">Complete dataset</a> (ZIP)</td>
+    <td><a href="{{=it.baseUrl}}{{=it.id}}/{{=it.id}}.zip">Complete dataset</a> (ZIP)</td>
   </tr>
   <tr>
-    <td><a href="{{=it.s3Url}}{{=it.id}}/{{=it.id}}.objects.ndjson">Objects</a> (NDJSON)</td>
+    <td><a href="{{=it.baseUrl}}{{=it.id}}/{{=it.id}}.objects.ndjson">Objects</a> (NDJSON)</td>
   </tr>
   <tr>
     <td>
-      <a href="{{=it.s3Url}}{{=it.id}}/{{=it.id}}.geojson">
-        Download GeoJSON file</a> — or <a href="http://geojson.io/#data=data:text/x-url,{{=encodeURIComponent(it.s3Url + it.id + '/' + it.id + '.sample.geojson')}}">view sample GeoJSON on geojson.io</a> (100 objects)
+      <a href="{{=it.baseUrl}}{{=it.id}}/{{=it.id}}.geojson">
+        Download GeoJSON file</a> — or <a href="http://geojson.io/#data=data:text/x-url,{{=encodeURIComponent(it.baseUrl + it.id + '/' + it.id + '.sample.geojson')}}">view sample GeoJSON on geojson.io</a> (100 objects)
     </td>
+  <tr>
+    <td>Specification</td>
+    <td>
+      <a href="{{=it.baseUrl}}{{=it.id}}/datapackage.json">Data Package</a>
+    </td>
+  </tr>
   </tr>
   {{? it.stats.objects }}
   <tr>

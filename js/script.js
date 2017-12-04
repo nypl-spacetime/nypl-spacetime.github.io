@@ -1,9 +1,8 @@
 ---
 layout:
 ---
-var s3Url = '{{site.s3-url}}'
-
-var statusFilename = 'etl-results.json'
+var baseUrl = '{{site.s3-url}}'
+var dataPackageFilename = 'datapackage.json'
 
 function formatNumber (number) {
   return number
@@ -65,8 +64,8 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
     var id = this.dataset.datasetDetailsId
     var dataset = this.dataset.datasetName
 
-    var statusUrl = s3Url + dataset + '/' + statusFilename
-    d3.json(statusUrl, function (err, statusJson) {
+    var dataPackageUrl = baseUrl + dataset + '/' + dataPackageFilename
+    d3.json(dataPackageUrl, function (err, dataPackage) {
       if (err) {
         console.error(err)
         return
@@ -82,42 +81,76 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
         .style('display', 'none')
 
       var templateData = {
-        s3Url: s3Url,
-        id: statusJson.dataset.id,
-        dataset: {},
+        baseUrl: baseUrl,
+        id: dataPackage.name,
+        fields: {},
         stats: {}
       }
 
-      var datasetKeys = {
+      var fields = {
         title: 'Title',
-        author: 'Author',
-        // editor: 'Editor',
-        website: 'Website'
+        homepage: 'Homepage',
+        contributors: 'Contributors',
+        sources: 'Sources'
       }
 
-      var datasetTransform = {
-        website: function (value) {
-          return '<a href="' + value + '">' + value + '</a>'
+      function makeLink (href, text) {
+        if (!href) {
+          return text
         }
-        // author: TODO: Bert Spaan <bertspaan@nypl.org>
+
+        return `<a href="${href}">${text || href}</a>`
+      }
+
+      const createFieldRows = {
+        homepage: function (url) {
+          return [
+            makeLink(url)
+          ]
+        },
+        sources: function (sources) {
+          return sources
+            .map(function (source) {
+              return makeLink(source.path, source.title)
+            })
+        },
+        contributors: function (contributors) {
+          console.log(contributors)
+          return contributors
+            .map(function (contributor) {
+              var title = contributor.title + (contributor.role ? (' (' + contributor.role + ')') : '')
+              var href = contributor.email ? ('mailto:' + contributor.mailto) : contributor.path
+              return makeLink(href, title)
+            })
+        }
       }
 
       var templateDatasetJson = {}
-      Object.keys(datasetKeys).forEach(function (key) {
-        if (statusJson.dataset[key]) {
-          var value = statusJson.dataset[key]
-          templateData.dataset[datasetKeys[key]] = datasetTransform[key] ? datasetTransform[key](value) : value
+      Object.keys(fields).forEach(function (field) {
+        if (dataPackage[field]) {
+          var fieldTitle = fields[field]
+          var rows = createFieldRows[field] && createFieldRows[field](dataPackage[field])
+          if (rows) {
+            templateData.fields[fieldTitle] = rows
+          }
         }
       })
 
-      if (statusJson.stats && statusJson.stats.objects) {
+      var objectsResource = dataPackage.resources
+        .filter(function (resource) {
+          return resource.name === dataPackage.name + '.objects'
+        })[0]
+
+      if (objectsResource && objectsResource.stats) {
+        var stats = objectsResource.stats
+
         templateData.stats.objects = {}
-        templateData.stats.objects.count = formatNumber(statusJson.stats.objects.count)
+        templateData.stats.objects.count = formatNumber(stats.count)
 
         var types = []
 
-        Object.keys(statusJson.stats.objects.types).forEach(function (type) {
-          var count = statusJson.stats.objects.types[type]
+        Object.keys(stats.types).forEach(function (type) {
+          var count = stats.types[type]
           types.push({
             type: type,
             count: count
@@ -131,11 +164,11 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
             return type.type
           })
 
-        if (statusJson.stats.objects.decades) {
-          var decades = statusJson.stats.objects.decades
+        if (stats.decades) {
+          var decades = stats.decades
 
           var newDecades = []
-          var total = statusJson.stats.objects.count
+          var total = stats.count
 
           var yearStart = 1710
           var yearEnd = 1960
@@ -165,7 +198,6 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
             }
           }
 
-
           templateData.stats.objects.decades = newDecades
           templateData.stats.objects.decadesDesc = newDecades
             .filter(function (decade) {
@@ -185,7 +217,7 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
         .html(html)
 
       d3.select('#' + id + '-last-updated')
-        .html(moment(statusJson.date).fromNow())
+        .html(moment(dataPackage.created).fromNow())
 
       d3.select('#' + id + '-on')
         .style('display', 'table-row')
