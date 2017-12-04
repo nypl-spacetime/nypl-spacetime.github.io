@@ -28,7 +28,7 @@ datasets:
 
     - name: addresses
       type: inferred
-      description: Building Inspector addresses combined with data from the <code>nyc-streets</code> dataset — for more information, see <a href="http://bertspaan.nl/west-village">bertspaan.nl/west-village</a>
+      description: Historical New York City addresses, created by combining house numbers transcribed in Building Inspector addresses with data from the <code>nyc-streets</code> dataset — for more information, see <a href="http://bertspaan.nl/west-village">bertspaan.nl/west-village</a>
       license: CC0
 
     - name: city-directories
