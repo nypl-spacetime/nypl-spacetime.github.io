@@ -41,7 +41,7 @@ repos:
 
   - name: city-directory-entry-parser
     description: Module to parse lines from OCR’d New York City directories into separate fields, such as names, occupations, and addresses.
-    technology: Node.js
+    technology: Python
 
   - name: building-inspector
     description: Crowdsourced extraction and correction of building footprints and addresses from historical maps
