@@ -54,7 +54,7 @@ datasets:
       license: CC BY-NC
 
     - name: spacetime-graph
-      description: Graph of <em>all data</em> from <em>all dataset</em> in the NYC Space/Time Directory, connected and grouped by their relations
+      description: Graph of <strong>all data</strong> from <strong>all datasets</strong> in the NYC Space/Time Directory, connected and grouped by their relations
       license: CC0
 
 types:
