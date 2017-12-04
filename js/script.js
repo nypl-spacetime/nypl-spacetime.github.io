@@ -115,7 +115,6 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
             })
         },
         contributors: function (contributors) {
-          console.log(contributors)
           return contributors
             .map(function (contributor) {
               var title = contributor.title + (contributor.role ? (' (' + contributor.role + ')') : '')
