@@ -137,12 +137,12 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
 
       var objectsResource = dataPackage.resources
         .filter(function (resource) {
-          return resource.name === dataPackage.name + '.objects'
+          return resource.name === dataPackage.name + '.objects.ndjson'
         })[0]
 
       var relationsResource = dataPackage.resources
         .filter(function (resource) {
-          return resource.name === dataPackage.name + '.relations'
+          return resource.name === dataPackage.name + '.relations.ndjson'
         })[0]
 
       if (objectsResource && objectsResource.stats) {
