@@ -201,9 +201,12 @@ samp {
 }
 
 ul, li {
-  list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+ul.projects {
+  list-style-type: none;
 }
 
 .centered {
@@ -382,6 +385,7 @@ table .project-description {
 
 .dataset-details-on table td:first-child:not(:last-child) {
   white-space: nowrap;
+  padding-right: 1em;
 }
 
 .dataset-details-on table td:first-child:not(:last-child):after {
@@ -465,6 +469,11 @@ tr.no-padding-bottom td {
 
 tr.no-padding-top td {
   padding-top: 0;
+}
+
+#table-of-contents {
+  columns: 2;
+  column-gap: 4em;
 }
 
 .footnote {
