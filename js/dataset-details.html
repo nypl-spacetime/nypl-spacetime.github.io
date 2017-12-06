@@ -19,37 +19,56 @@
     {{ } }}
   {{ } }}
   <tr>
-    <td rowspan="3">Data</td>
-    <td><a href="{{=it.baseUrl}}{{=it.id}}/{{=it.id}}.zip">Complete dataset</a> (ZIP)</td>
-  </tr>
-  <tr>
-    <td><a href="{{=it.baseUrl}}{{=it.id}}/{{=it.id}}.objects.ndjson">Objects</a> (NDJSON)</td>
-  </tr>
-  <tr>
-    <td>
-      <a href="{{=it.baseUrl}}{{=it.id}}/{{=it.id}}.geojson">
-        Download GeoJSON file</a> — or <a href="http://geojson.io/#data=data:text/x-url,{{=encodeURIComponent(it.baseUrl + it.id + '/' + it.id + '.sample.geojson')}}">view sample GeoJSON on geojson.io</a> (100 objects)
-    </td>
-  <tr>
     <td>Specification</td>
     <td>
       <a href="{{=it.baseUrl}}{{=it.id}}/datapackage.json">Data Package</a>
     </td>
   </tr>
-  </tr>
-  {{? it.stats.objects }}
   <tr>
-    <td rowspan="1">Objects</td>
-    <td>{{=it.stats.objects.count}}</td>
+    <td rowspan="2">Dataset</td>
+    <td><a href="{{=it.baseUrl}}{{=it.id}}/{{=it.id}}.zip">All files in Dataset</a> (ZIP)</td>
   </tr>
   <tr>
-  <!-- <td>
-    {{~it.stats.objects.types :value}}
-      <code>{{=value}}</code>
-    {{~}}
-  </td> -->
+    <td>
+      {{? it.stats.objects }}
+      <a href="{{=it.baseUrl}}{{=it.id}}/{{=it.id}}.objects.ndjson">Objects</a> (NDJSON){{? it.stats.relations }},{{?}}
+      {{?}}
+      {{? it.stats.relations }}
+      <a href="{{=it.baseUrl}}{{=it.id}}/{{=it.id}}.relations.ndjson">Relations</a> (NDJSON)
+      {{?}}
+    </td>
   </tr>
-  {{?}}
+
+  <tr>
+    <td rowspan="2">GeoJSON</td>
+    <td>
+      <a href="{{=it.baseUrl}}{{=it.id}}/{{=it.id}}.geojson">
+        Objects with geometries</a> — or <a href="http://geojson.io/#data=data:text/x-url,{{=encodeURIComponent(it.baseUrl + it.id + '/' + it.id + '.sample.geojson')}}">view sample on geojson.io</a> (100 objects)
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <a href="{{=it.baseUrl}}{{=it.id}}/{{=it.id}}.flattened.geojson">GeoJSON with simplified structure</a>, for easier usage (e.g. in QGIS)
+    </td>
+  </tr>
+
+  <tr>
+    <td>CSV</td>
+    <td><a href="{{=it.baseUrl}}{{=it.id}}/{{=it.id}}.csv">Objects with simplified structure</a></td>
+  </tr>
+
+  <tr>
+    <td>Size</td>
+    <td>
+      {{? it.stats.objects }}
+      {{=it.stats.objects.count}} Objects{{? it.stats.relations }};{{?}}
+      {{?}}
+      {{? it.stats.relations }}
+      {{=it.stats.relations.count}} Relations
+      {{?}}
+    </td>
+  </tr>
+
   {{? it.stats.objects && it.stats.objects.decades }}
   <tr>
     <td>Timeline</td>
@@ -96,7 +115,7 @@
   </tr>
   {{?}}
   <tr>
-    <td>ETL script</td>
+    <td>ETL module</td>
     <td><a href="https://github.com/nypl-spacetime/etl-{{=it.id}}">https://github.com/nypl-spacetime/etl-{{=it.id}}</a></td>
   </tr>
   <tr>

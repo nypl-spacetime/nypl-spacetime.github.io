@@ -117,7 +117,6 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
         contributors: function (contributors) {
           return contributors
             .map(function (contributor) {
-              console.log(contributor)
               var title = contributor.title + (contributor.role ? (' (' + contributor.role + ')') : '')
               var href = contributor.email ? ('mailto:' + contributor.email) : contributor.path
               return makeLink(href, title)
@@ -139,6 +138,11 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
       var objectsResource = dataPackage.resources
         .filter(function (resource) {
           return resource.name === dataPackage.name + '.objects'
+        })[0]
+
+      var relationsResource = dataPackage.resources
+        .filter(function (resource) {
+          return resource.name === dataPackage.name + '.relations'
         })[0]
 
       if (objectsResource && objectsResource.stats) {
@@ -209,6 +213,13 @@ d3.selectAll('#datasets .dataset-details-off .dataset-view-details')
             })
             .join('; ')
         }
+      }
+
+      if (relationsResource && relationsResource.stats) {
+        var stats = relationsResource.stats
+
+        templateData.stats.relations = {}
+        templateData.stats.relations.count = formatNumber(stats.count)
       }
 
       var html = template(templateData)

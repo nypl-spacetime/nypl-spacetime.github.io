@@ -3,6 +3,9 @@
   The table below lists datasets available in the NYC Space/Time Directory. Each Dataset consists of a <a href="https://frictionlessdata.io/data-packages/">Data Package descriptor</a>, and two <a href="http://ndjson.org/">Newline Delimited JSON</a> (NDJSON) files: one with all the dataset’s <a href="https://github.com/nypl-spacetime/spacetime-schemas#objects">Objects</a> , the other one with its <a href="https://github.com/nypl-spacetime/spacetime-schemas#relations">Relations</a>.
 </p>
 <p>
+  Each Dataset is available in a few different file formats (e.g. ZIP, NDJSON, GeoJSON), see the <a href="#dataset-file-types">File Types</a> table below for details.
+</p>
+<p>
   For more information on working with data from the NYC Space/Time Directory, see the <a href="https://github.com/nypl-spacetime/spacetime-data/">Data &amp; Tools repository on GitHub</a>.
 </p>
 <div class="table-container">
@@ -63,6 +66,61 @@
     </tbody>
   </table>
 </div>
+
+<h3>{% include anchor.html tag="span" text='File types' id='dataset-file-types' %}</h3>
+<dl>
+  <dt>
+    <span class="monospace-name">
+      NDJSON
+    </span>
+  </dt>
+  <dd>
+    <p>
+      <a href="http://ndjson.org/">Newline Delimited JSON</a>: one JSON object per line. <a href=" https://github.com/nypl-spacetime/spacetime-data">See GitHub</a> for more information on using these files. A NYC Space/Time Directory Dataset can contain two NDJSON files: one with its <a href="https://github.com/nypl-spacetime/spacetime-schemas#objects">Objects</a>, and one with its <a href="https://github.com/nypl-spacetime/spacetime-schemas#relations">Relations</a>.
+    </p>
+  </dd>
+  <dt>
+    <span class="monospace-name">
+      ZIP
+    </span>
+  </dt>
+  <dd>
+    <p>
+      Compressed archive of all files in the Dataset: a <a href="href="https://frictionlessdata.io/data-packages/>Data Package descriptor</a>, Objects and Relations files, as well as derived GeoJSON and CSV files.
+    </p>
+  </dd>
+  <dt>
+    <span class="monospace-name">
+      GeoJSON
+    </span>
+  </dt>
+  <dd>
+    <p>
+      This file contains all Objects in the Dataset that have geometries (either a point, line or polygon), converted to <a href="https://tools.ietf.org/html/rfc7946#section-3.2">GeoJSON Features</a>. Please note: the GeoJSON file does not contain Objects without geometries! For example, the GeoJSON file of the <code>city-directories</code> Dataset does not contain Objects that are not geocoded.
+    </p>
+  </dd>
+  <dt>
+    <span class="monospace-name">
+      GeoJSON
+    </span> (simplified)
+  </dt>
+  <dd>
+    <p>
+      The simplified GeoJSON file contains the same data as the normal GeoJSON file, but the nested <code>data</code> property is flattened, and its fields converted to unnested properties. This makes using this file in QGIS and other tools a lot easier, but some structure may be lost.
+    </p>
+  </dd>
+  <dt>
+    <span class="monospace-name">
+      CSV
+    </span>
+  </dt>
+  <dd>
+    <p>
+      The CSV file contains all Objects in the Dataset (with and without geometries), but the same flattening< is applied as in the simplified GeoJSON file to convert the nested JSON structure of the Objects to tabular data.
+    </p>
+  </dd>
+</dl>
+
 
 <h3>{% include anchor.html tag="span" text='Dataset types' id='dataset-types' %}</h3>
 <dl class="dataset-types">
