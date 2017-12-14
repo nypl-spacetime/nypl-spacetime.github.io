@@ -15,6 +15,10 @@ repos:
     description: Command line tools for NYC Space/Time Directory data
     technology: Node.js
 
+  - name: documentation
+    description: Information about various parts of the NYC Space/Time Directory project, and how they work together
+    technology:
+
   - name: dc-download
     description: Command-line tool for downloading images from <a href="https://digitalcollections.nypl.org/">Digital Collections</a>
     technology: Node.js
