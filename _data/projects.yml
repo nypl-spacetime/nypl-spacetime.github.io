@@ -65,6 +65,13 @@
   title: Tools &#38; Experiments
   description: Take a peek into the Space/Time Directory workshop! We’re sharing prototypes, proof of concepts, and visualizations the project as they’re made.
   projects:
+    - name: The Changing Shoreline of New York City
+      image: shoreline.jpg
+      url: http://spacetime.nypl.org/the-changing-shoreline-of-nyc/
+      alt: The Changing Shoreline of New York City
+      description: Explore how New York City’s shoreline expanded and changed throughout the centuries.
+      category: sketch
+
     - name: ScrollNYC
       image: scroll.jpg
       url: http://spacetime.nypl.org/scrollnyc
@@ -76,7 +83,7 @@
       image: fifthave.jpg
       url: http://publicdomain.nypl.org/fifth-avenue/
       alt: Street View, Then and Now
-      description: Take a tour of the Fifth Avenue, past and present! Compare the photos of Fifth Avenue in 1911 and today.
+      description: Take a tour of Fifth Avenue, past and present!
       category: sketch
 
     - name: Navigating the Green Book
