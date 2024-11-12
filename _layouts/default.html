@@ -12,9 +12,28 @@
     <script src="{{ site.baseurl }}js/d3.v4.min.js"></script>
     <script src="{{ site.baseurl }}js/moment.min.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}js/doT.min.js"></script>
+    <style>
+      body {
+        padding-top: 80px;
+      }
+      .archive-banner {
+        padding: 5px;
+        background-color: #F9E08E;
+        color: #000;
+        font-size: 1.3em;
+        position: fixed;
+        text-align: center;
+        top: 0px;
+        width: 100%;
+        z-index: 1000;
+      }
+    </style>
   </head>
   <body>
     <div id="skip" tabindex="-1"><a href="#mainContent">Skip to Main Content</a></div>
+    <div class="archive-banner">
+      As of October 2024, the Spacetime Directory will no longer be updated by NYPL and will soon be archived. Repositories and data will continue to be available at the project's Github page: <a href="https://github.com/nypl-spacetime">https://github.com/nypl-spacetime</a>.
+    </div>
     {% include header.html %}
     <a name="mainContent"></a>
     {{ content }}
